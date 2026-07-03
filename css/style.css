@@ -3,23 +3,21 @@
 :root {
   --color-bg: #F3E8D8;
   --color-bg-alt: #F3E8D8;
-  --color-card-bg: rgba(255, 255, 255, 0.46);
+  --color-card-bg: transparent;
   --color-text: #000000;
-  --color-heading: #20302C;
-  --color-link: #006CEA;
+  --color-heading: #000000;
+  --color-link: #0000EE;
   --color-link-visited: #0000EE;
   --color-purple: #6755D1;
-  --color-purple-bg: rgba(199, 134, 237, 0.43);
-  --color-orange-bg: rgba(243, 180, 86, 0.43);
-  --color-blue-bg: rgba(106, 200, 228, 0.43);
-  --color-green-bg: rgba(156, 218, 101, 0.43);
   --color-purple-solid: #C786ED;
+  --color-purple-translucent: rgba(199, 134, 237, 0.82);
   --color-orange-solid: #F3B456;
   --color-blue-solid: #6AC8E4;
   --color-green-solid: #9CDA65;
   --color-footer-bg: #B6AEA2;
-  --font-heading: 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-body: 'Madefor-Text', 'Avenir LT W01 35 Light', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Arial', 'Helvetica', sans-serif;
+  --font-body: 'Arial', 'Helvetica', sans-serif;
+  --font-decorative: 'Trebuchet MS', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --max-width: 980px;
 }
 
@@ -35,8 +33,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-bg);
   overflow-x: hidden;
@@ -79,6 +77,7 @@ a:visited {
   padding: 0 20px;
   position: relative;
   min-height: 45px;
+  background-color: rgba(255, 255, 255, 0.46);
 }
 
 .site-header .logo {
@@ -98,14 +97,14 @@ a:visited {
   font-family: var(--font-heading);
   font-size: 15px;
   font-weight: normal;
-  color: var(--color-text);
+  color: var(--color-link);
   text-decoration: none;
   padding: 5px 0;
 }
 
 .site-header nav ul li a:hover,
 .site-header nav ul li a.active {
-  color: var(--color-link);
+  text-decoration: underline;
 }
 
 .site-header nav ul li.has-submenu {
@@ -122,9 +121,9 @@ a:visited {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #fff;
+  background: #B6AEA2;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  border-radius: 4px;
+  border-radius: 0;
   padding: 8px 0;
   min-width: 180px;
   z-index: 100;
@@ -144,6 +143,7 @@ a:visited {
   padding: 6px 20px;
   white-space: nowrap;
   font-size: 14px;
+  color: var(--color-link);
 }
 
 /* ===================== MAIN ===================== */
@@ -185,10 +185,10 @@ main {
 }
 
 .hero-section .hero-text h4 {
-  font-family: var(--font-heading);
+  font-family: var(--font-decorative);
   font-size: 28px;
-  font-weight: bold;
-  color: var(--color-heading);
+  font-weight: normal;
+  color: var(--color-text);
   margin-bottom: 15px;
   line-height: 1.2;
 }
@@ -204,12 +204,13 @@ main {
 
 .hero-section .hero-text .learn-more {
   display: inline-block;
-  padding: 8px 24px;
-  background-color: var(--color-link);
-  color: #fff;
-  border-radius: 4px;
+  padding: 10px 30px;
+  background-color: var(--color-purple-translucent);
+  color: var(--color-link);
+  border-radius: 50px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
+  font-family: var(--font-heading);
   align-self: flex-start;
 }
 
@@ -219,23 +220,22 @@ main {
 }
 
 .hero-section .hero-text .learn-more:visited {
-  color: #fff;
+  color: var(--color-link);
 }
 
 /* Quote section */
 .quote-section {
-  background-color: #fff;
   padding: 40px 30px;
   margin-bottom: 30px;
   text-align: center;
 }
 
 .quote-section blockquote {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-decorative);
   font-size: 22px;
-  font-style: italic;
-  color: var(--color-heading);
-  line-height: 1.5;
+  font-style: normal;
+  color: var(--color-text);
+  line-height: 1.4;
   margin-bottom: 15px;
   max-width: 700px;
   margin-left: auto;
@@ -243,8 +243,8 @@ main {
 }
 
 .quote-section .attribution {
-  font-family: var(--font-heading);
-  font-size: 20px;
+  font-family: var(--font-decorative);
+  font-size: 16px;
   color: var(--color-text);
   font-weight: normal;
 }
@@ -260,10 +260,10 @@ main {
 }
 
 .steps-section .steps-title h2 {
-  font-family: var(--font-heading);
+  font-family: var(--font-decorative);
   font-size: 28px;
-  color: var(--color-heading);
-  font-weight: bold;
+  color: var(--color-text);
+  font-weight: normal;
 }
 
 .steps-section .steps-title p {
@@ -280,10 +280,10 @@ main {
 }
 
 .steps-section .steps-images img {
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 .steps-section .steps-grid {
@@ -298,7 +298,7 @@ main {
 }
 
 .steps-section .step-card h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-decorative);
   font-size: 22px;
   font-weight: normal;
   color: var(--color-text);
@@ -315,7 +315,7 @@ main {
 }
 
 .steps-section .step-card p {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--color-text);
   line-height: 1.5;
 }
@@ -332,7 +332,7 @@ main {
   width: 200px;
   height: 250px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 .grade-grid {
@@ -345,13 +345,13 @@ main {
 .grade-grid .grade-card {
   flex: 1;
   text-align: center;
-  padding: 15px;
-  background-color: var(--color-card-bg);
-  border-radius: 8px;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
 }
 
 .grade-grid .grade-card h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-decorative);
   font-size: 22px;
   font-weight: normal;
 }
@@ -365,6 +365,12 @@ main {
   color: var(--color-link);
 }
 
+/* Colored bars behind grade/project headings (matching Wix) */
+.grade-grid .grade-card.grade-3 h3 { border-bottom: 4px solid var(--color-purple-solid); padding-bottom: 10px; }
+.grade-grid .grade-card.grade-4 h3 { border-bottom: 4px solid var(--color-orange-solid); padding-bottom: 10px; }
+.grade-grid .grade-card.grade-5 h3 { border-bottom: 4px solid var(--color-blue-solid); padding-bottom: 10px; }
+.grade-grid .grade-card.grade-6 h3 { border-bottom: 4px solid var(--color-green-solid); padding-bottom: 10px; }
+
 .project-grid {
   display: flex;
   justify-content: space-between;
@@ -375,13 +381,13 @@ main {
 .project-grid .project-card {
   flex: 1;
   text-align: center;
-  padding: 15px;
-  background-color: var(--color-card-bg);
-  border-radius: 8px;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
 }
 
 .project-grid .project-card h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-decorative);
   font-size: 22px;
   font-weight: normal;
 }
@@ -395,6 +401,11 @@ main {
   color: var(--color-link);
 }
 
+.project-grid .project-card.proj-paper h3 { border-bottom: 4px solid var(--color-purple-solid); padding-bottom: 10px; }
+.project-grid .project-card.proj-laser h3 { border-bottom: 4px solid var(--color-orange-solid); padding-bottom: 10px; }
+.project-grid .project-card.proj-microbit h3 { border-bottom: 4px solid var(--color-blue-solid); padding-bottom: 10px; }
+.project-grid .project-card.proj-puzzle h3 { border-bottom: 4px solid var(--color-green-solid); padding-bottom: 10px; }
+
 .donations-grid {
   display: flex;
   justify-content: space-between;
@@ -405,21 +416,21 @@ main {
 .donations-grid .donation-card {
   flex: 1;
   padding: 15px;
-  border-radius: 8px;
-  background-color: var(--color-card-bg);
+  border-radius: 0;
+  background-color: transparent;
 }
 
 .donations-grid .donation-card h4 {
-  font-family: var(--font-heading);
+  font-family: var(--font-decorative);
   font-size: 18px;
-  font-weight: bold;
+  font-weight: normal;
   margin-bottom: 10px;
 }
 
 .donations-grid .donation-card ul {
   list-style: disc;
   padding-left: 20px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .donations-grid .donation-card ul ul {
@@ -431,6 +442,10 @@ main {
   margin-bottom: 5px;
 }
 
+.donations-grid .donation-card a {
+  color: var(--color-text);
+}
+
 /* ===================== SCHEDULE PAGE ===================== */
 .schedule-steps {
   margin-bottom: 30px;
@@ -438,16 +453,16 @@ main {
 
 .schedule-steps .step {
   margin-bottom: 20px;
-  padding: 15px 20px;
-  background-color: var(--color-card-bg);
-  border-radius: 8px;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
 }
 
 .schedule-steps .step h5 {
-  font-family: var(--font-heading);
-  font-size: 18px;
-  font-weight: bold;
-  color: var(--color-heading);
+  font-family: var(--font-decorative);
+  font-size: 22px;
+  font-weight: normal;
+  color: var(--color-text);
   margin-bottom: 5px;
 }
 
@@ -460,11 +475,11 @@ main {
 .interest-form-link {
   display: inline-block;
   padding: 10px 30px;
-  background-color: var(--color-link);
-  color: #fff !important;
-  border-radius: 6px;
+  background-color: var(--color-purple-translucent);
+  color: var(--color-link) !important;
+  border-radius: 50px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   font-family: var(--font-heading);
   margin: 20px auto;
   text-align: center;
@@ -475,15 +490,19 @@ main {
   text-decoration: none;
 }
 
+.interest-form-link:visited {
+  color: var(--color-link) !important;
+}
+
 .map-embed {
   margin-bottom: 30px;
 }
 
 .map-embed iframe {
   width: 100%;
-  height: 350px;
+  height: 306px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .calendar-embed {
@@ -494,7 +513,7 @@ main {
   width: 100%;
   height: 500px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 /* ===================== CONFIRM PAGE ===================== */
@@ -512,9 +531,9 @@ main {
 
 .confirm-grid .confirm-map iframe {
   width: 100%;
-  height: 300px;
+  height: 274px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .confirm-grid .confirm-contact {
@@ -523,17 +542,26 @@ main {
 }
 
 .confirm-grid .confirm-contact h3 {
-  font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--color-heading);
+  font-family: var(--font-decorative);
+  font-size: 22px;
+  font-weight: normal;
+  color: var(--color-text);
   margin-bottom: 10px;
   line-height: 1.8;
 }
 
+.confirm-grid .confirm-contact h3 a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.confirm-grid .confirm-contact h3 a:visited {
+  color: #FFFFFF;
+}
+
 .confirm-grid .confirm-contact img {
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: 0;
   margin-top: 15px;
 }
 
@@ -547,13 +575,13 @@ main {
 .confirm-cards .confirm-card {
   flex: 1;
   text-align: center;
-  padding: 20px;
-  background-color: var(--color-card-bg);
-  border-radius: 8px;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
 }
 
 .confirm-cards .confirm-card h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-decorative);
   font-size: 22px;
   font-weight: normal;
   color: var(--color-text);
@@ -582,10 +610,10 @@ main {
 }
 
 .donate-intro h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-decorative);
   font-size: 18px;
-  font-weight: bold;
-  color: var(--color-heading);
+  font-weight: normal;
+  color: var(--color-text);
   margin: 10px 0;
 }
 
@@ -599,8 +627,8 @@ main {
 .donate-grid .donate-item {
   flex: 1;
   min-width: 220px;
-  background-color: var(--color-card-bg);
-  border-radius: 8px;
+  background-color: transparent;
+  border-radius: 0;
   overflow: hidden;
 }
 
@@ -617,7 +645,7 @@ main {
 .donate-grid .donate-item .donate-content ul {
   list-style: disc;
   padding-left: 20px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .donate-grid .donate-item .donate-content ul ul {
@@ -629,6 +657,10 @@ main {
   margin-bottom: 5px;
 }
 
+.donate-grid .donate-item .donate-content a {
+  color: var(--color-text);
+}
+
 /* ===================== PROJECT PAGES ===================== */
 .project-page {
   padding: 20px 0;
@@ -638,7 +670,7 @@ main {
   width: 100%;
   min-height: 600px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 /* ===================== FOOTER ===================== */
@@ -646,7 +678,6 @@ footer {
   background-color: transparent;
   text-align: center;
   padding: 30px 20px;
-  font-size: 14px;
   color: var(--color-text);
 }
 
@@ -654,8 +685,22 @@ footer p {
   margin-bottom: 5px;
 }
 
+footer p:nth-child(1) {
+  font-family: var(--font-decorative);
+  font-size: 22px;
+}
+
+footer p:nth-child(2) {
+  font-size: 15px;
+}
+
+footer p:nth-child(3) {
+  font-size: 14px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
 footer a {
-  color: var(--color-link);
+  color: var(--color-text);
 }
 
 /* ===================== RESPONSIVE ===================== */
@@ -695,17 +740,17 @@ footer a {
   }
   
   .steps-section .steps-images img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 75px;
   }
 }
 
 /* ===================== UTILITY ===================== */
 .page-title {
-  font-family: var(--font-heading);
+  font-family: var(--font-decorative);
   font-size: 28px;
-  font-weight: bold;
-  color: var(--color-heading);
+  font-weight: normal;
+  color: var(--color-text);
   text-align: center;
   margin-bottom: 25px;
 }
