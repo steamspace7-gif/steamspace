@@ -37,47 +37,34 @@
     </header>
 
     <main class="field-trips">
-        <div class="project-images">
-            <img src="/images/papercircuit.png" alt="Paper Circuit">
-            <img src="/images/lasercutting.jpg" alt="Laser cutting">
-            <div style="width:200px;height:250px;background-color:#6AC8E4;display:flex;align-items:center;justify-content:center;border-radius:0;">
-                <span style="color:#fff;font-size:18px;font-family:'Trebuchet MS',sans-serif;text-align:center;">Micro:bit Game</span>
-            </div>
-            <img src="/images/puzzlepic.jpg" alt="Puzzle Design">
-        </div>
-
-        <div class="grade-grid">
-            <div class="grade-card grade-3">
-                <h3><a href="/field-trips">3rd Grade</a></h3>
-            </div>
-            <div class="grade-card grade-4">
-                <h3><a href="/lasercut-boxes">4th Grade</a></h3>
-            </div>
-            <div class="grade-card grade-5">
-                <h3><a href="/paper-circuits">5th Grade</a></h3>
-            </div>
-            <div class="grade-card grade-6">
-                <h3><a href="/puzzle-design">6th Grade</a></h3>
-            </div>
-        </div>
-
         <div class="project-grid">
             <div class="project-card proj-paper">
-                <h3><a href="/paper-circuits">Paper Circuits</a></h3>
+                <h3><a href="/paper-circuits">3rd Grade</a></h3>
+                <img src="/images/papercircuit.png" alt="Paper Circuit">
+                <h3 class="project-title"><a href="/paper-circuits">Paper Circuits</a></h3>
             </div>
             <div class="project-card proj-laser">
-                <h3><a href="/lasercut-boxes">Lasercut Boxes</a></h3>
+                <h3><a href="/lasercut-boxes">4th Grade</a></h3>
+                <img src="/images/lasercutting.jpg" alt="Laser cutting">
+                <h3 class="project-title"><a href="/lasercut-boxes">Lasercut Boxes</a></h3>
             </div>
             <div class="project-card proj-microbit">
-                <h3><a href="/microbit-game">Micro:bit Game</a></h3>
+                <h3><a href="/microbit-game">5th Grade</a></h3>
+                <img src="/images/microbit.png" alt="Micro:bit Game" onerror="this.style.display='none'; this.parentElement.querySelector('.microbit-fallback').style.display='flex';">
+                <div class="microbit-fallback" style="display:none;width:100%;height:200px;background-color:#6AC8E4;align-items:center;justify-content:center;">
+                    <span style="color:#fff;font-size:18px;font-family:'Trebuchet MS',sans-serif;text-align:center;">Micro:bit Game</span>
+                </div>
+                <h3 class="project-title"><a href="/microbit-game">Micro:bit Game</a></h3>
             </div>
             <div class="project-card proj-puzzle">
-                <h3><a href="/puzzle-design">Puzzle Design</a></h3>
+                <h3><a href="/puzzle-design">6th Grade</a></h3>
+                <img src="/images/puzzlepic.jpg" alt="Puzzle Design">
+                <h3 class="project-title"><a href="/puzzle-design">Puzzle Design</a></h3>
             </div>
         </div>
 
         <div class="donations-grid">
-            <div class="donation-card">
+            <div class="donation-card donate-paper">
                 <h4>Donations</h4>
                 <ul>
                     <li>CR2032 3V batteries
@@ -94,7 +81,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="donation-card">
+            <div class="donation-card donate-laser">
                 <h4>Donations</h4>
                 <ul>
                     <li>Compressed / Draft Board 1/8"
@@ -111,7 +98,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="donation-card">
+            <div class="donation-card donate-microbit">
                 <h4>Donations</h4>
                 <ul>
                     <li>BBC Micro:bit Club Kit
@@ -128,7 +115,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="donation-card">
+            <div class="donation-card donate-puzzle">
                 <h4>Donations</h4>
                 <ul>
                     <li>White book /chip board
