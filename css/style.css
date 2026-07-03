@@ -383,53 +383,79 @@ main {
 .grade-grid .grade-card.grade-6 h3 { border-bottom: 4px solid var(--color-green-solid); padding-bottom: 10px; }
 
 .project-grid {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 40px;
   gap: 20px;
 }
 
 .project-grid .project-card {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  padding: 0;
-  border-radius: 0;
+  border-radius: 16px;
   overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-grid .project-card h3 {
+.project-grid .project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.project-grid .project-card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  color: var(--color-text);
+}
+
+.project-grid .project-card .card-header h3 {
   font-family: var(--font-decorative);
   font-size: 20px;
   font-weight: normal;
-  padding: 10px 0;
   margin: 0;
 }
 
-.project-grid .project-card h3 a {
-  color: var(--color-text);
-  text-decoration: none;
+.project-grid .project-card .card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.project-grid .project-card h3 a:hover {
-  color: var(--color-link);
+.project-grid .project-card .card-image {
+  flex: 1;
+  min-height: 180px;
+  background-color: var(--color-bg);
 }
 
-.project-grid .project-card img {
+.project-grid .project-card .card-image img {
   width: 100%;
-  height: 200px;
+  height: 100%;
+  min-height: 180px;
   object-fit: cover;
   display: block;
 }
 
-.project-grid .project-card.proj-paper h3 { background-color: var(--color-purple-solid); }
-.project-grid .project-card.proj-laser h3 { background-color: var(--color-orange-solid); }
-.project-grid .project-card.proj-microbit h3 { background-color: var(--color-blue-solid); }
-.project-grid .project-card.proj-puzzle h3 { background-color: var(--color-green-solid); }
+.project-grid .project-card .card-footer {
+  padding: 12px;
+  color: var(--color-text);
+  font-family: var(--font-decorative);
+  font-size: 18px;
+}
 
-.project-grid .project-card.proj-paper h3.project-title { background-color: var(--color-purple-solid); }
-.project-grid .project-card.proj-laser h3.project-title { background-color: var(--color-orange-solid); }
-.project-grid .project-card.proj-microbit h3.project-title { background-color: var(--color-blue-solid); }
-.project-grid .project-card.proj-puzzle h3.project-title { background-color: var(--color-green-solid); }
+.project-grid .project-card.proj-paper .card-header,
+.project-grid .project-card.proj-paper .card-footer { background-color: var(--color-purple-solid); }
+.project-grid .project-card.proj-laser .card-header,
+.project-grid .project-card.proj-laser .card-footer { background-color: var(--color-orange-solid); }
+.project-grid .project-card.proj-microbit .card-header,
+.project-grid .project-card.proj-microbit .card-footer { background-color: var(--color-blue-solid); }
+.project-grid .project-card.proj-puzzle .card-header,
+.project-grid .project-card.proj-puzzle .card-footer { background-color: var(--color-green-solid); }
 
 .donations-grid {
   display: flex;

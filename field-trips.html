@@ -38,29 +38,43 @@
 
     <main class="field-trips">
         <div class="project-grid">
-            <div class="project-card proj-paper">
-                <h3><a href="/paper-circuits">3rd Grade</a></h3>
-                <img src="/images/papercircuit.png" alt="Paper Circuit">
-                <h3 class="project-title"><a href="/paper-circuits">Paper Circuits</a></h3>
-            </div>
-            <div class="project-card proj-laser">
-                <h3><a href="/lasercut-boxes">4th Grade</a></h3>
-                <img src="/images/lasercutting.jpg" alt="Laser cutting">
-                <h3 class="project-title"><a href="/lasercut-boxes">Lasercut Boxes</a></h3>
-            </div>
-            <div class="project-card proj-microbit">
-                <h3><a href="/microbit-game">5th Grade</a></h3>
-                <img src="/images/microbit.png" alt="Micro:bit Game" onerror="this.style.display='none'; this.parentElement.querySelector('.microbit-fallback').style.display='flex';">
-                <div class="microbit-fallback" style="display:none;width:100%;height:200px;background-color:#6AC8E4;align-items:center;justify-content:center;">
-                    <span style="color:#fff;font-size:18px;font-family:'Trebuchet MS',sans-serif;text-align:center;">Micro:bit Game</span>
+            <a href="/paper-circuits" class="project-card proj-paper">
+                <div class="card-header">
+                    <span class="card-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 11v9h9l9-9v-9h-9z"/><circle cx="12" cy="12" r="3"/></svg></span>
+                    <h3>3rd Grade</h3>
                 </div>
-                <h3 class="project-title"><a href="/microbit-game">Micro:bit Game</a></h3>
-            </div>
-            <div class="project-card proj-puzzle">
-                <h3><a href="/puzzle-design">6th Grade</a></h3>
-                <img src="/images/puzzlepic.jpg" alt="Puzzle Design">
-                <h3 class="project-title"><a href="/puzzle-design">Puzzle Design</a></h3>
-            </div>
+                <div class="card-image"><img src="/images/papercircuit.png" alt="Paper Circuit"></div>
+                <div class="card-footer"><span>Paper Circuits</span></div>
+            </a>
+            <a href="/lasercut-boxes" class="project-card proj-laser">
+                <div class="card-header">
+                    <span class="card-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 3h7v7"/></svg></span>
+                    <h3>4th Grade</h3>
+                </div>
+                <div class="card-image"><img src="/images/lasercutting.jpg" alt="Laser cutting"></div>
+                <div class="card-footer"><span>Lasercut Boxes</span></div>
+            </a>
+            <a href="/microbit-game" class="project-card proj-microbit">
+                <div class="card-header">
+                    <span class="card-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="8" width="16" height="8" rx="2"/><circle cx="8" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="16" cy="12" r="1"/></svg></span>
+                    <h3>5th Grade</h3>
+                </div>
+                <div class="card-image">
+                    <img src="/images/microbit.png" alt="Micro:bit Game" onerror="this.style.display='none'; this.parentElement.querySelector('.microbit-fallback').style.display='flex';">
+                    <div class="microbit-fallback" style="display:none;width:100%;height:200px;background-color:#6AC8E4;align-items:center;justify-content:center;">
+                        <span style="color:#fff;font-size:18px;font-family:'Trebuchet MS',sans-serif;text-align:center;">Micro:bit Game</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span>Micro:bit Game</span></div>
+            </a>
+            <a href="/puzzle-design" class="project-card proj-puzzle">
+                <div class="card-header">
+                    <span class="card-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4l-2 1-2-1V2H4v5h4l1 2-1 2H4v7h5v-3l2-1 2 1v3h7v-5h-3l-1-2 1-2h3V7h-5l-1-2 1-2h3V2h-7z"/></svg></span>
+                    <h3>6th Grade</h3>
+                </div>
+                <div class="card-image"><img src="/images/puzzlepic.jpg" alt="Puzzle Design"></div>
+                <div class="card-footer"><span>Puzzle Design</span></div>
+            </a>
         </div>
 
         <div class="donations-grid">
