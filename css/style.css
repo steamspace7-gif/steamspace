@@ -80,25 +80,25 @@ a:visited {
   right: 0;
   bottom: 0;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   padding: 0;
 }
 
 .site-header .logo {
-  width: 42%;
+  width: auto;
   max-width: 570px;
-  height: auto;
-  margin-top: 23px;
-  margin-left: 12%;
+  height: 89%;
+  max-height: 271px;
   position: relative;
   z-index: 2;
 }
 
 .site-header nav {
-  margin-top: 75px;
-  margin-right: 5%;
-  position: relative;
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 2;
 }
 
@@ -723,14 +723,12 @@ footer a {
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
   .site-header .logo {
-    width: 60%;
-    margin-left: 5%;
-    margin-top: 10px;
+    height: 70%;
+    max-height: 200px;
   }
   
   .site-header nav {
-    margin-top: 20px;
-    margin-right: 3%;
+    right: 2%;
   }
   
   .site-header nav ul {
