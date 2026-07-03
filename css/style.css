@@ -88,8 +88,8 @@ a:visited {
 .site-header .logo {
   width: auto;
   max-width: 570px;
-  height: 75%;
-  max-height: 228px;
+  height: 60%;
+  max-height: 182px;
   position: relative;
   z-index: 2;
 }
