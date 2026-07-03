@@ -60,37 +60,54 @@ a:visited {
   background-color: var(--color-bg);
 }
 
-.site-header .banner-image {
-  width: 100%;
+.site-header .banner-wrap {
+  position: relative;
   max-width: var(--max-width);
   margin: 0 auto;
+  overflow: visible;
+}
+
+.site-header .banner-image {
+  width: 100%;
   display: block;
   height: auto;
 }
 
-.site-header .nav-bar {
-  max-width: var(--max-width);
-  margin: 0 auto;
+.site-header .header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 0 20px;
-  position: relative;
-  min-height: 45px;
-  background-color: rgba(255, 255, 255, 0.46);
+  padding: 0;
 }
 
 .site-header .logo {
-  height: 60px;
-  width: auto;
-  margin-right: 20px;
+  width: 42%;
+  max-width: 570px;
+  height: auto;
+  margin-top: 23px;
+  margin-left: 12%;
+  position: relative;
+  z-index: 2;
+}
+
+.site-header nav {
+  margin-top: 75px;
+  margin-right: 5%;
+  position: relative;
+  z-index: 2;
 }
 
 .site-header nav ul {
   list-style: none;
   display: flex;
-  gap: 25px;
-  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
 }
 
 .site-header nav ul li a {
@@ -99,7 +116,7 @@ a:visited {
   font-weight: normal;
   color: var(--color-link);
   text-decoration: none;
-  padding: 5px 0;
+  padding: 2px 0;
 }
 
 .site-header nav ul li a:hover,
@@ -705,16 +722,19 @@ footer a {
 
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
-  .site-header .nav-bar {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
+  .site-header .logo {
+    width: 60%;
+    margin-left: 5%;
+    margin-top: 10px;
+  }
+  
+  .site-header nav {
+    margin-top: 20px;
+    margin-right: 3%;
   }
   
   .site-header nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    gap: 8px;
   }
   
   .hero-section .hero-image,
