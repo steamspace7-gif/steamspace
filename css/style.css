@@ -38,6 +38,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   overflow-x: hidden;
+  padding-top: 20px;
 }
 
 a {
