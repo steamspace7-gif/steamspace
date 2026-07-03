@@ -88,8 +88,8 @@ a:visited {
 .site-header .logo {
   width: auto;
   max-width: 570px;
-  height: 89%;
-  max-height: 271px;
+  height: 75%;
+  max-height: 228px;
   position: relative;
   z-index: 2;
 }
@@ -723,8 +723,8 @@ footer a {
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
   .site-header .logo {
-    height: 70%;
-    max-height: 200px;
+    height: 60%;
+    max-height: 180px;
   }
   
   .site-header nav {
