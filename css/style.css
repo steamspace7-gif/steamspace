@@ -3,6 +3,7 @@
 :root {
   --color-bg: #F3E8D8;
   --color-bg-alt: #B6AEA2;
+  --color-bg-box: #EFF1F2;
   --color-card-bg: transparent;
   --color-text: #000000;
   --color-heading: #000000;
@@ -905,11 +906,71 @@ main {
   padding: 20px 0;
 }
 
-.project-page .embedded-content {
-  width: 100%;
-  min-height: 600px;
-  border: 0;
-  border-radius: 0;
+.project-page .page-title {
+  font-family: var(--font-decorative);
+  font-size: 32px;
+  font-weight: normal;
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.project-page .grade-tag {
+  text-align: center;
+  font-family: var(--font-decorative);
+  font-size: 20px;
+  color: var(--color-purple-solid);
+  margin-bottom: 25px;
+}
+
+.project-page .project-intro {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  background-color: var(--color-bg-alt);
+  padding: 25px;
+  border-radius: 16px;
+  color: #fff;
+}
+
+.project-page .project-intro p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.project-page .project-section {
+  max-width: 900px;
+  margin: 0 auto 25px;
+  background-color: var(--color-bg-box);
+  padding: 25px;
+  border-radius: 16px;
+}
+
+.project-page .project-section h2 {
+  font-family: var(--font-decorative);
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 12px;
+  color: var(--color-text);
+}
+
+.project-page .project-section p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.project-page .moodle-notice {
+  max-width: 900px;
+  margin: 30px auto 0;
+  text-align: center;
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+.project-page .moodle-notice a {
+  color: var(--color-purple-solid);
+  text-decoration: underline;
 }
 
 /* ===================== FOOTER ===================== */
