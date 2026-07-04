@@ -30,6 +30,7 @@
                     </li>
                     <li><a href="/schedule">Schedule</a></li>
                     <li><a href="/confirm">Confirm</a></li>
+                    <li><a href="/faq">FAQ</a></li>
                 </ul>
             </nav>
             </div>
@@ -37,7 +38,7 @@
     </header>
 
     <main>
-        <section class="hero-section">
+        <section class="hero-section animate-on-scroll">
             <div class="hero-image">
                 <img src="/images/img_0383.jpg" alt="Students working on projects">
             </div>
@@ -48,12 +49,12 @@
             </div>
         </section>
 
-        <section class="quote-section">
+        <section class="quote-section animate-on-scroll">
             <blockquote>"The best moments usually occur when a person's body or mind is stretched to its limits in a voluntary effort to accomplish something difficult and worthwhile."</blockquote>
             <p class="attribution">Mihaly Csikszentmihalyi</p>
         </section>
 
-        <section class="steps-section">
+        <section class="steps-section animate-on-scroll">
             <div class="steps-title">
                 <h2>Planning a Hands on Field Trip</h2>
                 <p class="steps-subtitle">Choose | Schedule | Confirm</p>
@@ -70,6 +71,25 @@
                 </div>
             </div>
         </section>
+
+        <section class="gallery-section animate-on-scroll">
+            <h2>Field Trips in Action</h2>
+            <div class="gallery-grid">
+                <img src="/images/img_0383.jpg" alt="Students building projects" onclick="openLightbox(this)">
+                <img src="/images/img_0381_edited.jpg" alt="Students working together" onclick="openLightbox(this)">
+                <img src="/images/lasercutting.jpg" alt="Laser cutting" onclick="openLightbox(this)">
+                <img src="/images/papercircuit.png" alt="Paper circuits" onclick="openLightbox(this)">
+                <img src="/images/puzzlepic.jpg" alt="Puzzle design" onclick="openLightbox(this)">
+                <img src="/images/banner.jpg" alt="Building 106" onclick="openLightbox(this)">
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+
+        <script src="/js/steamspace.js"></script>
     </main>
 
     <footer>
