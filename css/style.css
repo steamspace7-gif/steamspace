@@ -973,6 +973,64 @@ main {
   text-decoration: underline;
 }
 
+.project-page .project-step {
+  max-width: 900px;
+  margin: 0 auto 25px;
+  background-color: var(--color-bg-box);
+  padding: 25px;
+  border-radius: 16px;
+}
+
+.project-page .project-step h2 {
+  font-family: var(--font-decorative);
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 12px;
+  color: var(--color-text);
+}
+
+.project-page .project-step p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.project-page .step-media,
+.project-page .intro-media {
+  margin: 15px 0;
+}
+
+.project-page .step-media img,
+.project-page .intro-media img,
+.project-page .step-media video,
+.project-page .intro-media video {
+  max-width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.project-page .resource-list {
+  list-style: none;
+  padding: 0;
+}
+
+.project-page .resource-list li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.project-page .resource-list a {
+  color: var(--color-purple-solid);
+  text-decoration: underline;
+}
+
+.project-page .resource-type {
+  font-size: 13px;
+  color: #666;
+  text-transform: lowercase;
+}
+
 /* ===================== FOOTER ===================== */
 footer {
   background-color: transparent;
