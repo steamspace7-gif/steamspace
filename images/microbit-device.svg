@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" role="img" aria-label="BBC micro:bit device">
+  <style>
+    .board { fill: #2E3192; }
+    .usb { fill: #444; }
+    .pin { fill: #FFD700; }
+    .led { fill: #44DBF8; }
+    .led.on { fill: #FF3366; }
+  </style>
+  <rect x="10" y="20" width="180" height="100" rx="10" class="board"/>
+  <rect x="85" y="10" width="30" height="20" rx="3" class="usb"/>
+  <g class="pins">
+    <circle cx="25" cy="35" r="4" class="pin"/><circle cx="25" cy="55" r="4" class="pin"/>
+    <circle cx="25" cy="75" r="4" class="pin"/><circle cx="25" cy="95" r="4" class="pin"/>
+    <circle cx="25" cy="115" r="4" class="pin"/>
+    <circle cx="175" cy="35" r="4" class="pin"/><circle cx="175" cy="55" r="4" class="pin"/>
+    <circle cx="175" cy="75" r="4" class="pin"/><circle cx="175" cy="95" r="4" class="pin"/>
+    <circle cx="175" cy="115" r="4" class="pin"/>
+  </g>
+  <g class="leds">
+    <circle cx="60" cy="50" r="5" class="led on"/><circle cx="80" cy="50" r="5" class="led"/>
+    <circle cx="100" cy="50" r="5" class="led on"/><circle cx="120" cy="50" r="5" class="led"/>
+    <circle cx="140" cy="50" r="5" class="led on"/>
+    <circle cx="60" cy="70" r="5" class="led"/><circle cx="80" cy="70" r="5" class="led on"/>
+    <circle cx="100" cy="70" r="5" class="led"/><circle cx="120" cy="70" r="5" class="led on"/>
+    <circle cx="140" cy="70" r="5" class="led"/>
+    <circle cx="60" cy="90" r="5" class="led on"/><circle cx="80" cy="90" r="5" class="led"/>
+    <circle cx="100" cy="90" r="5" class="led on"/><circle cx="120" cy="90" r="5" class="led"/>
+    <circle cx="140" cy="90" r="5" class="led on"/>
+  </g>
+  <text x="100" y="128" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="10" font-weight="700">BBC micro:bit</text>
+</svg>

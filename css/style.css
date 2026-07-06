@@ -208,11 +208,11 @@ a:visited {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
-  max-width: 80%;
-  max-height: 70%;
+  max-width: 92%;
+  max-height: 85%;
   width: auto;
   height: auto;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.45));
+  filter: drop-shadow(0 8px 28px rgba(0,0,0,0.55)) drop-shadow(0 0 40px rgba(0,0,0,0.35));
 }
 
 .hero-banner .banner-image {
