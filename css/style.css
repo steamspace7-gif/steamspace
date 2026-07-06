@@ -18,6 +18,7 @@
   --color-orange-solid: #F3B456;
   --color-blue-solid: #6AC8E4;
   --color-green-solid: #9CDA65;
+  --color-coral-solid: #E88C8C;
   --color-footer-bg: #B6AEA2;
   --font-heading: 'Arial', 'Helvetica', sans-serif;
   --font-body: 'Arial', 'Helvetica', sans-serif;
@@ -42,7 +43,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-top: 0;
 }
 
 a {
@@ -58,114 +59,156 @@ a:visited {
   color: var(--color-link-visited);
 }
 
-/* ===================== HEADER / BANNER ===================== */
-.site-header {
-  position: relative;
-  width: 100%;
+/* ===================== TOP BAR (WORDMARK + NAV) ===================== */
+.top-bar {
   background-color: var(--color-bg);
+  border-bottom: 2px solid var(--color-purple-solid);
+  position: sticky;
+  top: 0;
+  z-index: 200;
 }
 
-.site-header .banner-wrap {
-  position: relative;
+.top-bar .top-bar-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  overflow: visible;
-}
-
-.site-header .banner-image {
-  width: 100%;
-  display: block;
-  height: auto;
-}
-
-.site-header .header-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.site-header .logo {
+.top-bar .wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.top-bar .wordmark img {
+  height: 40px;
   width: auto;
-  max-width: 570px;
-  height: 60%;
-  max-height: 182px;
-  position: relative;
-  z-index: 2;
+  display: block;
 }
 
-.site-header nav {
-  position: absolute;
-  right: 3%;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-}
-
-.site-header nav ul {
+.top-bar nav ul {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: flex-start;
+  align-items: center;
+  gap: 8px;
 }
 
-.site-header nav ul li a {
-  font-family: var(--font-heading);
+.top-bar nav ul li a,
+.top-bar nav ul li.has-submenu > a {
+  display: inline-block;
+  font-family: var(--font-decorative);
   font-size: 15px;
-  font-weight: normal;
-  color: var(--color-link);
+  font-weight: 600;
+  color: var(--color-text);
   text-decoration: none;
-  padding: 2px 0;
+  padding: 8px 14px;
+  border-radius: 50px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.site-header nav ul li a:hover,
-.site-header nav ul li a.active {
-  text-decoration: underline;
+.top-bar nav ul li a:hover,
+.top-bar nav ul li a.active {
+  background-color: var(--color-purple-translucent);
+  color: #fff;
+  text-decoration: none;
 }
 
-.site-header nav ul li.has-submenu {
+.top-bar nav ul li.has-submenu {
   position: relative;
 }
 
-.site-header nav ul li.has-submenu > a::after {
+.top-bar nav ul li.has-submenu > a::after {
   content: ' ▾';
   font-size: 10px;
 }
 
-.site-header nav ul li.has-submenu ul {
+.top-bar nav ul li.has-submenu ul {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 6px);
   left: 0;
-  background: #B6AEA2;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  border-radius: 0;
-  padding: 8px 0;
-  min-width: 180px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border-radius: 12px;
+  padding: 10px 0;
+  min-width: 190px;
   z-index: 100;
 }
 
-.site-header nav ul li.has-submenu:hover ul {
+.top-bar nav ul li.has-submenu:hover ul {
   display: block;
 }
 
-.site-header nav ul li.has-submenu ul li {
+.top-bar nav ul li.has-submenu ul li {
   display: block;
   width: 100%;
 }
 
-.site-header nav ul li.has-submenu ul li a {
+.top-bar nav ul li.has-submenu ul li a {
   display: block;
-  padding: 6px 20px;
+  padding: 8px 20px;
   white-space: nowrap;
   font-size: 14px;
-  color: var(--color-link);
+  border-radius: 0;
+  font-weight: 500;
+}
+
+.top-bar nav ul li.has-submenu ul li a:hover {
+  background-color: var(--color-bg-box);
+  color: var(--color-text);
+}
+
+/* ===================== HERO BANNER ===================== */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.hero-banner .banner-image {
+  width: 100%;
+  display: block;
+  height: auto;
+  min-height: 220px;
+  object-fit: cover;
+}
+
+.hero-banner .banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(61,58,54,0.72) 0%, rgba(61,58,54,0.35) 60%, rgba(61,58,54,0.15) 100%);
+  display: flex;
+  align-items: center;
+  padding: 30px 40px;
+}
+
+.hero-banner .banner-tagline {
+  color: #fff;
+  max-width: 520px;
+}
+
+.hero-banner .banner-tagline h2 {
+  font-family: var(--font-decorative);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-hero-heading);
+  line-height: 1.15;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.hero-banner .banner-tagline p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
 /* ===================== MAIN ===================== */
