@@ -100,7 +100,8 @@ a:visited {
 
 .top-bar nav ul li a,
 .top-bar nav ul li.has-submenu > a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-decorative);
   font-size: 15px;
   font-weight: 600;
@@ -109,6 +110,13 @@ a:visited {
   padding: 8px 14px;
   border-radius: 50px;
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.top-bar nav ul li.has-submenu > a::after {
+  content: ' ▾';
+  font-size: 10px;
+  margin-left: 4px;
+  line-height: 1;
 }
 
 .top-bar nav ul li a:hover,
@@ -121,11 +129,6 @@ a:visited {
 .top-bar nav ul li.has-submenu {
   position: relative;
   padding-bottom: 10px;
-}
-
-.top-bar nav ul li.has-submenu > a::after {
-  content: ' ▾';
-  font-size: 10px;
 }
 
 .top-bar nav ul li.has-submenu ul {
