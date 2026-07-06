@@ -60,3 +60,32 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(el);
   });
 });
+
+
+/* Dropdown menu click/tap support */
+document.querySelectorAll('.has-submenu > a').forEach(trigger => {
+  trigger.addEventListener('click', function(e) {
+    const parent = this.parentElement;
+    const menu = parent.querySelector('ul');
+    if (!menu) return;
+    // on mobile or when menu is hidden, toggle it
+    const isHidden = getComputedStyle(menu).display === 'none';
+    // close siblings
+    document.querySelectorAll('.has-submenu').forEach(sib => {
+      if (sib !== parent) sib.classList.remove('open');
+    });
+    if (isHidden) {
+      parent.classList.add('open');
+      e.preventDefault();
+    } else {
+      parent.classList.remove('open');
+      // allow navigation to Choose page on second click
+    }
+  });
+});
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.has-submenu')) {
+    document.querySelectorAll('.has-submenu').forEach(s => s.classList.remove('open'));
+  }
+});

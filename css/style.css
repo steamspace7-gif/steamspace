@@ -120,6 +120,7 @@ a:visited {
 
 .top-bar nav ul li.has-submenu {
   position: relative;
+  padding-bottom: 10px;
 }
 
 .top-bar nav ul li.has-submenu > a::after {
@@ -130,17 +131,19 @@ a:visited {
 .top-bar nav ul li.has-submenu ul {
   display: none;
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 4px);
   left: 0;
   background: #fff;
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
   border-radius: 12px;
   padding: 10px 0;
-  min-width: 190px;
+  min-width: 230px;
   z-index: 100;
 }
 
-.top-bar nav ul li.has-submenu:hover ul {
+.top-bar nav ul li.has-submenu:hover ul,
+.top-bar nav ul li.has-submenu:focus-within ul,
+.top-bar nav ul li.has-submenu a:focus + ul {
   display: block;
 }
 
@@ -163,6 +166,30 @@ a:visited {
   color: var(--color-text);
 }
 
+.top-bar nav ul li.has-submenu:hover ul,
+.top-bar nav ul li.has-submenu:focus-within ul,
+.top-bar nav ul li.has-submenu a:focus + ul,
+.top-bar nav ul li.has-submenu.open ul {
+  display: block;
+}
+
+.top-bar nav ul li.has-submenu.open > a {
+  background-color: var(--color-purple-translucent);
+  color: #fff;
+}
+
+.top-bar nav ul li.has-submenu > a,
+.top-bar nav ul li.has-submenu > a:hover,
+.top-bar nav ul li.has-submenu > a.active {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.top-bar nav ul li.has-submenu:hover > a {
+  background-color: var(--color-purple-translucent);
+  color: #fff;
+}
+
 /* ===================== HERO BANNER ===================== */
 .hero-banner {
   position: relative;
@@ -170,6 +197,19 @@ a:visited {
   max-width: var(--max-width);
   margin: 0 auto;
   overflow: hidden;
+}
+
+.hero-banner .banner-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  max-width: 80%;
+  max-height: 70%;
+  width: auto;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.45));
 }
 
 .hero-banner .banner-image {
@@ -183,10 +223,8 @@ a:visited {
 .hero-banner .banner-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(61,58,54,0.72) 0%, rgba(61,58,54,0.35) 60%, rgba(61,58,54,0.15) 100%);
-  display: flex;
-  align-items: center;
-  padding: 30px 40px;
+  background: rgba(61,58,54,0.35);
+  z-index: 2;
 }
 
 .hero-banner .banner-tagline {
@@ -217,6 +255,25 @@ main {
   margin: 0 auto;
   padding: 20px;
 }
+main > section,
+main > div,
+main > .hero-section,
+main > .quote-section,
+main > .steps-section,
+main > .project-grid,
+main > .donations-grid,
+main > .schedule-card,
+main > .confirm-grid,
+main > .confirm-cards,
+main > .project-section,
+main > .faq-item,
+main > .faq-list {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 
 /* ===================== HOME PAGE ===================== */
 .hero-section {
