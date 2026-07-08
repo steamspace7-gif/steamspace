@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Building 106 at Fort Apache Historic Park illustration">
+  <style>
+    .sky { fill: #E8F4F8; }
+    .ground { fill: #D6C6A8; }
+    .building { fill: #F3E8D8; }
+    .roof { fill: #8B6F47; }
+    .trim { fill: #C4A77D; }
+    .window { fill: #6AC8E4; }
+    .door { fill: #A67C52; }
+    .tree { fill: #9CDA65; }
+    .trunk { fill: #8B6F47; }
+  </style>
+
+  <!-- Sky -->
+  <rect class="sky" width="1200" height="400"/>
+
+  <!-- Ground hills -->
+  <path class="ground" d="M0 320 Q300 280 600 310 T1200 300 V400 H0 Z"/>
+
+  <!-- Trees -->
+  <g transform="translate(80,220)">
+    <rect class="trunk" x="20" y="40" width="10" height="60"/>
+    <circle class="tree" cx="25" cy="35" r="35"/>
+  </g>
+  <g transform="translate(1050,210)">
+    <rect class="trunk" x="20" y="50" width="10" height="60"/>
+    <circle class="tree" cx="25" cy="45" r="40"/>
+  </g>
+  <g transform="translate(160,250)">
+    <rect class="trunk" x="15" y="30" width="8" height="40"/>
+    <circle class="tree" cx="19" cy="25" r="25"/>
+  </g>
+  <g transform="translate(980,260)">
+    <rect class="trunk" x="15" y="30" width="8" height="40"/>
+    <circle class="tree" cx="19" cy="25" r="25"/>
+  </g>
+
+  <!-- Building 106 -->
+  <g transform="translate(350, 120)">
+    <rect class="building" x="0" y="40" width="500" height="180"/>
+    <polygon class="roof" points="-20,40 250,-20 520,40"/>
+    <rect class="window" x="40" y="70" width="45" height="55" rx="3"/>
+    <rect class="trim" x="42" y="72" width="41" height="4"/>
+    <rect class="window" x="110" y="70" width="45" height="55" rx="3"/>
+    <rect class="trim" x="112" y="72" width="41" height="4"/>
+    <rect class="window" x="345" y="70" width="45" height="55" rx="3"/>
+    <rect class="trim" x="347" y="72" width="41" height="4"/>
+    <rect class="window" x="415" y="70" width="45" height="55" rx="3"/>
+    <rect class="trim" x="417" y="72" width="41" height="4"/>
+
+    <rect class="door" x="185" y="140" width="55" height="80" rx="2"/>
+    <rect class="door" x="260" y="140" width="55" height="80" rx="2"/>
+    <rect class="window" x="40" y="150" width="45" height="55" rx="3"/>
+    <rect class="window" x="110" y="150" width="45" height="55" rx="3"/>
+    <rect class="window" x="345" y="150" width="45" height="55" rx="3"/>
+    <rect class="window" x="415" y="150" width="45" height="55" rx="3"/>
+
+    <rect class="roof" x="160" y="130" width="180" height="12"/>
+    <rect class="trim" x="175" y="142" width="8" height="78"/>
+    <rect class="trim" x="247" y="142" width="8" height="78"/>
+    <rect class="trim" x="317" y="142" width="8" height="78"/>
+
+    <rect class="trim" x="175" y="220" width="130" height="8"/>
+    <rect class="trim" x="165" y="228" width="150" height="8"/>
+  </g>
+</svg>
