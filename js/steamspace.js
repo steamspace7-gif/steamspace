@@ -63,36 +63,67 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* Dropdown menu click/tap support */
-document.querySelectorAll('.has-submenu > a').forEach(trigger => {
-  trigger.addEventListener('click', function(e) {
-    const parent = this.parentElement;
-    const menu = parent.querySelector('ul');
-    if (!menu) return;
-    const isOpen = parent.classList.contains('open');
-    // close all siblings
-    document.querySelectorAll('.has-submenu').forEach(sib => {
-      if (sib !== parent) sib.classList.remove('open');
-    });
-    if (isOpen) {
-      parent.classList.remove('open');
-    } else {
-      parent.classList.add('open');
-      e.preventDefault();
-    }
+function openSubmenu(item) {
+  document.querySelectorAll('.has-submenu').forEach(sib => {
+    if (sib !== item) sib.classList.remove('open');
   });
-});
+  item.classList.add('open');
+}
 
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.has-submenu')) {
+function closeSubmenu(item) {
+  if (item) {
+    item.classList.remove('open');
+  } else {
     document.querySelectorAll('.has-submenu').forEach(s => s.classList.remove('open'));
+  }
+}
+
+let hoverCloseTimer = null;
+
+document.querySelectorAll('.has-submenu').forEach(item => {
+  // Hover: open immediately, close with small delay so cursor can reach submenu
+  item.addEventListener('mouseenter', () => {
+    clearTimeout(hoverCloseTimer);
+    openSubmenu(item);
+  });
+  item.addEventListener('mouseleave', () => {
+    hoverCloseTimer = setTimeout(() => closeSubmenu(item), 200);
+  });
+
+  // Click the top link toggles open/closed on touch or when hover isn't available
+  const trigger = item.querySelector('a');
+  if (trigger) {
+    trigger.addEventListener('click', function(e) {
+      const menu = item.querySelector('ul');
+      if (!menu) return;
+      // If submenu is already open and this is a real link click, allow navigation
+      if (item.classList.contains('open') && !e.target.closest('ul')) {
+        // Let it navigate unless it's the first open action
+        return;
+      }
+      e.preventDefault();
+      openSubmenu(item);
+    });
+  }
+
+  // Clicking inside the submenu follows links normally; parent stays open
+  const menu = item.querySelector('ul');
+  if (menu) {
+    menu.addEventListener('click', function(e) {
+      // Allow normal link navigation; don't close here so click completes
+      e.stopPropagation();
+    });
   }
 });
 
-// On pointer devices, ensure hover still works by syncing .open removal when mouse leaves
-let lastHoverClose = 0;
-document.querySelectorAll('.has-submenu').forEach(item => {
-  item.addEventListener('mouseleave', function() {
-    lastHoverClose = Date.now();
-    this.classList.remove('open');
-  });
+// Close when clicking anywhere outside the nav
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.has-submenu')) {
+    closeSubmenu();
+  }
+});
+
+// Close submenus on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeSubmenu();
 });
