@@ -205,6 +205,7 @@ a:visited {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: 0 20px;
   overflow: hidden;
 }
 
@@ -225,63 +226,32 @@ a:visited {
   filter: drop-shadow(0 8px 28px rgba(0,0,0,0.55));
 }
 
-.hero-banner .banner-logo::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.45);
-  border-radius: 16px;
-  z-index: -1;
-}
-
-.hero-banner .banner-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(120,90,60,0.18);
-  z-index: 2;
-}
-
-.hero-banner.option-a .banner-image {
-  width: 100%;
-  display: block;
-  height: auto;
-  min-height: 260px;
-  object-fit: cover;
-  object-position: center 35%;
-  filter: sepia(0.25) saturate(1.2) contrast(1.05) brightness(1.05);
-}
-
-.hero-banner.option-b .banner-image {
-  width: 100%;
-  display: block;
-  height: auto;
-  min-height: 260px;
-  object-fit: cover;
-  object-position: center 35%;
-}
-
-.hero-banner.option-c .banner-image {
-  display: none;
-}
-
-.hero-banner.option-c .banner-overlay {
-  display: none;
-}
-
-.hero-banner.option-c .banner-svg {
-  width: 100%;
-  min-height: 260px;
-  display: block;
-}
-
 .hero-banner .banner-image {
   width: 100%;
   display: block;
   height: auto;
   min-height: 260px;
+  max-height: 360px;
   object-fit: cover;
   object-position: center 35%;
+  border-radius: 16px;
 }
+
+.hero-banner .banner-overlay {
+  position: absolute;
+  inset: 20px;
+  background: rgba(120,90,60,0.18);
+  z-index: 2;
+  border-radius: 16px;
+}
+
+.hero-banner .banner-tagline {
+  color: #fff;
+  max-width: 520px;
+}
+
+.hero-banner .banner-tagline h2 {
+  font-family: var(--font-decorative);
   font-size: 36px;
   font-weight: 700;
   color: var(--color-hero-heading);
