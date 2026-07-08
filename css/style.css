@@ -24,6 +24,7 @@
   --font-body: 'Arial', 'Helvetica', sans-serif;
   --font-decorative: 'Trebuchet MS', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --max-width: 980px;
+  --banner-bg: #E8DCC8;
 }
 
 * {
@@ -202,10 +203,11 @@ a:visited {
 /* ===================== HERO BANNER ===================== */
 .hero-banner {
   position: relative;
-  width: 100%;
-  max-width: var(--max-width);
+  width: calc(100% - 40px);
+  max-width: calc(var(--max-width) - 40px);
   margin: 0 auto;
-  padding: 0 20px;
+  background: var(--banner-bg);
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -221,7 +223,7 @@ a:visited {
   height: auto;
   padding: 16px 28px;
   border-radius: 16px;
-  background: rgba(255,255,255,0.72);
+  background: rgba(255,255,255,0.47);
   backdrop-filter: blur(4px);
   filter: drop-shadow(0 8px 28px rgba(0,0,0,0.55));
 }
