@@ -158,7 +158,7 @@ a:visited {
   left: 0;
   background: #fff;
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 10px 0;
   min-width: 230px;
   z-index: 100;
@@ -181,7 +181,7 @@ a:visited {
   padding: 8px 20px;
   white-space: nowrap;
   font-size: 14px;
-  border-radius: 0;
+  border-radius: 16px;
   font-weight: 500;
 }
 
@@ -425,7 +425,7 @@ main > .faq-list {
   flex: 1;
   text-align: center;
   padding: 0;
-  border-radius: 0;
+  border-radius: 16px;
 }
 
 .steps-section .step-card h3 {
@@ -474,7 +474,7 @@ main > .faq-list {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 16px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -505,7 +505,7 @@ main > .faq-list {
 .lightbox img {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 .lightbox-close {
@@ -533,7 +533,7 @@ main > .faq-list {
 
 .faq-item {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   overflow: hidden;
@@ -596,7 +596,7 @@ main > .faq-list {
   height: 0;
   overflow: hidden;
   margin-bottom: 30px;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .calendar-embed iframe {
@@ -606,7 +606,7 @@ main > .faq-list {
   width: 100%;
   height: 100%;
   border: 0;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 /* ===================== FIELD TRIPS (CHOOSE) PAGE ===================== */
@@ -621,7 +621,7 @@ main > .faq-list {
   width: 200px;
   height: 250px;
   object-fit: cover;
-  border-radius: 0;
+  border-radius: 16px;
 }
 
 .grade-grid {
@@ -636,7 +636,7 @@ main > .faq-list {
   text-align: center;
   padding: 0;
   background-color: transparent;
-  border-radius: 0;
+  border-radius: 16px;
 }
 
 .grade-grid .grade-card h3 {
@@ -745,7 +745,7 @@ main > .faq-list {
 .donations-grid .donation-card {
   flex: 1;
   padding: 15px;
-  border-radius: 0;
+  border-radius: 16px;
   background-color: transparent;
 }
 
@@ -787,7 +787,7 @@ main > .faq-list {
   margin-bottom: 30px;
   padding: 30px;
   background-color: rgba(243, 180, 86, 0.65);
-  border-radius: 0;
+  border-radius: 16px;
   gap: 20px;
 }
 
@@ -797,7 +797,7 @@ main > .faq-list {
   margin-bottom: 0;
   padding: 0;
   background-color: transparent;
-  border-radius: 0;
+  border-radius: 16px;
 }
 
 .schedule-steps .step h5 {
@@ -853,7 +853,7 @@ main > .faq-list {
   width: 100%;
   height: 306px;
   border: 0;
-  border-radius: 0;
+  border-radius: 16px;
 }
 
 .calendar-embed {
@@ -864,7 +864,7 @@ main > .faq-list {
   width: 100%;
   height: 500px;
   border: 0;
-  border-radius: 0;
+  border-radius: 16px;
 }
 
 /* ===================== CONFIRM PAGE ===================== */
@@ -884,7 +884,7 @@ main > .faq-list {
   width: 100%;
   height: 274px;
   border: 0;
-  border-radius: 0;
+  border-radius: 16px;
 }
 
 .confirm-grid .confirm-contact {
@@ -916,7 +916,7 @@ main > .faq-list {
 
 .confirm-grid .confirm-contact img {
   max-width: 100%;
-  border-radius: 0;
+  border-radius: 16px;
   margin-top: 15px;
 }
 
@@ -931,7 +931,7 @@ main > .faq-list {
   flex: 1;
   text-align: center;
   padding: 15px 0;
-  border-radius: 0;
+  border-radius: 16px;
 }
 
 .confirm-cards .confirm-card h3 {
@@ -986,7 +986,7 @@ main > .faq-list {
   flex: 1;
   min-width: 220px;
   background-color: transparent;
-  border-radius: 0;
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -1123,7 +1123,7 @@ main > .faq-list {
 .project-page .step-media video,
 .project-page .intro-media video {
   max-width: 100%;
-  border-radius: 12px;
+  border-radius: 16px;
   display: block;
   margin-bottom: 10px;
 }
