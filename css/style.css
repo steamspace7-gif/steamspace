@@ -24,7 +24,7 @@
   --font-body: 'Arial', 'Helvetica', sans-serif;
   --font-decorative: 'Trebuchet MS', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --max-width: 980px;
-  --banner-bg: #E8DCC8;
+  --banner-bg: var(--color-bg-alt);
 }
 
 * {
