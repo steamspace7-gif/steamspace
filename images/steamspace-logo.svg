@@ -22,6 +22,6 @@
   <circle cx="138" cy="22" r="15" fill="#E88C8C" />
   <text x="138" y="27" text-anchor="middle" class="circle" fill="#3D3A36">M</text>
 
-  <!-- Wordmark as two clearly separated tspans inside one text element -->
-  <text x="165" y="29" class="wordmark" fill="#3D3A36">STEAM<tspan class="wordmark-light" dx="10" fill="#3D3A36">space</tspan></text>
+  <!-- Wordmark text: just "space" after the STEAM circles -->
+  <text x="165" y="29" class="wordmark-light" fill="#3D3A36">space</text>
 </svg>
