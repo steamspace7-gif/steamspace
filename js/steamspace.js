@@ -68,18 +68,16 @@ document.querySelectorAll('.has-submenu > a').forEach(trigger => {
     const parent = this.parentElement;
     const menu = parent.querySelector('ul');
     if (!menu) return;
-    // on mobile or when menu is hidden, toggle it
-    const isHidden = getComputedStyle(menu).display === 'none';
-    // close siblings
+    const isOpen = parent.classList.contains('open');
+    // close all siblings
     document.querySelectorAll('.has-submenu').forEach(sib => {
       if (sib !== parent) sib.classList.remove('open');
     });
-    if (isHidden) {
+    if (isOpen) {
+      parent.classList.remove('open');
+    } else {
       parent.classList.add('open');
       e.preventDefault();
-    } else {
-      parent.classList.remove('open');
-      // allow navigation to Choose page on second click
     }
   });
 });
@@ -88,4 +86,13 @@ document.addEventListener('click', function(e) {
   if (!e.target.closest('.has-submenu')) {
     document.querySelectorAll('.has-submenu').forEach(s => s.classList.remove('open'));
   }
+});
+
+// On pointer devices, ensure hover still works by syncing .open removal when mouse leaves
+let lastHoverClose = 0;
+document.querySelectorAll('.has-submenu').forEach(item => {
+  item.addEventListener('mouseleave', function() {
+    lastHoverClose = Date.now();
+    this.classList.remove('open');
+  });
 });

@@ -182,12 +182,13 @@ a:visited {
   white-space: nowrap;
   font-size: 14px;
   border-radius: 16px;
-  font-weight: 500;
+  line-height: 1.2;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .top-bar nav ul li.has-submenu ul li a:hover {
-  background-color: var(--color-bg-box);
-  color: var(--color-text);
+  background-color: var(--color-purple-translucent);
+  color: #fff;
 }
 
 .top-bar-inner {
@@ -240,9 +241,10 @@ a:visited {
 .hero-banner .banner-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(120,90,60,0.12);
+  background: var(--banner-bg);
   z-index: 2;
   border-radius: 16px;
+  opacity: 0.35;
 }
 
 .hero-banner .banner-tagline {
