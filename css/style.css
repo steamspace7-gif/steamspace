@@ -281,7 +281,6 @@ a:visited {
   min-height: 260px;
   object-fit: cover;
   object-position: center 35%;
-  filter: sepia(0.25) saturate(1.2) contrast(1.05) brightness(1.05);
 }
   font-size: 36px;
   font-weight: 700;
