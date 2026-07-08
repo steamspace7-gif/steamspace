@@ -230,17 +230,15 @@ a:visited {
   width: 100%;
   display: block;
   height: auto;
-  min-height: 260px;
-  max-height: 360px;
-  object-fit: cover;
-  object-position: center 35%;
+  object-fit: contain;
+  object-position: center center;
   border-radius: 16px;
 }
 
 .hero-banner .banner-overlay {
   position: absolute;
-  inset: 20px;
-  background: rgba(120,90,60,0.18);
+  inset: 0;
+  background: rgba(120,90,60,0.12);
   z-index: 2;
   border-radius: 16px;
 }
