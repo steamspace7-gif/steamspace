@@ -75,12 +75,24 @@
         <section class="gallery-section animate-on-scroll">
             <h2>Field Trips in Action</h2>
             <div class="gallery-grid">
-                <img src="/images/img_0383.jpg" alt="Students building projects" onclick="openLightbox(this)">
-                <img src="/images/img_0381_edited.jpg" alt="Students working together" onclick="openLightbox(this)">
-                <img src="/images/lasercutting.jpg" alt="Laser cutting" onclick="openLightbox(this)">
-                <img src="/images/papercircuit.png" alt="Paper circuits" onclick="openLightbox(this)">
-                <img src="/images/puzzlepic.jpg" alt="Puzzle design" onclick="openLightbox(this)">
-                <img src="/images/banner.jpg" alt="Building 106" onclick="openLightbox(this)">
+            <a href="/microbit-game" class="gallery-item project-link">
+                <img src="/images/img_0383.jpg" alt="Students building projects">
+            </a>
+            <a href="/field-trips" class="gallery-item project-link" onclick="event.preventDefault(); openLightbox(this.querySelector('img')); return false;">
+                <img src="/images/img_0381_edited.jpg" alt="Students working together">
+            </a>
+            <a href="/lasercut-boxes" class="gallery-item project-link">
+                <img src="/images/lasercutting.jpg" alt="Laser cutting">
+            </a>
+            <a href="/paper-circuits" class="gallery-item project-link">
+                <img src="/images/papercircuitimage.png" alt="Paper circuits">
+            </a>
+            <a href="/puzzle-design" class="gallery-item project-link">
+                <img src="/images/puzzlepic1_edited.jpg" alt="Puzzle design">
+            </a>
+            <a href="/field-trips" class="gallery-item project-link" onclick="event.preventDefault(); openLightbox(this.querySelector('img')); return false;">
+                <img src="/images/banner.jpg" alt="Building 106">
+            </a>
             </div>
         </section>
 
