@@ -134,9 +134,9 @@ a:visited {
 
 .top-bar nav ul li.has-submenu {
   position: relative;
-  padding-bottom: 10px;
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .top-bar nav ul li.has-submenu > a {
@@ -144,18 +144,8 @@ a:visited {
 }
 
 .top-bar nav ul li.has-submenu:hover > a,
-.top-bar nav ul li.has-submenu > a.active {
-  background-color: transparent;
-  color: var(--color-text);
-}
-
-.top-bar nav ul li.has-submenu:hover > a:hover,
-.top-bar nav ul li.has-submenu:hover > a.active:hover {
-  background-color: var(--color-purple-translucent);
-  color: #fff;
-}
-
-.top-bar nav ul li.has-submenu:hover > a {
+.top-bar nav ul li.has-submenu > a.active,
+.top-bar nav ul li.has-submenu.open > a {
   background-color: var(--color-purple-translucent);
   color: #fff;
 }
@@ -163,7 +153,7 @@ a:visited {
 .top-bar nav ul li.has-submenu ul {
   display: none;
   position: absolute;
-  top: calc(100% + 4px);
+  top: calc(100% + 6px);
   left: 0;
   background: #fff;
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
@@ -197,6 +187,16 @@ a:visited {
 .top-bar nav ul li.has-submenu ul li a:hover {
   background-color: var(--color-bg-box);
   color: var(--color-text);
+}
+
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 10px 20px;
+  position: relative;
 }
 
 /* ===================== HERO BANNER ===================== */
