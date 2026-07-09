@@ -217,15 +217,6 @@ a:visited {
   justify-content: center;
 }
 
-.hero-banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, rgba(58,58,58,0.75) 0%, rgba(58,58,58,0.25) 55%, transparent 75%);
-  z-index: 2;
-  border-radius: 16px;
-}
-
 .hero-banner .banner-logo {
   position: absolute;
   top: 50%;
@@ -236,11 +227,11 @@ a:visited {
   max-height: 85%;
   width: auto;
   height: auto;
-  padding: 0;
-  border-radius: 0;
-  background: transparent;
-  backdrop-filter: none;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.45));
+  padding: 16px 28px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.47);
+  backdrop-filter: blur(4px);
+  filter: drop-shadow(0 8px 28px rgba(0,0,0,0.55));
 }
 
 .hero-banner .banner-image {
