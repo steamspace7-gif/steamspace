@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banner Preview | Steamspace</title>
+    <title>Header &amp; Banner Preview | Steamspace</title>
     <link rel="stylesheet" href="/css/style.css">
     <style>
         body {
@@ -18,7 +18,7 @@
         }
         .option-label {
             font-family: var(--font-decorative);
-            font-size: 20px;
+            font-size: 18px;
             margin: 20px 0 10px;
             padding: 8px 16px;
             background: #fff;
@@ -35,42 +35,71 @@
             overflow: hidden;
         }
 
-        /* Banner Option A: current tall banner, warm bg */
-        .banner-a .hero-banner {
-            min-height: 420px;
-            max-height: 420px;
-            background: var(--color-bg-alt);
+        /* Shared dark unified header */
+        .preview-frame .top-bar {
+            background-color: #3a3a3a;
+            border-bottom-color: #555;
         }
-        .banner-a .hero-banner .banner-image {
-            max-height: 420px;
+        .preview-frame .top-bar nav ul li a,
+        .preview-frame .top-bar nav ul li.has-submenu > a {
+            color: #fff;
         }
-        .banner-a .hero-banner .banner-logo {
-            max-height: 85%;
-            padding: 16px 28px;
+        .preview-frame .top-bar nav ul li a:hover,
+        .preview-frame .top-bar nav ul li.has-submenu > a:hover,
+        .preview-frame .top-bar nav ul li.has-submenu.open > a {
+            background-color: rgba(255,255,255,0.15);
         }
-        .banner-a .hero-banner .banner-overlay {
-            background: var(--color-bg-alt);
-            opacity: 0.2;
+        .preview-frame .top-bar nav ul li a.active {
+            background-color: rgba(255,255,255,0.2);
         }
 
-        /* Banner Option B: trimmed height with dark gray bg, logo stays full size */
-        .banner-b .hero-banner {
+        /* Shared trimmed dark banner */
+        .preview-frame .hero-banner {
             min-height: 330px;
             max-height: 330px;
             background: #3a3a3a;
             padding: 0;
         }
-        .banner-b .hero-banner .banner-image {
+        .preview-frame .hero-banner .banner-image {
             max-height: 330px;
         }
-        .banner-b .hero-banner .banner-logo {
+
+        /* Option A: current logo + heavy gray box */
+        .option-a .hero-banner .banner-logo {
             max-height: 85%;
             padding: 16px 28px;
-            background: rgba(255,255,255,0.35);
+            background: rgba(255,255,255,0.47);
+            backdrop-filter: blur(4px);
         }
-        .banner-b .hero-banner .banner-overlay {
-            background: #3a3a3a;
-            opacity: 0.15;
+
+        /* Option B: no box, logo floats, text area has subtle dark gradient */
+        .option-b .hero-banner {
+            position: relative;
+        }
+        .option-b .hero-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(58,58,58,0.75) 0%, rgba(58,58,58,0.25) 55%, transparent 75%);
+            z-index: 2;
+            border-radius: 16px;
+        }
+        .option-b .hero-banner .banner-logo {
+            max-height: 85%;
+            padding: 0;
+            background: transparent;
+            backdrop-filter: none;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.45));
+        }
+
+        /* Option C: tight subtle rounded backdrop (covers fringes without heaviness) */
+        .option-c .hero-banner .banner-logo {
+            max-height: 85%;
+            padding: 14px 28px;
+            background: rgba(58,58,58,0.55);
+            border-radius: 24px;
+            backdrop-filter: blur(2px);
+            filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35));
         }
 
         .dummy-content {
@@ -86,10 +115,10 @@
     </style>
 </head>
 <body>
-    <h1 class="preview-title">Banner Options Preview</h1>
+    <h1 class="preview-title">Header &amp; Banner Options Preview</h1>
 
-    <div class="option-label">Banner Option A — Current warm background, 420px tall</div>
-    <div class="preview-frame banner-a">
+    <div class="option-label">Option A — Current gray box behind logo (baseline)</div>
+    <div class="preview-frame option-a">
         <div class="top-bar">
             <div class="top-bar-inner">
                 <a href="/" class="wordmark">
@@ -97,7 +126,7 @@
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/" class="active">Home</a></li>
                         <li class="has-submenu">
                             <a href="/field-trips">Choose</a>
                             <ul>
@@ -117,13 +146,12 @@
         <div class="hero-banner">
             <img src="/images/banner-option-b.jpg" alt="Students at Steamspace" class="banner-image">
             <a href="/"><img src="/images/logo.png" alt="Steamspace" class="banner-logo"></a>
-            <div class="banner-overlay"></div>
         </div>
         <div class="dummy-content">Page content begins here</div>
     </div>
 
-    <div class="option-label">Banner Option B — Dark gray background, 330px tall, logo stays full size</div>
-    <div class="preview-frame banner-b">
+    <div class="option-label">Option B — Logo floats with subtle dark vignette (no box)</div>
+    <div class="preview-frame option-b">
         <div class="top-bar">
             <div class="top-bar-inner">
                 <a href="/" class="wordmark">
@@ -131,7 +159,7 @@
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/" class="active">Home</a></li>
                         <li class="has-submenu">
                             <a href="/field-trips">Choose</a>
                             <ul>
@@ -151,13 +179,45 @@
         <div class="hero-banner">
             <img src="/images/banner-option-b.jpg" alt="Students at Steamspace" class="banner-image">
             <a href="/"><img src="/images/logo.png" alt="Steamspace" class="banner-logo"></a>
-            <div class="banner-overlay"></div>
+        </div>
+        <div class="dummy-content">Page content begins here</div>
+    </div>
+
+    <div class="option-label">Option C — Tight rounded backdrop, still covers logo fringes</div>
+    <div class="preview-frame option-c">
+        <div class="top-bar">
+            <div class="top-bar-inner">
+                <a href="/" class="wordmark">
+                    <img src="/images/steamspace-logo.svg" alt="Steamspace">
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="/" class="active">Home</a></li>
+                        <li class="has-submenu">
+                            <a href="/field-trips">Choose</a>
+                            <ul>
+                                <li><a href="/paper-circuits">3rd Grade · Paper Circuits</a></li>
+                                <li><a href="/lasercut-boxes">4th Grade · Lasercut Boxes</a></li>
+                                <li><a href="/microbit-game">5th Grade · Micro:bit Game</a></li>
+                                <li><a href="/puzzle-design">6th Grade · Puzzle Design</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/schedule">Schedule</a></li>
+                        <li><a href="/confirm">Confirm</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="hero-banner">
+            <img src="/images/banner-option-b.jpg" alt="Students at Steamspace" class="banner-image">
+            <a href="/"><img src="/images/logo.png" alt="Steamspace" class="banner-logo"></a>
         </div>
         <div class="dummy-content">Page content begins here</div>
     </div>
 
     <p style="text-align:center; font-family: var(--font-decorative); font-size: 16px;">
-        Tell me if Banner Option B looks right, or if you want the height adjusted.
+        Choose A, B, or C — or suggest tweaks.
     </p>
 
     <script src="/js/steamspace.js"></script>
