@@ -35,29 +35,11 @@
             overflow: hidden;
         }
 
-        /* Dark gray header shared by both banner options */
-        .preview-frame .top-bar {
-            background-color: #3a3a3a;
-            border-bottom-color: #555;
-        }
-        .preview-frame .top-bar nav ul li a,
-        .preview-frame .top-bar nav ul li.has-submenu > a {
-            color: #fff;
-        }
-        .preview-frame .top-bar nav ul li a:hover,
-        .preview-frame .top-bar nav ul li.has-submenu > a:hover,
-        .preview-frame .top-bar nav ul li.has-submenu.open > a {
-            background-color: rgba(255,255,255,0.15);
-        }
-        .preview-frame .top-bar nav ul li a.active {
-            background-color: rgba(255,255,255,0.2);
-        }
-
-        /* Banner Option A: current dark-gray-ish setup but still 420px */
+        /* Banner Option A: current tall banner, warm bg */
         .banner-a .hero-banner {
             min-height: 420px;
             max-height: 420px;
-            background: #3a3a3a;
+            background: var(--color-bg-alt);
         }
         .banner-a .hero-banner .banner-image {
             max-height: 420px;
@@ -66,30 +48,29 @@
             max-height: 85%;
             padding: 16px 28px;
         }
+        .banner-a .hero-banner .banner-overlay {
+            background: var(--color-bg-alt);
+            opacity: 0.2;
+        }
 
-        /* Banner Option B: trimmed to hug the logo, dark gray bg */
+        /* Banner Option B: trimmed height with dark gray bg, logo stays full size */
         .banner-b .hero-banner {
-            min-height: 0;
-            height: auto;
-            min-height: 220px;
-            max-height: 260px;
+            min-height: 330px;
+            max-height: 330px;
             background: #3a3a3a;
-            padding: 12px 0;
+            padding: 0;
         }
         .banner-b .hero-banner .banner-image {
-            max-height: 260px;
-            height: 100%;
-            object-fit: contain;
+            max-height: 330px;
         }
         .banner-b .hero-banner .banner-logo {
-            max-height: 70%;
-            max-width: 80%;
-            padding: 10px 18px;
+            max-height: 85%;
+            padding: 16px 28px;
             background: rgba(255,255,255,0.35);
         }
         .banner-b .hero-banner .banner-overlay {
-            opacity: 0.15;
             background: #3a3a3a;
+            opacity: 0.15;
         }
 
         .dummy-content {
@@ -107,7 +88,7 @@
 <body>
     <h1 class="preview-title">Banner Options Preview</h1>
 
-    <div class="option-label">Banner Option A — Dark gray background, current 420px height</div>
+    <div class="option-label">Banner Option A — Current warm background, 420px tall</div>
     <div class="preview-frame banner-a">
         <div class="top-bar">
             <div class="top-bar-inner">
@@ -141,7 +122,7 @@
         <div class="dummy-content">Page content begins here</div>
     </div>
 
-    <div class="option-label">Banner Option B — Dark gray background, trimmed to hug the logo</div>
+    <div class="option-label">Banner Option B — Dark gray background, 330px tall, logo stays full size</div>
     <div class="preview-frame banner-b">
         <div class="top-bar">
             <div class="top-bar-inner">
@@ -176,7 +157,7 @@
     </div>
 
     <p style="text-align:center; font-family: var(--font-decorative); font-size: 16px;">
-        Tell me which banner option looks right (A or B). I can also adjust the height further.
+        Tell me if Banner Option B looks right, or if you want the height adjusted.
     </p>
 
     <script src="/js/steamspace.js"></script>
