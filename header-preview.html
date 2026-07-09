@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header &amp; Banner Preview | Steamspace</title>
+    <title>Banner Preview | Steamspace</title>
     <link rel="stylesheet" href="/css/style.css">
     <style>
         body {
@@ -35,36 +35,29 @@
             overflow: hidden;
         }
 
-        /* Header Option A: current warm background */
-        .header-a .top-bar {
-            background-color: var(--color-bg);
-        }
-        .header-a .top-bar nav ul li a,
-        .header-a .top-bar nav ul li.has-submenu > a {
-            color: var(--color-text);
-        }
-
-        /* Header Option B: dark gray background */
-        .header-b .top-bar {
+        /* Dark gray header shared by both banner options */
+        .preview-frame .top-bar {
             background-color: #3a3a3a;
             border-bottom-color: #555;
         }
-        .header-b .top-bar nav ul li a,
-        .header-b .top-bar nav ul li.has-submenu > a {
+        .preview-frame .top-bar nav ul li a,
+        .preview-frame .top-bar nav ul li.has-submenu > a {
             color: #fff;
         }
-        .header-b .top-bar nav ul li a:hover,
-        .header-b .top-bar nav ul li.has-submenu > a:hover,
-        .header-b .top-bar nav ul li.has-submenu.open > a {
+        .preview-frame .top-bar nav ul li a:hover,
+        .preview-frame .top-bar nav ul li.has-submenu > a:hover,
+        .preview-frame .top-bar nav ul li.has-submenu.open > a {
             background-color: rgba(255,255,255,0.15);
         }
-        .header-b .top-bar nav ul li a.active {
+        .preview-frame .top-bar nav ul li a.active {
             background-color: rgba(255,255,255,0.2);
         }
 
-        /* Banner Option A: current tall banner */
+        /* Banner Option A: current dark-gray-ish setup but still 420px */
         .banner-a .hero-banner {
             min-height: 420px;
+            max-height: 420px;
+            background: #3a3a3a;
         }
         .banner-a .hero-banner .banner-image {
             max-height: 420px;
@@ -74,16 +67,29 @@
             padding: 16px 28px;
         }
 
-        /* Banner Option B: trimmed shorter banner */
+        /* Banner Option B: trimmed to hug the logo, dark gray bg */
         .banner-b .hero-banner {
-            min-height: 300px;
+            min-height: 0;
+            height: auto;
+            min-height: 220px;
+            max-height: 260px;
+            background: #3a3a3a;
+            padding: 12px 0;
         }
         .banner-b .hero-banner .banner-image {
-            max-height: 300px;
+            max-height: 260px;
+            height: 100%;
+            object-fit: contain;
         }
         .banner-b .hero-banner .banner-logo {
-            max-height: 75%;
-            padding: 12px 22px;
+            max-height: 70%;
+            max-width: 80%;
+            padding: 10px 18px;
+            background: rgba(255,255,255,0.35);
+        }
+        .banner-b .hero-banner .banner-overlay {
+            opacity: 0.15;
+            background: #3a3a3a;
         }
 
         .dummy-content {
@@ -99,78 +105,34 @@
     </style>
 </head>
 <body>
-    <h1 class="preview-title">Header &amp; Banner Options Preview</h1>
+    <h1 class="preview-title">Banner Options Preview</h1>
 
-    <div class="option-label">Header Option A — Current warm cream background</div>
-    <div class="preview-frame header-a">
-        <div class="top-bar">
-            <div class="top-bar-inner">
-                <a href="/" class="wordmark">
-                    <img src="/images/steamspace-logo.svg" alt="Steamspace">
-                </a>
-                <nav>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li class="has-submenu">
-                            <a href="/field-trips">Choose</a>
-                            <ul>
-                                <li><a href="/paper-circuits">3rd Grade · Paper Circuits</a></li>
-                                <li><a href="/lasercut-boxes">4th Grade · Lasercut Boxes</a></li>
-                                <li><a href="/microbit-game">5th Grade · Micro:bit Game</a></li>
-                                <li><a href="/puzzle-design">6th Grade · Puzzle Design</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/schedule">Schedule</a></li>
-                        <li><a href="/confirm">Confirm</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="hero-banner">
-            <img src="/images/banner-option-b.jpg" alt="Students at Steamspace" class="banner-image">
-            <a href="/"><img src="/images/logo.png" alt="Steamspace" class="banner-logo"></a>
-            <div class="banner-overlay"></div>
-        </div>
-        <div class="dummy-content">Page content begins here</div>
-    </div>
-
-    <div class="option-label">Header Option B — Dark gray background (your favorite)</div>
-    <div class="preview-frame header-b">
-        <div class="top-bar">
-            <div class="top-bar-inner">
-                <a href="/" class="wordmark">
-                    <img src="/images/steamspace-logo.svg" alt="Steamspace">
-                </a>
-                <nav>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li class="has-submenu">
-                            <a href="/field-trips">Choose</a>
-                            <ul>
-                                <li><a href="/paper-circuits">3rd Grade · Paper Circuits</a></li>
-                                <li><a href="/lasercut-boxes">4th Grade · Lasercut Boxes</a></li>
-                                <li><a href="/microbit-game">5th Grade · Micro:bit Game</a></li>
-                                <li><a href="/puzzle-design">6th Grade · Puzzle Design</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/schedule">Schedule</a></li>
-                        <li><a href="/confirm">Confirm</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="hero-banner">
-            <img src="/images/banner-option-b.jpg" alt="Students at Steamspace" class="banner-image">
-            <a href="/"><img src="/images/logo.png" alt="Steamspace" class="banner-logo"></a>
-            <div class="banner-overlay"></div>
-        </div>
-        <div class="dummy-content">Page content begins here</div>
-    </div>
-
-    <div class="option-label">Banner Option A — Current tall banner (420px)</div>
+    <div class="option-label">Banner Option A — Dark gray background, current 420px height</div>
     <div class="preview-frame banner-a">
+        <div class="top-bar">
+            <div class="top-bar-inner">
+                <a href="/" class="wordmark">
+                    <img src="/images/steamspace-logo.svg" alt="Steamspace">
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li class="has-submenu">
+                            <a href="/field-trips">Choose</a>
+                            <ul>
+                                <li><a href="/paper-circuits">3rd Grade · Paper Circuits</a></li>
+                                <li><a href="/lasercut-boxes">4th Grade · Lasercut Boxes</a></li>
+                                <li><a href="/microbit-game">5th Grade · Micro:bit Game</a></li>
+                                <li><a href="/puzzle-design">6th Grade · Puzzle Design</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/schedule">Schedule</a></li>
+                        <li><a href="/confirm">Confirm</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
         <div class="hero-banner">
             <img src="/images/banner-option-b.jpg" alt="Students at Steamspace" class="banner-image">
             <a href="/"><img src="/images/logo.png" alt="Steamspace" class="banner-logo"></a>
@@ -179,8 +141,32 @@
         <div class="dummy-content">Page content begins here</div>
     </div>
 
-    <div class="option-label">Banner Option B — Trimmed shorter banner (300px)</div>
+    <div class="option-label">Banner Option B — Dark gray background, trimmed to hug the logo</div>
     <div class="preview-frame banner-b">
+        <div class="top-bar">
+            <div class="top-bar-inner">
+                <a href="/" class="wordmark">
+                    <img src="/images/steamspace-logo.svg" alt="Steamspace">
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li class="has-submenu">
+                            <a href="/field-trips">Choose</a>
+                            <ul>
+                                <li><a href="/paper-circuits">3rd Grade · Paper Circuits</a></li>
+                                <li><a href="/lasercut-boxes">4th Grade · Lasercut Boxes</a></li>
+                                <li><a href="/microbit-game">5th Grade · Micro:bit Game</a></li>
+                                <li><a href="/puzzle-design">6th Grade · Puzzle Design</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/schedule">Schedule</a></li>
+                        <li><a href="/confirm">Confirm</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
         <div class="hero-banner">
             <img src="/images/banner-option-b.jpg" alt="Students at Steamspace" class="banner-image">
             <a href="/"><img src="/images/logo.png" alt="Steamspace" class="banner-logo"></a>
@@ -190,7 +176,7 @@
     </div>
 
     <p style="text-align:center; font-family: var(--font-decorative); font-size: 16px;">
-        Tell me which banner option you prefer (A or B). Header Option B will be applied.
+        Tell me which banner option looks right (A or B). I can also adjust the height further.
     </p>
 
     <script src="/js/steamspace.js"></script>
