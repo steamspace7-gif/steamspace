@@ -23,5 +23,5 @@
   <text x="138" y="27" text-anchor="middle" class="circle" fill="#3D3A36">M</text>
 
   <!-- Wordmark text: just "space" after the STEAM circles -->
-  <text x="165" y="29" class="wordmark-light" fill="#3D3A36">space</text>
+  <text x="165" y="29" class="wordmark-light" fill="#FFFFFF">space</text>
 </svg>
