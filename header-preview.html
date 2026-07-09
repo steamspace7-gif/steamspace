@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header Preview | Steamspace</title>
+    <title>Header &amp; Banner Preview | Steamspace</title>
     <link rel="stylesheet" href="/css/style.css">
     <style>
         body {
@@ -35,44 +35,59 @@
             overflow: hidden;
         }
 
-        /* Option A: current warm background, trimmed padding */
-        .option-a .top-bar-inner {
-            padding: 4px 20px;
+        /* Header Option A: current warm background */
+        .header-a .top-bar {
+            background-color: var(--color-bg);
         }
-        .option-a .top-bar .wordmark img {
-            height: 36px;
-        }
-        .option-a .top-bar nav ul li a,
-        .option-a .top-bar nav ul li.has-submenu > a {
-            padding: 6px 14px;
+        .header-a .top-bar nav ul li a,
+        .header-a .top-bar nav ul li.has-submenu > a {
+            color: var(--color-text);
         }
 
-        /* Option B: dark gray background, trimmed padding */
-        .option-b .top-bar {
+        /* Header Option B: dark gray background */
+        .header-b .top-bar {
             background-color: #3a3a3a;
             border-bottom-color: #555;
         }
-        .option-b .top-bar-inner {
-            padding: 4px 20px;
-        }
-        .option-b .top-bar .wordmark img {
-            height: 36px;
-        }
-        .option-b .top-bar nav ul li a,
-        .option-b .top-bar nav ul li.has-submenu > a {
+        .header-b .top-bar nav ul li a,
+        .header-b .top-bar nav ul li.has-submenu > a {
             color: #fff;
-            padding: 6px 14px;
         }
-        .option-b .top-bar nav ul li a:hover,
-        .option-b .top-bar nav ul li.has-submenu > a:hover {
+        .header-b .top-bar nav ul li a:hover,
+        .header-b .top-bar nav ul li.has-submenu > a:hover,
+        .header-b .top-bar nav ul li.has-submenu.open > a {
             background-color: rgba(255,255,255,0.15);
         }
-        .option-b .top-bar nav ul li a.active {
+        .header-b .top-bar nav ul li a.active {
             background-color: rgba(255,255,255,0.2);
         }
 
+        /* Banner Option A: current tall banner */
+        .banner-a .hero-banner {
+            min-height: 420px;
+        }
+        .banner-a .hero-banner .banner-image {
+            max-height: 420px;
+        }
+        .banner-a .hero-banner .banner-logo {
+            max-height: 85%;
+            padding: 16px 28px;
+        }
+
+        /* Banner Option B: trimmed shorter banner */
+        .banner-b .hero-banner {
+            min-height: 300px;
+        }
+        .banner-b .hero-banner .banner-image {
+            max-height: 300px;
+        }
+        .banner-b .hero-banner .banner-logo {
+            max-height: 75%;
+            padding: 12px 22px;
+        }
+
         .dummy-content {
-            height: 200px;
+            height: 120px;
             background: linear-gradient(180deg, #B6AEA2 0%, #E8DCC8 100%);
             display: flex;
             align-items: center;
@@ -84,10 +99,10 @@
     </style>
 </head>
 <body>
-    <h1 class="preview-title">Header Options Preview</h1>
+    <h1 class="preview-title">Header &amp; Banner Options Preview</h1>
 
-    <div class="option-label">Option A — Current warm background, trimmed vertically</div>
-    <div class="preview-frame option-a">
+    <div class="option-label">Header Option A — Current warm cream background</div>
+    <div class="preview-frame header-a">
         <div class="top-bar">
             <div class="top-bar-inner">
                 <a href="/" class="wordmark">
@@ -112,11 +127,16 @@
                 </nav>
             </div>
         </div>
+        <div class="hero-banner">
+            <img src="/images/banner-option-b.jpg" alt="Students at Steamspace" class="banner-image">
+            <a href="/"><img src="/images/logo.png" alt="Steamspace" class="banner-logo"></a>
+            <div class="banner-overlay"></div>
+        </div>
         <div class="dummy-content">Page content begins here</div>
     </div>
 
-    <div class="option-label">Option B — Dark gray background, trimmed vertically</div>
-    <div class="preview-frame option-b">
+    <div class="option-label">Header Option B — Dark gray background (your favorite)</div>
+    <div class="preview-frame header-b">
         <div class="top-bar">
             <div class="top-bar-inner">
                 <a href="/" class="wordmark">
@@ -140,12 +160,37 @@
                     </ul>
                 </nav>
             </div>
+        </div>
+        <div class="hero-banner">
+            <img src="/images/banner-option-b.jpg" alt="Students at Steamspace" class="banner-image">
+            <a href="/"><img src="/images/logo.png" alt="Steamspace" class="banner-logo"></a>
+            <div class="banner-overlay"></div>
+        </div>
+        <div class="dummy-content">Page content begins here</div>
+    </div>
+
+    <div class="option-label">Banner Option A — Current tall banner (420px)</div>
+    <div class="preview-frame banner-a">
+        <div class="hero-banner">
+            <img src="/images/banner-option-b.jpg" alt="Students at Steamspace" class="banner-image">
+            <a href="/"><img src="/images/logo.png" alt="Steamspace" class="banner-logo"></a>
+            <div class="banner-overlay"></div>
+        </div>
+        <div class="dummy-content">Page content begins here</div>
+    </div>
+
+    <div class="option-label">Banner Option B — Trimmed shorter banner (300px)</div>
+    <div class="preview-frame banner-b">
+        <div class="hero-banner">
+            <img src="/images/banner-option-b.jpg" alt="Students at Steamspace" class="banner-image">
+            <a href="/"><img src="/images/logo.png" alt="Steamspace" class="banner-logo"></a>
+            <div class="banner-overlay"></div>
         </div>
         <div class="dummy-content">Page content begins here</div>
     </div>
 
     <p style="text-align:center; font-family: var(--font-decorative); font-size: 16px;">
-        Tell me which option you prefer (A or B), or suggest tweaks.
+        Tell me which banner option you prefer (A or B). Header Option B will be applied.
     </p>
 
     <script src="/js/steamspace.js"></script>
