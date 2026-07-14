@@ -2,14 +2,57 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/confirm", "destination": "/confirm.html" },
-    { "source": "/field-trips", "destination": "/field-trips.html" },
-    { "source": "/schedule", "destination": "/schedule.html" },
-    { "source": "/donate", "destination": "/donate.html" },
-    { "source": "/faq", "destination": "/faq.html" },
-    { "source": "/paper-circuits", "destination": "/paper-circuits.html" },
-    { "source": "/lasercut-boxes", "destination": "/lasercut-boxes.html" },
-    { "source": "/microbit-game", "destination": "/microbit-game.html" },
-    { "source": "/puzzle-design", "destination": "/puzzle-design.html" }
+    {
+      "source": "/field-trip-prep",
+      "destination": "/field-trip-prep.html"
+    },
+    {
+      "source": "/prep",
+      "destination": "/field-trip-prep.html"
+    },
+    {
+      "source": "/choose",
+      "destination": "/choose.html"
+    },
+    {
+      "source": "/schedule",
+      "destination": "/schedule.html"
+    },
+    {
+      "source": "/confirm",
+      "destination": "/confirm.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq.html"
+    },
+    {
+      "source": "/donate",
+      "destination": "/donate.html"
+    },
+    {
+      "source": "/paper-circuits",
+      "destination": "/paper-circuits.html"
+    },
+    {
+      "source": "/lasercut-boxes",
+      "destination": "/lasercut-boxes.html"
+    },
+    {
+      "source": "/microbit-game",
+      "destination": "/microbit-game.html"
+    },
+    {
+      "source": "/puzzle-design",
+      "destination": "/puzzle-design.html"
+    },
+    {
+      "source": "/lego-paper-building",
+      "destination": "/lego-paper-building.html"
+    },
+    {
+      "source": "/field-trips",
+      "destination": "/field-trip-prep.html"
+    }
   ]
 }

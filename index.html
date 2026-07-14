@@ -1,112 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Steamspace</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | STEAMSPACE @ Ft Apache</title>
+  <meta name="description" content="Hands-on elementary field trips at Building 106 on the Fort Apache Historic Park. Choose a project, schedule your trip, and confirm with ABHS STEM.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=12">
 </head>
 <body>
-        <div class="top-bar">
-        <div class="top-bar-inner">
-            <a href="/" class="wordmark">
-                <img src="/images/steamspace-logo.svg" alt="Steamspace">
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="/" class="active">Home</a></li>
-                    <li class="has-submenu">
-                        <a href="/field-trips">Choose</a>
-                        <ul>
-                            <li><a href="/paper-circuits">3rd Grade · Paper Circuits</a></li>
-                            <li><a href="/lasercut-boxes">4th Grade · Lasercut Boxes</a></li>
-                            <li><a href="/microbit-game">5th Grade · Micro:bit Game</a></li>
-                            <li><a href="/puzzle-design">6th Grade · Puzzle Design</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/schedule">Schedule</a></li>
-                    <li><a href="/confirm">Confirm</a></li>
-                    <li><a href="/faq">FAQ</a></li>
-                </ul>
-            </nav>
-        </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/steamspace-logo.svg" alt="STEAMSPACE home">
+        <span class="brand-text">
+          <strong>STEAMSPACE</strong>
+          <span>@ Ft Apache</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Site">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li class="has-submenu">
+            <a href="choose.html">Choose</a>
+            <ul class="submenu">
+              <li><a href="lego-paper-building.html">2nd · LEGO Paper Building</a></li>
+              <li><a href="paper-circuits.html">3rd · Paper Circuits</a></li>
+              <li><a href="lasercut-boxes.html">4th · Laser Cut Boxes</a></li>
+              <li><a href="microbit-game.html">5th · Micro:bit Game</a></li>
+              <li><a href="puzzle-design.html">6th · Puzzle Design</a></li>
+            </ul>
+          </li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="confirm.html">Confirm</a></li>
+          <li><a href="field-trip-prep.html">Prep</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <header class="hero-banner">
-        <img src="/images/banner-option-b.jpg" alt="Students at Steamspace" class="banner-image">
-        <a href="/"><img src="/images/logo.png" alt="Steamspace" class="banner-logo"></a>
-        <div class="banner-overlay"></div>
-    </header>
-<main>
-        <section class="hero-section animate-on-scroll">
-            <div class="hero-image">
-                <img src="/images/img_0383.jpg" alt="Students working on projects">
-            </div>
-            <div class="hero-text">
-                <h4 class="hero-title">Field Trips with a Purpose</h4>
-                <h6>At the Steamspace students build hands-on projects that are tied to their grade level AZ standards while being introduced to a variety of new experiences and possible lifelong interests. We offer projects including laser cutting and engraving and design, 3D design and printing, electronic circuits, micro:bit and vex robotics programming, as well as other building and making opportunities all located at Building 106 on the Ft. Apache Historic Park.</h6>
-                <a href="/field-trips" class="learn-more">Learn More</a>
-            </div>
-        </section>
+  <section class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <img src="images/steam-banner-ai-kids.png" alt="">
+      <div class="hero-shade"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-kicker">Hands-on Field Trips</p>
+      <h1>STEAMSPACE @ Ft Apache</h1>
+      <div class="steam-row" aria-hidden="true">
+        <img src="images/steam-icons.svg" alt="">
+      </div>
+      <p class="hero-lead">Elementary students build real projects tied to Arizona grade-level standards at Building 106 on the Fort Apache Historic Park.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="choose.html">Choose a Project</a>
+        <a class="btn btn-ghost" href="schedule.html">Schedule Your Trip</a>
+      </div>
+    </div>
+  </section>
 
-        <section class="quote-section animate-on-scroll">
-            <blockquote>"The best moments usually occur when a person's body or mind is stretched to its limits in a voluntary effort to accomplish something difficult and worthwhile."</blockquote>
-            <p class="attribution">Mihaly Csikszentmihalyi</p>
-        </section>
+  <main>
+    <section class="section purpose reveal">
+      <div class="purpose-photo">
+        <img src="images/img_0383.jpg" alt="Students and instructor working on hands-on STEAM projects">
+      </div>
+      <div class="purpose-copy">
+        <h2>Field Trips with a Purpose</h2>
+        <p>At the Steamspace students build hands-on projects that are tied to their grade level AZ standards while being introduced to a variety of new experiences and possible lifelong interests. We offer projects including laser cutting and engraving and design, 3D design and printing, electronic circuits, micro:bit and vex robotics programming, as well as other building and making opportunities all located at Building 106 on the Ft. Apache Historic Park.</p>
+        <a class="btn btn-solid" href="choose.html">Learn More</a>
+      </div>
+    </section>
+  </main>
 
-        <section class="steps-section animate-on-scroll">
-            <div class="steps-title">
-                <h2>Planning a Hands on Field Trip</h2>
-                <p class="steps-subtitle">Choose | Schedule | Confirm</p>
-            </div>
-            <div class="steps-grid">
-                <div class="step-card step-choose">
-                    <h3><a href="/field-trips">Choose a Field Trip Project</a></h3>
-                </div>
-                <div class="step-card step-schedule">
-                    <h3><a href="/schedule">Schedule Your Trip</a></h3>
-                </div>
-                <div class="step-card step-confirm">
-                    <h3><a href="/confirm">Contact Us and Confirm</a></h3>
-                </div>
-            </div>
-        </section>
+  <section class="quote-band reveal">
+    <blockquote>“The best moments usually occur when a person’s body or mind is stretched to its limits in a voluntary effort to accomplish something difficult and worthwhile.”</blockquote>
+    <cite>Mihaly Csikszentmihalyi</cite>
+  </section>
 
-        <section class="gallery-section animate-on-scroll">
-            <h2>Field Trips in Action</h2>
-            <div class="gallery-grid">
-            <a href="/microbit-game" class="gallery-item project-link">
-                <img src="/images/img_0383.jpg" alt="Students building projects">
-            </a>
-            <a href="/field-trips" class="gallery-item project-link" onclick="event.preventDefault(); openLightbox(this.querySelector('img')); return false;">
-                <img src="/images/img_0381_edited.jpg" alt="Students working together">
-            </a>
-            <a href="/lasercut-boxes" class="gallery-item project-link">
-                <img src="/images/lasercutting.jpg" alt="Laser cutting">
-            </a>
-            <a href="/paper-circuits" class="gallery-item project-link">
-                <img src="/images/papercircuitimage.png" alt="Paper circuits">
-            </a>
-            <a href="/puzzle-design" class="gallery-item project-link">
-                <img src="/images/puzzlepic1_edited.jpg" alt="Puzzle design">
-            </a>
-            <a href="/field-trips" class="gallery-item project-link" onclick="event.preventDefault(); openLightbox(this.querySelector('img')); return false;">
-                <img src="/images/banner.jpg" alt="Building 106">
-            </a>
-            </div>
-        </section>
+  <main>
+    <section class="section reveal">
+      <div class="section-head">
+        <h2>Planning a Hands-on Field Trip</h2>
+        <p>Choose · Schedule · Confirm</p>
+      </div>
+      <div class="plan-steps">
+        <a class="plan-step" href="choose.html">
+          <div class="num">1</div>
+          <h3>Choose a Field Trip Project</h3>
+          <p>Pick a grade-level project: paper circuits, laser-cut boxes, micro:bit games, or puzzle design.</p>
+        </a>
+        <a class="plan-step" href="schedule.html">
+          <div class="num">2</div>
+          <h3>Schedule Your Trip</h3>
+          <p>Trips run Tuesdays and Thursdays. Check the calendar and submit the interest form.</p>
+        </a>
+        <a class="plan-step" href="confirm.html">
+          <div class="num">3</div>
+          <h3>Contact Us and Confirm</h3>
+          <p>Finalize timing, museum visit options, and arrival details with our team.</p>
+        </a>
+      </div>
+      <p style="margin-top: 1.25rem; color: var(--ink-soft);">
+        Optional before your visit:
+        <a href="field-trip-prep.html">Field Trip Prep</a> — a short interest inventory for students.
+      </p>
+    </section>
 
-        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-            <span class="lightbox-close">&times;</span>
-            <img id="lightbox-img" src="" alt="">
+    <section class="section reveal">
+      <div class="section-head">
+        <h2>Field Trips in Action</h2>
+        <p>A peek at making, coding, cutting, and creating at Steamspace.</p>
+      </div>
+      <div class="gallery">
+        <a class="gallery-item" href="lego-paper-building.html">
+          <figure>
+            <img src="images/lego-bear.jpg" alt="LEGO paper building bear on a green baseplate">
+            <figcaption class="gallery-caption">
+              <span class="gallery-title">LEGO Paper Building</span>
+              <span class="gallery-grade">2nd Grade</span>
+            </figcaption>
+          </figure>
+        </a>
+        <a class="gallery-item" href="paper-circuits.html">
+          <figure>
+            <img src="images/gallery-paper-circuits.jpg?v=2" alt="Hands building cardboard paper circuits with glowing blue LEDs">
+            <figcaption class="gallery-caption">
+              <span class="gallery-title">Paper Circuits</span>
+              <span class="gallery-grade">3rd Grade</span>
+            </figcaption>
+          </figure>
+        </a>
+        <a class="gallery-item gallery-item--lasercut" href="lasercut-boxes.html">
+          <figure>
+            <img src="images/gallery-lasercut-boxes.jpg?v=2" alt="Student assembling a laser-cut wooden box with mallet">
+            <figcaption class="gallery-caption">
+              <span class="gallery-title">Lasercut Boxes</span>
+              <span class="gallery-grade">4th Grade</span>
+            </figcaption>
+          </figure>
+        </a>
+        <a class="gallery-item" href="microbit-game.html">
+          <figure>
+            <img src="images/gallery-microbit-game.jpg" alt="Cardboard Micro:bit game with foil touch pads and wiring">
+            <figcaption class="gallery-caption">
+              <span class="gallery-title">Micro:bit Game</span>
+              <span class="gallery-grade">5th Grade</span>
+            </figcaption>
+          </figure>
+        </a>
+        <a class="gallery-item" href="puzzle-design.html">
+          <figure>
+            <img src="images/puzzlepic1_edited.jpg" alt="Student-designed geometric laser-cut puzzle">
+            <figcaption class="gallery-caption">
+              <span class="gallery-title">Puzzle Design</span>
+              <span class="gallery-grade">6th Grade</span>
+            </figcaption>
+          </figure>
+        </a>
+        <div class="gallery-item gallery-item--soon" role="group" aria-label="More projects coming soon">
+          <figure>
+            <img src="images/gallery-building-106-clean.png" alt="Building 106 at Fort Apache STEAMSPACE">
+            <figcaption class="gallery-caption">
+              <span class="gallery-title">More projects coming soon</span>
+            </figcaption>
+          </figure>
         </div>
+      </div>
+    </section>
+  </main>
 
-        <script src="/js/steamspace.js"></script>
-    </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-wrap">
+        <img class="footer-logo" src="images/logo-cleaned.png?v=6" alt="STEAMSPACE at Fort Apache — Hands-on Field Trips" width="200" height="101">
+      </div>
+      <strong>ABHS STEM</strong>
+      <p><a href="mailto:steamspace@wmabhs.org">steamspace@wmabhs.org</a></p>
+      <p><a href="donate.html">Donate Supplies</a></p>
+      <p>Building 106 · Fort Apache Historic Park</p>
+    </div>
+  </footer>
 
-    <footer>
-        <p>ABHS STEM</p>
-        <p><a href="mailto:steamspace@wmabhs.org">steamspace@wmabhs.org</a></p>
-    </footer>
+  <script src="js/site.js?v=7"></script>
 </body>
 </html>

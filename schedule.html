@@ -1,80 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule | Steamspace</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule | STEAMSPACE @ Ft Apache</title>
+  <meta name="description" content="Schedule a Steamspace field trip on Tuesdays or Thursdays. Fill out the interest form and check the calendar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=10">
 </head>
 <body>
-        <div class="top-bar">
-        <div class="top-bar-inner">
-            <a href="/" class="wordmark">
-                <img src="/images/steamspace-logo.svg" alt="Steamspace">
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li class="has-submenu">
-                        <a href="/field-trips">Choose</a>
-                        <ul>
-                            <li><a href="/paper-circuits">3rd Grade · Paper Circuits</a></li>
-                            <li><a href="/lasercut-boxes">4th Grade · Lasercut Boxes</a></li>
-                            <li><a href="/microbit-game">5th Grade · Micro:bit Game</a></li>
-                            <li><a href="/puzzle-design">6th Grade · Puzzle Design</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/schedule" class="active">Schedule</a></li>
-                    <li><a href="/confirm">Confirm</a></li>
-                    <li><a href="/faq">FAQ</a></li>
-                </ul>
-            </nav>
-        </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/steamspace-logo.svg" alt="STEAMSPACE home">
+        <span class="brand-text">
+          <strong>STEAMSPACE</strong>
+          <span>@ Ft Apache</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Site">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="has-submenu">
+            <a href="choose.html">Choose</a>
+            <ul class="submenu">
+              <li><a href="lego-paper-building.html">2nd · LEGO Paper Building</a></li>
+              <li><a href="paper-circuits.html">3rd · Paper Circuits</a></li>
+              <li><a href="lasercut-boxes.html">4th · Laser Cut Boxes</a></li>
+              <li><a href="microbit-game.html">5th · Micro:bit Game</a></li>
+              <li><a href="puzzle-design.html">6th · Puzzle Design</a></li>
+            </ul>
+          </li>
+          <li><a href="schedule.html" class="active">Schedule</a></li>
+          <li><a href="confirm.html">Confirm</a></li>
+          <li><a href="field-trip-prep.html">Prep</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <header class="hero-banner">
-        <img src="/images/banner-option-b.jpg" alt="Students at Steamspace" class="banner-image">
-        <a href="/"><img src="/images/logo.png" alt="Steamspace" class="banner-logo"></a>
-        <div class="banner-overlay"></div>
-    </header>
-<main>
-        <section class="schedule-steps animate-on-scroll">
-            <div class="step">
-                <h5>1</h5>
-                <p>Projects are designed for 20 students or less. Schools are responsible for providing permission slips, transportation, and a sack lunch.</p>
-            </div>
-            <div class="step">
-                <h5>2</h5>
-                <p>Field Trips are only offered on Tuesdays and Thursdays during the School Year. Check the Calendar below to plan your trip.</p>
-            </div>
-            <div class="step">
-                <h5>3</h5>
-                <p>Decide what time you would like to arrive, what time you would like to leave, and if you'd like to schedule time to visit the Apache Cultural Center and Museum.</p>
-            </div>
-            <div class="step">
-                <h5>4</h5>
-                <p><a href="https://forms.gle/Hay16TfXqFxQYNw89">Fill out the Interest Form</a></p>
-            </div>
-        </section>
+  <section class="page-hero">
+    <div class="hero-media" aria-hidden="true">
+      <img src="images/steam-banner-schedule.png" alt="">
+      <div class="hero-shade"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-kicker">Step 2</p>
+      <h1>Schedule Your Trip</h1>
+      <p class="hero-lead">Plan your date, arrival time, and optional museum visit.</p>
+    </div>
+  </section>
 
-        <div style="text-align: center;">
-            <a href="https://forms.gle/Hay16TfXqFxQYNw89" class="interest-form-link">Field Trip Interest Form</a>
+  <main>
+    <section class="section reveal">
+      <div class="schedule-list">
+        <div class="schedule-item">
+          <div class="badge">1</div>
+          <p>Projects are designed for 20 students or less. Schools are responsible for providing permission slips, transportation, and a sack lunch.</p>
         </div>
-
-        <div class="map-embed">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3389.2!2d-109.98!3d33.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDQzJzQ4LjAiTiAxMDnCsDU4JzQ4LjAiVw!5e0!3m2!1sen!2sus!4v0000000000000!5m2!1sen!2sus" title="Google Maps" allowfullscreen loading="lazy"></iframe>
+        <div class="schedule-item">
+          <div class="badge">2</div>
+          <p>Field trips are only offered on Tuesdays and Thursdays during the school year. Check the calendar below to plan your trip.</p>
         </div>
-
-        <div class="calendar-embed">
-            <iframe src="https://calendar.google.com/calendar/embed?src=steamspace%40wmabhs.org&ctz=America%2FPhoenix" title="Steamspace Calendar" loading="lazy"></iframe>
+        <div class="schedule-item">
+          <div class="badge">3</div>
+          <p>Decide what time you would like to arrive, what time you would like to leave, and if you'd like to schedule time to visit the Apache Cultural Center and Museum.</p>
         </div>
+        <div class="schedule-item">
+          <div class="badge">4</div>
+          <p><a href="https://forms.gle/Hay16TfXqFxQYNw89" target="_blank" rel="noopener">Fill out the Interest Form</a></p>
+        </div>
+      </div>
+      <p style="margin-bottom: 1.5rem;">
+        <a class="btn btn-primary" href="https://forms.gle/Hay16TfXqFxQYNw89" target="_blank" rel="noopener">Field Trip Interest Form</a>
+      </p>
+      <div class="prep-callout" style="margin-bottom: 1.5rem;">
+        <p><strong>Optional:</strong> Before the trip, students can try the Steamspace Interest Inventory—a quick way to notice strengths and interests.</p>
+        <a class="btn btn-solid" href="field-trip-prep.html">Field Trip Prep</a>
+      </div>
+    </section>
 
-        <script src="/js/steamspace.js"></script>
-    </main>
+    <section class="section reveal">
+      <div class="section-head">
+        <h2>Find Us</h2>
+        <p>Building 106 on the Fort Apache Historic Park.</p>
+      </div>
+      <div class="embed-frame">
+        <iframe src="https://www.google.com/maps?q=Building+106+Fort+Apache+Historic+Park&amp;output=embed" title="Google Maps — Fort Apache Historic Park" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </section>
 
-    <footer>
-        <p>ABHS STEM</p>
-        <p><a href="mailto:steamspace@wmabhs.org">steamspace@wmabhs.org</a></p>
-    </footer>
+    <section class="section reveal">
+      <div class="section-head">
+        <h2>Availability Calendar</h2>
+        <p>Open dates for Steamspace field trips.</p>
+      </div>
+      <div class="embed-frame">
+        <iframe src="https://calendar.google.com/calendar/embed?src=steamspace%40wmabhs.org&amp;ctz=America%2FPhoenix" title="Steamspace Calendar" loading="lazy"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-wrap">
+        <img class="footer-logo" src="images/logo-cleaned.png?v=6" alt="STEAMSPACE at Fort Apache — Hands-on Field Trips" width="200" height="101">
+      </div>
+      <strong>ABHS STEM</strong>
+      <p><a href="mailto:steamspace@wmabhs.org">steamspace@wmabhs.org</a></p>
+      <p><a href="donate.html">Donate Supplies</a></p>
+    </div>
+  </footer>
+  <script src="js/site.js?v=7"></script>
 </body>
 </html>

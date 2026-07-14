@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donate | STEAMSPACE @ Ft Apache</title>
-  <meta name="description" content="Suggested donations that help Steamspace students take their field trip projects home.">
+  <title>Choose a Project | STEAMSPACE @ Ft Apache</title>
+  <meta name="description" content="Choose a hands-on field trip project for 3rd–6th grade: Paper Circuits, Laser Cut Boxes, Micro:bit Game, or Puzzle Design.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -15,14 +15,17 @@
     <div class="header-inner">
       <a class="brand" href="index.html">
         <img src="images/steamspace-logo.svg" alt="STEAMSPACE home">
-        <span class="brand-text"><strong>STEAMSPACE</strong><span>@ Ft Apache</span></span>
+        <span class="brand-text">
+          <strong>STEAMSPACE</strong>
+          <span>@ Ft Apache</span>
+        </span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav class="site-nav" id="site-nav" aria-label="Site">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li class="has-submenu">
-            <a href="choose.html">Choose</a>
+            <a href="choose.html" class="active">Choose</a>
             <ul class="submenu">
               <li><a href="lego-paper-building.html">2nd · LEGO Paper Building</a></li>
               <li><a href="paper-circuits.html">3rd · Paper Circuits</a></li>
@@ -32,7 +35,7 @@
             </ul>
           </li>
           <li><a href="schedule.html">Schedule</a></li>
-          <li><a href="confirm.html" class="active">Confirm</a></li>
+          <li><a href="confirm.html">Confirm</a></li>
           <li><a href="field-trip-prep.html">Prep</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>
@@ -42,25 +45,75 @@
 
   <section class="page-hero">
     <div class="hero-media" aria-hidden="true">
-      <img src="images/papercircuitimage.png" alt="">
+      <img src="images/workshop-vex-table.png" alt="">
       <div class="hero-shade"></div>
     </div>
     <div class="hero-content">
-      <p class="hero-kicker">Support</p>
-      <h1>Donate Supplies</h1>
-      <p class="hero-lead">Donations are not mandatory, but greatly appreciated so students can take their project with them.</p>
+      <p class="hero-kicker">Step 1</p>
+      <h1>Choose a Field Trip Project</h1>
+      <p class="hero-lead">Each project is designed for a grade band and tied to Arizona standards.</p>
     </div>
   </section>
 
   <main>
     <section class="section reveal">
+      <div class="project-grid">
+        <a class="project-tile" href="lego-paper-building.html">
+          <div class="thumb"><img src="images/lego-bear.jpg" alt="Completed LEGO bear on green baseplate"></div>
+          <div class="meta">
+            <span class="grade">2nd–3rd Grade</span>
+            <h3>LEGO Paper Building</h3>
+          </div>
+        </a>
+        <a class="project-tile" href="paper-circuits.html">
+          <div class="thumb"><img src="images/papercircuitimage.png" alt="Paper circuit greeting card"></div>
+          <div class="meta">
+            <span class="grade">3rd Grade</span>
+            <h3>Paper Circuits</h3>
+          </div>
+        </a>
+        <a class="project-tile" href="lasercut-boxes.html">
+          <div class="thumb"><img src="images/choose-lasercut-boxes.jpg" alt="Decorated laser-cut wooden box with butterfly design"></div>
+          <div class="meta">
+            <span class="grade">4th Grade</span>
+            <h3>Laser Cut Boxes</h3>
+          </div>
+        </a>
+        <a class="project-tile" href="microbit-game.html">
+          <div class="thumb"><img src="images/microbit-game-micro-bit-reaction-game-2-players-1.PNG" alt="Micro:bit reaction game"></div>
+          <div class="meta">
+            <span class="grade">5th Grade</span>
+            <h3>Micro:bit Game</h3>
+          </div>
+        </a>
+        <a class="project-tile" href="puzzle-design.html">
+          <div class="thumb"><img src="images/puzzlepic1_edited.jpg" alt="Student puzzle design"></div>
+          <div class="meta">
+            <span class="grade">6th Grade</span>
+            <h3>Puzzle Design</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-head">
+        <h2>Optional Field Trip Prep</h2>
+        <p>Before your visit, students can take a short interest inventory—helpful if you have time, never required.</p>
+      </div>
+      <div class="prep-callout">
+        <p>Choose the grade-band form that fits your class and open it when you’re ready.</p>
+        <a class="btn btn-solid" href="field-trip-prep.html">Go to Field Trip Prep</a>
+      </div>
+    </section>
+
+    <section class="section reveal">
       <div class="section-head">
         <h2>Suggested Donations</h2>
-        <p>Donations do not need to be made before the field trip — they will be used for the next trip. Some more expensive supplies (like Micro:bits) can return to school and be used in the STEM classroom.</p>
+        <p>Donations are optional but help students take projects home. See the full list on the <a href="donate.html">Donate</a> page.</p>
       </div>
       <div class="donate-grid">
         <div class="donate-panel">
-          <img src="images/papercircuitimage.png" alt="Paper circuits" style="border-radius:12px;margin-bottom:0.85rem;">
           <h3>Paper Circuits</h3>
           <ul>
             <li>CR2032 3V batteries
@@ -78,7 +131,6 @@
           </ul>
         </div>
         <div class="donate-panel">
-          <img src="images/lasercutting.jpg" alt="Laser cutting" style="border-radius:12px;margin-bottom:0.85rem;">
           <h3>Laser Cut Boxes</h3>
           <ul>
             <li>Compressed / Draft Board 1/8"
@@ -113,7 +165,6 @@
           </ul>
         </div>
         <div class="donate-panel">
-          <img src="images/puzzlepic1_edited.jpg" alt="Puzzle design" style="border-radius:12px;margin-bottom:0.85rem;">
           <h3>Puzzle Design</h3>
           <ul>
             <li>White book / chip board
@@ -130,18 +181,6 @@
             </li>
           </ul>
         </div>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <div class="section-head">
-        <h2>Browse Projects</h2>
-      </div>
-      <div class="project-grid">
-        <a class="project-tile" href="paper-circuits.html"><div class="thumb"><img src="images/papercircuitimage.png" alt=""></div><div class="meta"><span class="grade">3rd Grade</span><h3>Paper Circuits</h3></div></a>
-        <a class="project-tile" href="lasercut-boxes.html"><div class="thumb"><img src="images/lasercutting.jpg" alt=""></div><div class="meta"><span class="grade">4th Grade</span><h3>Laser Cut Boxes</h3></div></a>
-        <a class="project-tile" href="microbit-game.html"><div class="thumb"><img src="images/microbit-game-micro-bit-reaction-game-2-players-1.PNG" alt=""></div><div class="meta"><span class="grade">5th Grade</span><h3>Micro:bit Game</h3></div></a>
-        <a class="project-tile" href="puzzle-design.html"><div class="thumb"><img src="images/puzzlepic1_edited.jpg" alt=""></div><div class="meta"><span class="grade">6th Grade</span><h3>Puzzle Design</h3></div></a>
       </div>
     </section>
   </main>
