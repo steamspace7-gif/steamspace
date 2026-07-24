@@ -58,6 +58,20 @@ a {
   text-underline-offset: 3px;
 }
 
+a:focus-visible,
+button:focus-visible,
+.nav-toggle:focus-visible,
+.site-nav a:focus-visible,
+.faq-question:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: 3px solid var(--sun);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
 a:hover {
   color: var(--pine-deep);
 }
@@ -1147,7 +1161,7 @@ main {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 840px) {
   .nav-toggle {
     display: inline-flex;
   }

@@ -28,7 +28,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const isMobileNav = () => window.matchMedia("(max-width: 720px)").matches;
+  const isMobileNav = () => window.matchMedia("(max-width: 840px)").matches;
   const closeSubmenus = () => {
     document.querySelectorAll(".has-submenu.open").forEach((el) => el.classList.remove("open"));
   };
@@ -70,16 +70,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // FAQ accordion
   document.querySelectorAll(".faq-question").forEach((btn) => {
+    const item = btn.parentElement;
+    const answer = item.querySelector(".faq-answer");
+    // Initialize closed state
+    btn.setAttribute("aria-expanded", "false");
+    answer.style.maxHeight = null;
+
     btn.addEventListener("click", () => {
-      const item = btn.parentElement;
-      const answer = item.querySelector(".faq-answer");
       const isOpen = item.classList.contains("open");
       document.querySelectorAll(".faq-item.open").forEach((openItem) => {
         openItem.classList.remove("open");
+        const q = openItem.querySelector(".faq-question");
+        if (q) q.setAttribute("aria-expanded", "false");
         openItem.querySelector(".faq-answer").style.maxHeight = null;
       });
       if (!isOpen) {
         item.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
         answer.style.maxHeight = answer.scrollHeight + "px";
       }
     });
