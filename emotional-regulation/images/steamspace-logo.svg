@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="STEAMSPACE">
+  <!-- Clean nav mark: rounded tile with pine field + sun accent -->
+  <rect x="1" y="1" width="46" height="46" rx="12" fill="#1f6b4a"/>
+  <circle cx="36" cy="12" r="6" fill="#f0b429"/>
+  <text x="24" y="31" text-anchor="middle" font-family="Fredoka, Trebuchet MS, sans-serif" font-size="22" font-weight="600" fill="#fffdf8">S</text>
+</svg>
