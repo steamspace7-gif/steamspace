@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emotional Regulation Skills | STEAMSPACE</title>
-  <meta name="description" content="STEAMSPACE staff dashboard of CBT/DBT coping skills with a skill finder, cheat sheet, and 3-step guides. Educational use only." />
+  <title>Emotional Regulation Skills | ABHS STEM</title>
+  <meta name="description" content="ABHS STEM staff dashboard of CBT/DBT coping skills with a skill finder, cheat sheet, and 3-step guides. Educational use only." />
   <meta name="robots" content="noindex, nofollow" />
   <base href="/emotional-regulation/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,34 +17,49 @@
 
   <header class="site-header">
     <div class="wrap header-inner">
-      <div class="brand">
-        <img class="brand-mark" src="images/steamspace-logo.svg" width="40" height="40" alt="" />
-        <div class="brand-text">
-          <p class="brand-kicker">STEAMSPACE · Keep CALM</p>
-          <h1>Emotional Regulation Skills</h1>
-          <p class="brand-sub"><span id="skill-count">0</span> CBT &amp; DBT coping skills · STEM team resource</p>
-        </div>
-      </div>
+      <a class="brand" href="https://steamspace.vercel.app/" target="_blank" rel="noopener">
+        <img class="brand-mark" src="images/steamspace-logo.svg" width="42" height="42" alt="" />
+        <span class="brand-text">
+          <strong>STEAMSPACE</strong>
+          <span>@ Ft Apache · ABHS STEM</span>
+        </span>
+      </a>
       <div class="header-actions">
-        <a class="crisis-pill" href="https://988lifeline.org" target="_blank" rel="noopener" title="988 Suicide & Crisis Lifeline">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          Crisis? Call/text 988
-        </a>
+        <span class="header-badge">Keep CALM · Staff Resource</span>
         <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode"></button>
       </div>
     </div>
   </header>
 
+  <section class="hero-band" aria-label="Program introduction">
+    <div class="wrap hero-inner">
+      <p class="hero-kicker">ABHS STEM Program · Social &amp; Emotional Learning</p>
+      <h1>Emotional Regulation Skills</h1>
+      <div class="steam-row" aria-hidden="true">
+        <img src="images/steam-icons.svg" alt="" width="280" height="52" />
+      </div>
+      <p class="hero-lead">
+        <span id="skill-count">0</span> CBT &amp; DBT coping skills for STEM staff — skill finder, quick-reference cheat sheet, and 3-step guides aligned with our Keep CALM curriculum.
+      </p>
+      <div class="hero-pills">
+        <span class="pill">Mindfulness</span>
+        <span class="pill">Distress Tolerance</span>
+        <span class="pill">Emotion Regulation</span>
+        <span class="pill">Interpersonal Effectiveness</span>
+      </div>
+    </div>
+  </section>
+
   <main id="main" class="wrap">
 
     <p class="disclaimer">
-      <strong>Educational use only.</strong> This dashboard is a STEAMSPACE staff reference, not a substitute for professional mental-health care.
-      If you are in danger or having thoughts of suicide, contact <a href="https://988lifeline.org" target="_blank" rel="noopener">988</a> (U.S.) or your local emergency number immediately.
+      <strong>Educational use only.</strong> Staff reference for the ABHS STEM team — not a substitute for professional mental-health care.
     </p>
 
-    <section class="card rec" aria-labelledby="rec-title">
+    <section class="card rec reveal" aria-labelledby="rec-title">
       <div class="card-head">
-        <h2 id="rec-title">Skill Finder</h2>
+        <p class="section-kicker">Skill Finder</p>
+        <h2 id="rec-title">What fits right now?</h2>
         <p class="card-sub">Tell me what you're feeling and what you have available — I'll rank the best skills for right now.</p>
       </div>
       <div class="rec-grid">
@@ -92,16 +107,18 @@
       <div id="rec-results" class="rec-results" aria-live="polite"></div>
     </section>
 
-    <section class="card" aria-labelledby="cheat-title">
+    <section class="card reveal" aria-labelledby="cheat-title">
       <div class="card-head">
-        <h2 id="cheat-title">Quick-Reference Cheat Sheet</h2>
+        <p class="section-kicker">Quick Reference</p>
+        <h2 id="cheat-title">Cheat Sheet</h2>
         <p class="card-sub">Top skills for each stressor — the fastest thing to try first.</p>
       </div>
       <div id="cheat-grid" class="cheat-grid"></div>
     </section>
 
-    <section class="card table-card" aria-labelledby="table-title">
+    <section class="card table-card reveal" aria-labelledby="table-title">
       <div class="card-head">
+        <p class="section-kicker">Full Library</p>
         <h2 id="table-title">All <span id="table-count">0</span> Skills</h2>
         <p class="card-sub">Click a column to sort · click a row to see the 3-step guide.</p>
       </div>
@@ -144,7 +161,14 @@
     <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
 
     <footer class="site-footer">
-      <p><strong>STEAMSPACE @ Ft Apache</strong> · ABHS STEM team resource. Built on the four DBT skills modules — Mindfulness, Distress Tolerance, Emotion Regulation, and Interpersonal Effectiveness — as described by Marsha Linehan, with CBT coping skills mapped under the same structure. Educational reference, not clinical advice.</p>
+      <div class="footer-brand">
+        <img src="images/steamspace-logo.svg" width="32" height="32" alt="" />
+        <div>
+          <strong>ABHS STEM Program</strong>
+          <span>White Mountain Apache Reservation · Building 106, Ft Apache Historic Park</span>
+        </div>
+      </div>
+      <p>Hands-on STEM and social-emotional learning for school-age children. This dashboard maps CBT and DBT coping skills under the four DBT modules — Mindfulness, Distress Tolerance, Emotion Regulation, and Interpersonal Effectiveness. Educational reference, not clinical advice.</p>
     </footer>
   </main>
 
