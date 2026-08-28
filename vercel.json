@@ -57,6 +57,10 @@
     {
       "source": "/emotional-regulation",
       "destination": "/emotional-regulation/index.html"
+    },
+    {
+      "source": "/emotional-regulation/",
+      "destination": "/emotional-regulation/index.html"
     }
   ],
   "headers": [
