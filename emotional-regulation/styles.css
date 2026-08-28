@@ -135,7 +135,7 @@ input, select { font: inherit; color: inherit; }
 
 img { max-width: 100%; display: block; }
 
-/* ===== Header (steamspace site style) ===== */
+/* ===== Header ===== */
 .site-header {
   position: sticky; top: 0; z-index: 100;
   backdrop-filter: blur(10px);
@@ -200,7 +200,7 @@ img { max-width: 100%; display: block; }
 }
 .theme-toggle:hover { background: rgba(31, 107, 74, 0.08); transform: translateY(-1px); }
 
-/* ===== Hero band (brochure + steamspace) ===== */
+/* ===== Hero band ===== */
 .hero-band {
   background:
     radial-gradient(ellipse at 85% 15%, rgba(240, 180, 41, 0.35), transparent 45%),

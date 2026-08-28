@@ -2,7 +2,7 @@ window.SKILLS_DATA = {
   "meta": {
     "title": "Emotional Regulation & Coping Skills Library",
     "subtitle": "A CBT- and DBT-informed reference of 40 skills across four modules",
-    "author": "STEAMSPACE @ Ft Apache · ABHS STEM",
+    "author": "ABHS STEM Program · Apache Behavioral Health Services",
     "disclaimer": "This guide is for educational and self-help purposes only and is not a substitute for professional medical or mental-health care. In a life-threatening crisis, call or text 988 (Suicide & Crisis Lifeline) in the U.S., or your local emergency number.",
     "crisis": "988 Suicide & Crisis Lifeline — https://988lifeline.org",
     "modules": [

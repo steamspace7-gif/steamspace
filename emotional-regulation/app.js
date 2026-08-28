@@ -1,4 +1,4 @@
-/* ===== STEAMSPACE Emotional Regulation Skills Dashboard — app.js ===== */
+/* ===== ABHS STEM Emotional Regulation Skills Dashboard — app.js ===== */
 (function () {
   "use strict";
 
