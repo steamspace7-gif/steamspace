@@ -326,7 +326,6 @@
   fStressor.addEventListener("change", renderTable);
 
   // initial
-  document.getElementById("skill-count").textContent = skills.length;
   document.getElementById("table-count").textContent = skills.length;
   renderCheat();
   renderTable();
