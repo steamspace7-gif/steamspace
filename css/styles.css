@@ -261,6 +261,22 @@ a:hover {
     radial-gradient(circle at 80% 20%, rgba(240, 180, 41, 0.25), transparent 40%);
 }
 
+/* ===== AI PORTRAIT DISCLAIMER (subtle, bottom of hero) ===== */
+.hero-ai-notice {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  z-index: 2;
+  margin: 0;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.65rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.55);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
 .hero-content {
   position: relative;
   z-index: 1;
