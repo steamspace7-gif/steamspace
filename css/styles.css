@@ -1215,6 +1215,30 @@ main {
   }
 }
 
+/* ===================== AIR-POWERED ROCKETS ===================== */
+/* Students holding finished rocket hero — kids + craft centered, title sits below */
+.page-hero--rockets {
+  min-height: clamp(300px, 38vw, 440px);
+}
+
+.page-hero--rockets .hero-media img {
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+/* Cap instructional step photos at 40% of prior full-width size */
+.page-air-powered-rockets .project-step .step-media {
+  max-width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-air-powered-rockets .project-step .step-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ===================== LEGO PAPER BUILDING ===================== */
 /* Modest shrink for instructional step photos only (not hero, icons, animal cards) */
 .page-lego-paper-building .project-step .step-media {
