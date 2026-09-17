@@ -190,6 +190,44 @@ img { max-width: 100%; display: block; }
 }
 .theme-toggle:hover { background: rgba(31, 107, 74, 0.08); transform: translateY(-1px); }
 
+.pdf-download {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .38rem .7rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(31, 107, 74, 0.28);
+  background: rgba(31, 107, 74, 0.06);
+  color: var(--pine-deep);
+  font-family: var(--font-display);
+  font-size: .74rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+
+.pdf-download:hover {
+  background: rgba(31, 107, 74, 0.12);
+  border-color: rgba(31, 107, 74, 0.45);
+  color: var(--pine-deep);
+  transform: translateY(-1px);
+}
+
+.pdf-download svg { flex-shrink: 0; }
+
+[data-theme='dark'] .pdf-download {
+  border-color: rgba(126, 201, 164, 0.35);
+  background: rgba(126, 201, 164, 0.1);
+  color: var(--primary);
+}
+
+[data-theme='dark'] .pdf-download:hover {
+  background: rgba(126, 201, 164, 0.18);
+  border-color: rgba(126, 201, 164, 0.55);
+  color: var(--primary-hover);
+}
+
 /* ===== Hero band ===== */
 .hero-band {
   background:
@@ -260,6 +298,28 @@ img { max-width: 100%; display: block; }
   flex-wrap: wrap;
   gap: .35rem;
   justify-content: flex-start;
+}
+
+.hero-download {
+  margin: .45rem 0 0;
+}
+
+.hero-download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+  text-underline-offset: 3px;
+  transition: color .2s, text-decoration-color .2s;
+}
+
+.hero-download-link:hover {
+  color: #fff;
+  text-decoration-color: rgba(255, 255, 255, 0.7);
 }
 
 .hero-pills .pill,
@@ -823,6 +883,7 @@ html.is-embed main { padding-top: 1rem; }
   }
 
   .hero-pills { justify-content: center; }
+  .hero-download { text-align: center; width: 100%; }
   .steam-row { margin-inline: auto; }
 
   .som-framework-grid { grid-template-columns: 1fr; }
@@ -840,6 +901,8 @@ html.is-embed main { padding-top: 1rem; }
   .rec-result { grid-template-columns: 36px 1fr; }
   .rec-cta { grid-column: 2; justify-self: start; }
   .header-inner { padding: .7rem 0; }
+  .pdf-download-label { display: none; }
+  .pdf-download { padding: .38rem; border-radius: 10px; }
   .meta-grid { grid-template-columns: 1fr; }
 }
 
