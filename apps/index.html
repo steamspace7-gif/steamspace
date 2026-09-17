@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff SEL Apps | ABHS STEM</title>
+  <meta name="description" content="ABHS STEM staff tools for social and emotional learning — emotional regulation, mindfulness, and more." />
+  <meta name="robots" content="noindex, nofollow" />
+  <base href="/apps/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <img class="brand-mark" src="images/abhs-stem-logo.svg" width="42" height="42" alt="" />
+        <span class="brand-text">
+          <strong>ABHS STEM Program</strong>
+          <span>Apache Behavioral Health Services</span>
+        </span>
+      </div>
+      <div class="header-actions">
+        <span class="header-badge">ABHS STEM team - Staff Resources</span>
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode"></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-band" aria-label="Staff SEL apps introduction">
+    <div class="wrap hero-inner">
+      <div class="hero-col hero-col-title">
+        <p class="hero-kicker">ABHS STEM Program · Social &amp; Emotional Learning</p>
+        <h1>Staff SEL Apps</h1>
+        <div class="steam-row" aria-hidden="true">
+          <img src="images/steam-icons.svg" alt="" width="220" height="40" />
+        </div>
+      </div>
+      <div class="hero-col hero-col-meta">
+        <p class="hero-lead">
+          Calm, staff-facing tools for behavioral health educators — skill finders, activity guides, and quick references aligned with our SEL curriculum.
+        </p>
+        <div class="hero-pills">
+          <span class="pill">DBT skills</span>
+          <span class="pill">Mindfulness</span>
+          <span class="pill">K-8 activities</span>
+          <span class="pill">Staff only</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" class="wrap">
+    <section class="card apps-section reveal" aria-label="Staff SEL apps">
+      <div class="card-head">
+        <p class="section-kicker">Available tools</p>
+        <p class="card-sub">Select a resource below. More staff tools will be added here as they launch.</p>
+      </div>
+      <div id="apps-grid" class="apps-grid" role="list"></div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="images/abhs-stem-logo.svg" width="32" height="32" alt="" />
+        <div>
+          <strong>ABHS STEM Program</strong>
+          <span>Apache Behavioral Health Services · White Mountain Apache Reservation</span>
+        </div>
+      </div>
+      <p>Hands-on STEM and social-emotional learning for school-age children. These staff dashboards support CBT and DBT-informed practice — educational reference, not clinical advice.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
