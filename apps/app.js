@@ -68,7 +68,7 @@
   const grid = document.getElementById("apps-grid");
   if (!grid) return;
 
-  grid.innerHTML = APPS.map((app) => {
+  const cards = APPS.map((app) => {
     const pills = app.pills
       .map((p) => `<span class="app-pill">${esc(p)}</span>`)
       .join("");
@@ -87,7 +87,9 @@
         <div class="app-pills">${pills}</div>
       </a>
     `;
-  }).join(`
+  }).join("");
+
+  grid.innerHTML = cards + `
     <div class="app-card app-card--soon" role="listitem" aria-hidden="true">
       <div class="app-card-top">
         <span class="app-status app-status--soon">Coming soon</span>
@@ -95,5 +97,5 @@
       <h3 class="app-title">More staff tools</h3>
       <p class="app-desc">Additional SEL dashboards will appear here as they launch.</p>
     </div>
-  `);
+  `;
 })();

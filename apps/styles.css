@@ -363,14 +363,16 @@ main > * {
 .apps-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: .9rem;
+  gap: 1.1rem 1.3rem;
+  width: 100%;
 }
 
 .app-card {
   display: flex;
   flex-direction: column;
   gap: .5rem;
-  padding: .95rem 1rem 1.05rem;
+  min-height: 11.5rem;
+  padding: 1.15rem 1.25rem 1.3rem;
   background: var(--surface-alt);
   border: 1px solid var(--border);
   border-left: 4px solid var(--sky-deep);
@@ -518,14 +520,14 @@ main > * {
 /* Coming-soon placeholder */
 .app-card--soon {
   grid-column: 1 / -1;
-  max-width: calc(50% - 0.45rem);
-  margin-inline: auto;
   border-left-color: var(--border-strong);
   background: var(--surface);
   border-style: dashed;
   cursor: default;
   pointer-events: none;
   opacity: .85;
+  min-height: 0;
+  padding-block: .85rem 1rem;
 }
 
 .app-card--soon .app-title {
@@ -596,10 +598,6 @@ main > * {
 
   .apps-grid {
     grid-template-columns: 1fr;
-  }
-
-  .app-card--soon {
-    max-width: none;
   }
 }
 
