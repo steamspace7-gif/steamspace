@@ -67,6 +67,14 @@
       "destination": "/emotional-regulation/index.html"
     },
     {
+      "source": "/apps",
+      "destination": "/apps/index.html"
+    },
+    {
+      "source": "/apps/",
+      "destination": "/apps/index.html"
+    },
+    {
       "source": "/mindfulness",
       "destination": "/mindfulness/index.html"
     },
@@ -86,6 +94,15 @@
         {
           "key": "Content-Security-Policy",
           "value": "frame-ancestors 'self' https://*.sharepoint.com https://*.sharepoint.us https://*.microsoft.com https://*.office.com https://*.office365.com https://*.microsoftonline.com"
+        }
+      ]
+    },
+    {
+      "source": "/apps(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
         }
       ]
     },
