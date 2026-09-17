@@ -26,8 +26,8 @@
       description:
         "Activity finder, cheat sheet, and step-by-step guides for behavioral health educators.",
       href: "/mindfulness",
-      status: "preview",
-      statusLabel: "Preview",
+      status: "live",
+      statusLabel: "Live now",
       pills: ["K-2", "3-5", "6-8", "Trauma-sensitive"],
     },
   ];
