@@ -1,4 +1,5 @@
-/* ABHS STEM · Mindfulness Activities Dashboard (aligned with Emotional Regulation) */
+/* ABHS STEM · Mindfulness Activities Dashboard
+   Design reference: https://nativesteam.vercel.app/emotional-regulation/ */
 :root,
 [data-theme='light'] {
   --sky: #dff0fa;
@@ -649,6 +650,10 @@ tbody tr {
 tbody tr:hover { background: var(--primary-tint); }
 tbody td { padding: .65rem .8rem; vertical-align: top; }
 td.cell-name { font-weight: 700; color: var(--text); white-space: nowrap; }
+
+.level-dots { display: inline-flex; gap: 2px; }
+.level-dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--border-strong); display: inline-block; }
+.level-dots i.on { background: var(--pine); }
 
 /* ===== Drawer ===== */
 .drawer-backdrop {

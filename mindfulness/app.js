@@ -47,6 +47,10 @@
     if (m >= 30) return "20+ min";
     return m + " min";
   }
+  const DIFF_LABEL = { 1: "Easy", 2: "Moderate", 3: "High" };
+  function levelDots(d) {
+    return `<span class="level-dots" title="${DIFF_LABEL[d]}">${[1, 2, 3].map(i => `<i class="${i <= d ? "on" : ""}"></i>`).join("")}</span>`;
+  }
   function useLabel(u) { return u.replace(/_/g, " "); }
   function escapeHtml(s) {
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -134,7 +138,6 @@
       const mindHtml = (a.states_of_mind || []).map(s =>
         `<span class="mind-chip ${mindClass(s)}">${escapeHtml(s)}</span>`
       ).join(" ");
-      const diffLabel = a.difficulty === 1 ? "Easy" : a.difficulty === 2 ? "Mod" : "High";
       return `<tr data-id="${a.id}">
         <td class="cell-name">${escapeHtml(a.name)}</td>
         <td>${ageShort(a.age_bands)}</td>
@@ -144,7 +147,7 @@
         <td>${escapeHtml(a.setting)}</td>
         <td><span class="energy-dot energy-${energyClass}"></span>${escapeHtml(a.energy_level)}</td>
         <td><div class="mind-chip-row" style="margin:0">${mindHtml}</div></td>
-        <td class="num" style="text-align:right">${diffLabel}</td>
+        <td class="num" style="text-align:right">${levelDots(a.difficulty)}<div style="font-size:.7rem;color:var(--text-faint)">${DIFF_LABEL[a.difficulty]}</div></td>
       </tr>`;
     }).join("");
 
