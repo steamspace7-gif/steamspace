@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56" role="img" aria-label="S T E A M - Science Technology Engineering Arts Mathematics">
+  <!-- Flat STEAM letter icons: pine / sky / sand / teal / sun palette -->
+  <g font-family="Fredoka, Trebuchet MS, sans-serif" font-weight="600" text-anchor="middle">
+    <!-- S Science -->
+    <circle cx="28" cy="28" r="24" fill="#9fd0e8"/>
+    <text x="28" y="35" font-size="22" fill="#145239">S</text>
+
+    <!-- T Technology -->
+    <circle cx="88" cy="28" r="24" fill="#1a8a8a"/>
+    <text x="88" y="35" font-size="22" fill="#fffdf8">T</text>
+
+    <!-- E Engineering -->
+    <circle cx="148" cy="28" r="24" fill="#f0b429"/>
+    <text x="148" y="35" font-size="22" fill="#1c2a24">E</text>
+
+    <!-- A Arts -->
+    <circle cx="208" cy="28" r="24" fill="#e8dcc8"/>
+    <text x="208" y="35" font-size="22" fill="#1f6b4a">A</text>
+
+    <!-- M Mathematics -->
+    <circle cx="268" cy="28" r="24" fill="#1f6b4a"/>
+    <text x="268" y="35" font-size="22" fill="#fffdf8">M</text>
+  </g>
+</svg>
