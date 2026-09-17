@@ -1,0 +1,150 @@
+:root,
+[data-theme='light'] {
+  --sky: #dff0fa;
+  --pine: #1f6b4a;
+  --pine-deep: #145239;
+  --sand: #f7f1e6;
+  --ink: #1c2a24;
+  --ink-soft: #3d5248;
+  --paper: #fffdf8;
+  --coral: #e36b4a;
+  --bg: #f4faf7;
+  --border: #e8dcc8;
+  --primary: var(--pine);
+  --primary-hover: var(--pine-deep);
+  --primary-soft: #e3f2ea;
+  --radius: 18px;
+  --shadow: 0 18px 40px rgba(28, 42, 36, 0.12);
+  --font-display: "Fredoka", "Trebuchet MS", sans-serif;
+  --font-body: "Nunito", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, var(--sky), transparent 55%),
+    linear-gradient(180deg, var(--bg), #eef7f1 70%);
+}
+
+.login-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.login-card {
+  width: min(100%, 420px);
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.75rem;
+}
+
+.brand-row {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.brand-kicker {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+h1 {
+  margin: 0.15rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 600;
+}
+
+.login-lead {
+  margin: 0 0 1.25rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.login-form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.field-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input[type='password'] {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  font: inherit;
+  background: #fff;
+}
+
+input[type='password']:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
+.form-error {
+  margin: 0;
+  color: var(--coral);
+  font-size: 0.92rem;
+}
+
+.submit-btn {
+  margin-top: 0.35rem;
+  border: 0;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: var(--primary-hover);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.login-foot {
+  margin: 1.25rem 0 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+.login-foot a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.login-foot a:hover {
+  text-decoration: underline;
+}
+
+.logout-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+}

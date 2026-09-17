@@ -81,6 +81,14 @@
     {
       "source": "/mindfulness/",
       "destination": "/mindfulness/index.html"
+    },
+    {
+      "source": "/staff-login",
+      "destination": "/staff-login/index.html"
+    },
+    {
+      "source": "/staff-login/",
+      "destination": "/staff-login/index.html"
     }
   ],
   "headers": [
@@ -116,6 +124,15 @@
         {
           "key": "Content-Security-Policy",
           "value": "frame-ancestors 'self' https://*.sharepoint.com https://*.sharepoint.us https://*.microsoft.com https://*.office.com https://*.office365.com https://*.microsoftonline.com"
+        }
+      ]
+    },
+    {
+      "source": "/staff-login(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
         }
       ]
     }
