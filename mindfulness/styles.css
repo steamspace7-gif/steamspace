@@ -92,6 +92,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
+#table, #cheat-section, #som-framework { scroll-margin-top: 5.5rem; }
 
 body {
   min-height: 100dvh;
@@ -418,10 +419,12 @@ select:focus, input[type="search"]:focus {
 .rec-name { font-weight: 700; font-size: .98rem; }
 .rec-meta { color: var(--text-muted); font-size: .82rem; margin-top: .1rem; display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
 .rec-cta {
-  font-size: .8rem; font-weight: 700; color: var(--pine);
+  font-size: .8rem; font-weight: 700; color: var(--primary);
   white-space: nowrap; padding: .35rem .5rem;
   border-radius: 8px;
+  transition: background .15s;
 }
+.rec-cta:hover { background: var(--primary-soft); text-decoration: none; }
 
 /* ===== Activity type pills ===== */
 .pill-Breathing { color: #1b5c63; background: color-mix(in srgb, var(--sky) 70%, var(--paper)); }
@@ -609,7 +612,7 @@ select:focus, input[type="search"]:focus {
   font-size: .78rem; font-weight: 600; color: var(--text-muted);
   white-space: nowrap; cursor: pointer;
 }
-.trauma-toggle input { accent-color: var(--pine); width: 16px; height: 16px; cursor: pointer; }
+.trauma-toggle input { accent-color: var(--primary); width: 16px; height: 16px; cursor: pointer; }
 
 .result-count {
   font-size: .78rem; color: var(--text-muted);
@@ -653,7 +656,7 @@ td.cell-name { font-weight: 700; color: var(--text); white-space: nowrap; }
 
 .level-dots { display: inline-flex; gap: 2px; }
 .level-dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--border-strong); display: inline-block; }
-.level-dots i.on { background: var(--pine); }
+.level-dots i.on { background: var(--primary); }
 
 /* ===== Drawer ===== */
 .drawer-backdrop {

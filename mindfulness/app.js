@@ -260,10 +260,10 @@
     ];
 
     el("cheat-grid").innerHTML = useCases.map(uc => {
-      const items = activities
+      const matches = activities
         .filter(a => a.primary_use_case === uc.key)
-        .sort((x, y) => x.duration_minutes - y.duration_minutes)
-        .slice(0, 6);
+        .sort((x, y) => x.duration_minutes - y.duration_minutes);
+      const items = matches.slice(0, 6);
       const skills = items.map((a, i) =>
         `<div class="cheat-skill" data-id="${a.id}"><b>${i === 0 ? "1st" : "·"}</b> ${escapeHtml(a.name)} <span class="t">· ${fmtTime(a.duration_minutes)} · ${ageShort(a.age_bands)}</span></div>`
       ).join("");
@@ -271,7 +271,7 @@
         <div class="cheat-card">
           <div class="cheat-head">
             <span class="cheat-title">${escapeHtml(uc.label)}</span>
-            <span class="cheat-count">${items.length} picks</span>
+            <span class="cheat-count">${matches.length} activities</span>
           </div>
           <div class="cheat-skills">${skills || '<span class="t">see full table</span>'}</div>
         </div>`;
