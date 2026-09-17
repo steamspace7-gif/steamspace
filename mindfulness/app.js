@@ -142,12 +142,12 @@
         <td class="cell-name">${escapeHtml(a.name)}</td>
         <td>${ageShort(a.age_bands)}</td>
         <td><span class="pill pill-${tp}">${escapeHtml(a.activity_type)}</span></td>
-        <td>${escapeHtml(useLabel(a.primary_use_case))}</td>
+        <td class="num" style="text-align:right">${levelDots(a.difficulty)}<div style="font-size:.7rem;color:var(--text-faint)">${DIFF_LABEL[a.difficulty]}</div></td>
         <td class="num" style="text-align:right">${fmtTime(a.duration_minutes)}</td>
         <td>${escapeHtml(a.setting)}</td>
+        <td>${escapeHtml(useLabel(a.primary_use_case))}</td>
         <td><span class="energy-dot energy-${energyClass}"></span>${escapeHtml(a.energy_level)}</td>
         <td><div class="mind-chip-row" style="margin:0">${mindHtml}</div></td>
-        <td class="num" style="text-align:right">${levelDots(a.difficulty)}<div style="font-size:.7rem;color:var(--text-faint)">${DIFF_LABEL[a.difficulty]}</div></td>
       </tr>`;
     }).join("");
 
