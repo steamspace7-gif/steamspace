@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mindfulness Activities for K-8 Students | ABHS STEM</title>
+  <meta name="description" content="ABHS STEM staff dashboard of evidence-informed K-8 mindfulness activities with an activity finder, cheat sheet, and step-by-step guides. Educational use only." />
+  <meta name="robots" content="noindex, nofollow" />
+  <!-- Vercel cleanUrls + trailingSlash:false: keep relative assets under /mindfulness/ -->
+  <base href="/mindfulness/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <img class="brand-mark" src="images/abhs-stem-logo.svg" width="42" height="42" alt="" />
+        <span class="brand-text">
+          <strong>ABHS STEM Program</strong>
+          <span>Apache Behavioral Health Services</span>
+        </span>
+      </div>
+      <div class="header-actions">
+        <span class="header-badge">ABHS STEM team - Staff Resources</span>
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode"></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-band" aria-label="Program introduction">
+    <div class="wrap hero-inner">
+      <div class="hero-col hero-col-title">
+        <p class="hero-kicker">ABHS STEM Program · Social &amp; Emotional Learning</p>
+        <h1>Mindfulness Activities for K-8</h1>
+        <div class="steam-row" aria-hidden="true">
+          <img src="images/steam-icons.svg" alt="" width="220" height="40" />
+        </div>
+      </div>
+      <div class="hero-col hero-col-meta">
+        <p class="hero-lead">
+          Activity finder, quick reference cheat sheet, and step-by-step guides for behavioral health educators — <span id="activity-count">0</span> evidence-informed activities.
+        </p>
+        <div class="hero-pills">
+          <span class="pill">K-2</span>
+          <span class="pill">3-5</span>
+          <span class="pill">6-8</span>
+          <span class="pill">Trauma-sensitive options</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" class="wrap">
+
+    <section class="card reveal" id="som-framework" aria-labelledby="som-title">
+      <div class="card-head">
+        <p class="section-kicker">DBT Framework</p>
+        <h2 id="som-title">Three States of Mind for Children</h2>
+        <p class="card-sub">Every activity is tagged with the DBT states of mind it addresses — child-friendly language paired with the clinical DBT term.</p>
+      </div>
+      <div class="som-framework-grid" id="som-grid"></div>
+    </section>
+
+    <section class="card rec reveal" aria-labelledby="rec-title">
+      <div class="card-head">
+        <p class="section-kicker">Activity Finder</p>
+        <h2 id="rec-title">What fits right now?</h2>
+        <p class="card-sub">Tell me what's happening and what you have available — I'll suggest the best activities for right now.</p>
+      </div>
+      <div class="rec-grid">
+        <div class="control">
+          <span class="label-block">Grade level</span>
+          <div class="chip-group" id="rec-age">
+            <button type="button" class="chip active" data-val="all">All</button>
+            <button type="button" class="chip" data-val="K-2">K-2</button>
+            <button type="button" class="chip" data-val="3-5">3-5</button>
+            <button type="button" class="chip" data-val="6-8">6-8</button>
+          </div>
+        </div>
+        <div class="control">
+          <label for="rec-use">What's happening?</label>
+          <select id="rec-use">
+            <option value="all">Any situation</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="rec-time">Time available</label>
+          <select id="rec-time">
+            <option value="all">Any duration</option>
+            <option value="1">Under 1 min</option>
+            <option value="3">1–3 min</option>
+            <option value="5">3–5 min</option>
+            <option value="10">5–10 min</option>
+            <option value="20">10+ min</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="rec-setting">Setting</label>
+          <select id="rec-setting">
+            <option value="all">Any setting</option>
+            <option value="Any">Anywhere</option>
+            <option value="Quiet/private">Quiet / Private</option>
+            <option value="Desk">Desk-based</option>
+            <option value="Floor">Floor / Movement space</option>
+            <option value="Outdoor">Outdoors</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="rec-group">Group size</label>
+          <select id="rec-group">
+            <option value="all">Any size</option>
+            <option value="Individual">Individual</option>
+            <option value="Small">Small group</option>
+            <option value="Whole">Whole classroom</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="rec-type">Activity type</label>
+          <select id="rec-type">
+            <option value="all">All types</option>
+          </select>
+        </div>
+      </div>
+      <div class="rec-results" id="rec-results" aria-live="polite">
+        <p class="rec-placeholder">Select your situation above to get tailored recommendations.</p>
+      </div>
+    </section>
+
+    <section class="card reveal" id="cheat-section" aria-labelledby="cheat-title">
+      <div class="card-head">
+        <p class="section-kicker">Quick Reference</p>
+        <h2 id="cheat-title">Cheat Sheet</h2>
+        <p class="card-sub">Top activities for each situation — the fastest thing to try first.</p>
+      </div>
+      <div class="cheat-grid" id="cheat-grid"></div>
+    </section>
+
+    <section class="card table-card reveal" id="table" aria-labelledby="table-title">
+      <div class="card-head">
+        <p class="section-kicker">Full Library</p>
+        <h2 id="table-title">All <span id="table-count">0</span> Activities</h2>
+        <p class="card-sub">Click a column to sort · click a row for full details, steps, and trauma notes.</p>
+      </div>
+      <div class="filter-bar">
+        <div class="search-wrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="search" type="search" placeholder="Search activities, mechanisms, materials…" aria-label="Search activities" />
+        </div>
+        <div class="filter-selects">
+          <select id="f-age" aria-label="Filter by age band">
+            <option value="all">All ages</option>
+            <option value="K-2">K-2</option>
+            <option value="3-5">3-5</option>
+            <option value="6-8">6-8</option>
+          </select>
+          <select id="f-type" aria-label="Filter by activity type">
+            <option value="all">All types</option>
+          </select>
+          <select id="f-use" aria-label="Filter by use case">
+            <option value="all">All situations</option>
+          </select>
+          <select id="f-energy" aria-label="Filter by energy level">
+            <option value="all">All energy</option>
+            <option value="Calming">Calming</option>
+            <option value="Focusing">Focusing</option>
+            <option value="Activating">Activating</option>
+            <option value="Reflective">Reflective</option>
+          </select>
+          <select id="f-mind" aria-label="Filter by DBT state of mind">
+            <option value="all">All states of mind</option>
+            <option value="Emotion Mind">Emotion Mind</option>
+            <option value="Robot Mind">Robot Mind</option>
+            <option value="Wise Mind">Wise Mind</option>
+          </select>
+          <label class="trauma-toggle">
+            <input type="checkbox" id="f-trauma" /> Trauma-sensitive only
+          </label>
+        </div>
+        <span id="result-count" class="result-count"></span>
+      </div>
+      <div class="table-scroll">
+        <table class="skill-table" id="activity-table">
+          <thead>
+            <tr>
+              <th data-sort="name" data-key="name" class="sortable">Activity</th>
+              <th data-sort="age" data-key="age_bands" class="sortable">Ages</th>
+              <th data-sort="type" data-key="activity_type" class="sortable">Type</th>
+              <th data-sort="difficulty" data-key="difficulty" class="sortable num">Level</th>
+              <th data-sort="duration" data-key="duration_minutes" class="sortable num">Time</th>
+              <th data-sort="setting" data-key="setting" class="sortable">Setting</th>
+              <th data-sort="use" data-key="primary_use_case" class="sortable">Primary use</th>
+              <th data-sort="energy" data-key="energy_level" class="sortable">Energy</th>
+              <th>Mind</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="drawer-title">
+      <div class="drawer-inner">
+        <button class="drawer-close" id="drawer-close" aria-label="Close">✕</button>
+        <div id="drawer-content"></div>
+      </div>
+    </aside>
+    <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="images/abhs-stem-logo.svg" width="32" height="32" alt="" />
+        <div>
+          <strong>ABHS STEM Program</strong>
+          <span>Apache Behavioral Health Services · White Mountain Apache Reservation</span>
+        </div>
+      </div>
+      <p>Hands-on STEM and social-emotional learning for school-age children. This dashboard maps evidence-informed K-8 mindfulness activities — breathing, movement, sensory grounding, and attention training — aligned with DBT states of mind. Educational reference for behavioral health educators; not a substitute for clinical supervision or professional mental-health care.</p>
+    </footer>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
