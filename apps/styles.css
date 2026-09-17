@@ -308,6 +308,11 @@ main > * {
   width: min(var(--content), 100%);
 }
 
+/* Apps card uses full wrap width so the 2-col grid fills desktop */
+main > .apps-section {
+  width: min(var(--max), 100%);
+}
+
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -359,11 +364,11 @@ main > * {
   margin-inline: auto;
 }
 
-/* ===== App cards grid ===== */
+/* ===== App cards grid (cheat-grid / cheat-card parity) ===== */
 .apps-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.1rem 1.3rem;
+  gap: .9rem;
   width: 100%;
 }
 
@@ -371,8 +376,7 @@ main > * {
   display: flex;
   flex-direction: column;
   gap: .5rem;
-  min-height: 11.5rem;
-  padding: 1.15rem 1.25rem 1.3rem;
+  padding: .95rem 1rem;
   background: var(--surface-alt);
   border: 1px solid var(--border);
   border-left: 4px solid var(--sky-deep);
@@ -526,8 +530,34 @@ main > * {
   cursor: default;
   pointer-events: none;
   opacity: .85;
-  min-height: 0;
-  padding-block: .85rem 1rem;
+  padding: .75rem 1rem;
+}
+
+@media (min-width: 721px) {
+  .app-card--soon {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: .85rem;
+    row-gap: .15rem;
+    align-items: baseline;
+  }
+
+  .app-card--soon .app-card-top {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    align-self: center;
+  }
+
+  .app-card--soon .app-title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .app-card--soon .app-desc {
+    grid-column: 2;
+    grid-row: 2;
+  }
 }
 
 .app-card--soon .app-title {
