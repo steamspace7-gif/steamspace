@@ -65,6 +65,14 @@
     {
       "source": "/emotional-regulation/",
       "destination": "/emotional-regulation/index.html"
+    },
+    {
+      "source": "/mindfulness",
+      "destination": "/mindfulness/index.html"
+    },
+    {
+      "source": "/mindfulness/",
+      "destination": "/mindfulness/index.html"
     }
   ],
   "headers": [
