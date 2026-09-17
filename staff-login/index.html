@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff Access | ABHS STEM</title>
+  <meta name="description" content="Staff sign-in for ABHS STEM SEL tools." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/staff-login/styles.css" />
+</head>
+<body>
+  <main class="login-shell">
+    <section class="login-card" aria-labelledby="login-title">
+      <div class="brand-row">
+        <img src="/images/steamspace-logo.svg" width="40" height="40" alt="" />
+        <div>
+          <p class="brand-kicker">ABHS STEM Program</p>
+          <h1 id="login-title">Staff access</h1>
+        </div>
+      </div>
+
+      <p class="login-lead">
+        Enter the shared staff password to open SEL tools for educators.
+      </p>
+
+      <form id="login-form" class="login-form" novalidate>
+        <label class="field-label" for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autocomplete="current-password"
+          required
+          autofocus
+        />
+        <p id="error" class="form-error" role="alert" hidden></p>
+        <button type="submit" class="submit-btn">Sign in</button>
+      </form>
+
+      <p class="login-foot">
+        Unlocks <a href="/apps">Staff SEL Apps</a>, mindfulness, and emotional regulation tools.
+        <a class="logout-link" href="/api/staff-logout">Sign out</a>
+      </p>
+    </section>
+  </main>
+
+  <script src="/staff-login/login.js"></script>
+</body>
+</html>
