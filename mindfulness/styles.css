@@ -49,6 +49,7 @@
   --ring: 0 0 0 3px rgba(240, 180, 41, 0.45);
   --max: 1040px;
   --content: 920px;
+  --gutter: 1.5rem;
   --font-display: "Fredoka", "Trebuchet MS", sans-serif;
   --font-body: "Nunito", "Segoe UI", sans-serif;
 }
@@ -109,7 +110,7 @@ body {
 }
 
 .wrap {
-  width: min(var(--max), 100% - 3rem);
+  width: min(var(--max), 100% - 2 * var(--gutter));
   margin-inline: auto;
 }
 
@@ -148,14 +149,22 @@ img { max-width: 100%; display: block; }
 
 .header-inner {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 1rem;
   padding: .85rem 0;
 }
 
 .brand { justify-self: start; display: flex; align-items: center; gap: .75rem; color: var(--ink); }
-.header-actions { justify-self: end; display: flex; align-items: center; gap: .6rem; }
+.header-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  min-width: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
 
 .brand-mark { height: 42px; width: auto; flex-shrink: 0; border-radius: 12px; }
 
@@ -244,7 +253,7 @@ img { max-width: 100%; display: block; }
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   gap: 0.75rem 1.75rem;
   align-items: center;
-  max-width: var(--max);
+  width: min(var(--max), 100% - 2 * var(--gutter));
   margin-inline: auto;
   animation: fade-up 0.7s ease both;
 }
@@ -255,6 +264,7 @@ img { max-width: 100%; display: block; }
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  min-width: 0;
 }
 
 .hero-kicker {
@@ -291,6 +301,7 @@ img { max-width: 100%; display: block; }
   color: rgba(255, 255, 255, 0.94);
   line-height: 1.45;
   margin: 0 0 .5rem;
+  overflow-wrap: break-word;
 }
 
 .hero-pills {
@@ -359,6 +370,8 @@ main {
 
 main > * {
   width: min(var(--content), 100%);
+  max-width: 100%;
+  min-width: 0;
 }
 
 .section-kicker {
@@ -382,6 +395,8 @@ main > * {
   padding: 1.4rem 1.4rem 1.5rem;
   box-shadow: var(--shadow-sm);
   transition: box-shadow .25s ease, transform .25s ease;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 .card:hover { box-shadow: var(--shadow-md); }
 
@@ -400,14 +415,16 @@ main > * {
 
 /* ===== Activity Finder ===== */
 .rec-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 1.3rem;
   padding: 1.15rem 1.25rem;
   background: linear-gradient(135deg, var(--sky) 0%, color-mix(in srgb, var(--sky) 60%, var(--sand)) 100%);
   border: 1px solid color-mix(in srgb, var(--sky-deep) 45%, var(--border));
   border-radius: var(--radius-sm);
 }
 
-.control { display: flex; flex-direction: column; gap: .4rem; }
+.control { display: flex; flex-direction: column; gap: .4rem; min-width: 0; }
 .control label, .control .label-block {
   font-size: .78rem; font-weight: 700; color: var(--text-muted);
 }
@@ -450,13 +467,17 @@ select:focus, input[type="search"]:focus {
 }
 
 .rec-result {
-  display: grid; grid-template-columns: 44px 1fr auto; gap: .9rem; align-items: center;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) minmax(0, auto);
+  gap: .9rem;
+  align-items: center;
   padding: .9rem 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--surface);
   cursor: pointer;
   transition: border-color .15s, transform .15s, box-shadow .15s;
+  min-width: 0;
 }
 .rec-result:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
 .rec-result.top {
@@ -476,11 +497,14 @@ select:focus, input[type="search"]:focus {
 .rec-rank.r3 { background: var(--sky-deep); color: var(--ink); }
 .rec-rank.rx { background: var(--surface-sunken); color: var(--text-muted); }
 
-.rec-name { font-weight: 700; font-size: .98rem; }
-.rec-meta { color: var(--text-muted); font-size: .82rem; margin-top: .1rem; display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
+.rec-name { font-weight: 700; font-size: .98rem; min-width: 0; overflow-wrap: break-word; }
+.rec-meta { color: var(--text-muted); font-size: .82rem; margin-top: .1rem; display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; min-width: 0; }
 .rec-cta {
   font-size: .8rem; font-weight: 700; color: var(--primary);
-  white-space: nowrap; padding: .35rem .5rem;
+  white-space: normal;
+  text-align: right;
+  justify-self: end;
+  padding: .35rem .5rem;
   border-radius: 8px;
   transition: background .15s;
 }
@@ -517,7 +541,6 @@ select:focus, input[type="search"]:focus {
   border-radius: 999px;
   font-size: .68rem;
   font-weight: 700;
-  white-space: nowrap;
 }
 
 .wise-mind-box {
@@ -534,7 +557,7 @@ select:focus, input[type="search"]:focus {
 
 .som-framework-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: .9rem;
 }
 
@@ -544,6 +567,8 @@ select:focus, input[type="search"]:focus {
   border: 1px solid var(--border);
   border-left: 4px solid var(--border-strong);
   transition: border-color .2s, transform .2s, box-shadow .2s;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 .som-framework-card:hover {
   transform: translateY(-2px);
@@ -885,18 +910,17 @@ html.is-embed main { padding-top: 1rem; }
   .hero-pills { justify-content: center; }
   .hero-download { text-align: center; width: 100%; }
   .steam-row { margin-inline: auto; }
-
-  .som-framework-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 860px) {
-  .rec-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 960px) {
+  .rec-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .som-framework-grid { grid-template-columns: minmax(0, 1fr); }
   .header-badge { display: none; }
-  .header-inner { grid-template-columns: 1fr auto; }
+  .header-inner { grid-template-columns: minmax(0, 1fr) auto; }
 }
 
-@media (max-width: 560px) {
-  .rec-grid { grid-template-columns: 1fr; }
+@media (max-width: 640px) {
+  .rec-grid { grid-template-columns: minmax(0, 1fr); }
   .card { padding: 1.1rem; }
   .rec-result { grid-template-columns: 36px 1fr; }
   .rec-cta { grid-column: 2; justify-self: start; }
