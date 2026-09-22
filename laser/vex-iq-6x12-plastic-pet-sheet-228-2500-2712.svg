@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  VEX IQ 6x12 Plastic PET Sheet
+  Part #: 228-2500-2712 (from Thin Plastic Sheet Pack 228-7888)
+  Laser-cut outline SVG — millimeters
+
+  Geometry derived from the official STEP CAD published via
+  https://vex.parts/parts/228-2500-2712 (STEP file name:
+  "6x12 Plastic Sheet (228-2500-2712).STEP").
+
+  Outer size: 152.1 mm x 75.9 mm (~6.00 in x 2.99 in)
+  Note: "6x12" is VEX hole-count naming (6 x 12 pitch), not 6x12 inches.
+  Corner radius: 6.2 mm
+  Holes: 32 x Ø6.5 mm on a 12.7 mm (0.5 in) pitch, perimeter only
+  Stock thickness (reference): 0.254 mm / 0.010 in PET
+
+  Cut settings tip: import as mm; cut all black stroked paths;
+  kerf compensation is laser/material specific — not included here.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="152.1mm" height="75.9mm"
+     viewBox="0 0 152.1 75.9">
+  <title>VEX IQ 6x12 Plastic PET Sheet #228-2500-2712</title>
+  <g id="cut" fill="none" stroke="#000000" stroke-width="0.1"
+     stroke-linejoin="round" stroke-linecap="round">
+    <!-- Outer outline -->
+    <rect x="0" y="0" width="152.1" height="75.9" rx="6.2" ry="6.2"/>
+    <!-- Mounting holes (32) -->
+    <circle cx="6.2" cy="6.2" r="3.25"/>
+    <circle cx="18.9" cy="6.2" r="3.25"/>
+    <circle cx="31.6" cy="6.2" r="3.25"/>
+    <circle cx="44.3" cy="6.2" r="3.25"/>
+    <circle cx="57.0" cy="6.2" r="3.25"/>
+    <circle cx="69.7" cy="6.2" r="3.25"/>
+    <circle cx="82.4" cy="6.2" r="3.25"/>
+    <circle cx="95.1" cy="6.2" r="3.25"/>
+    <circle cx="107.8" cy="6.2" r="3.25"/>
+    <circle cx="120.5" cy="6.2" r="3.25"/>
+    <circle cx="133.2" cy="6.2" r="3.25"/>
+    <circle cx="145.9" cy="6.2" r="3.25"/>
+    <circle cx="6.2" cy="18.9" r="3.25"/>
+    <circle cx="145.9" cy="18.9" r="3.25"/>
+    <circle cx="6.2" cy="31.6" r="3.25"/>
+    <circle cx="145.9" cy="31.6" r="3.25"/>
+    <circle cx="6.2" cy="44.3" r="3.25"/>
+    <circle cx="145.9" cy="44.3" r="3.25"/>
+    <circle cx="6.2" cy="57.0" r="3.25"/>
+    <circle cx="145.9" cy="57.0" r="3.25"/>
+    <circle cx="6.2" cy="69.7" r="3.25"/>
+    <circle cx="18.9" cy="69.7" r="3.25"/>
+    <circle cx="31.6" cy="69.7" r="3.25"/>
+    <circle cx="44.3" cy="69.7" r="3.25"/>
+    <circle cx="57.0" cy="69.7" r="3.25"/>
+    <circle cx="69.7" cy="69.7" r="3.25"/>
+    <circle cx="82.4" cy="69.7" r="3.25"/>
+    <circle cx="95.1" cy="69.7" r="3.25"/>
+    <circle cx="107.8" cy="69.7" r="3.25"/>
+    <circle cx="120.5" cy="69.7" r="3.25"/>
+    <circle cx="133.2" cy="69.7" r="3.25"/>
+    <circle cx="145.9" cy="69.7" r="3.25"/>
+  </g>
+</svg>
