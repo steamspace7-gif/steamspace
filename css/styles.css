@@ -1272,18 +1272,6 @@ main {
   display: block;
 }
 
-/* ===================== TINKERCAD CHARACTER FIGURE ===================== */
-.page-tinkercad-character-figure .project-step .step-media {
-  max-width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.page-tinkercad-character-figure .project-step .step-media img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 /* ===================== LEGO PAPER BUILDING ===================== */
 /* Modest shrink for instructional step photos only (not hero, icons, animal cards) */
