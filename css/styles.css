@@ -1805,8 +1805,8 @@ main {
   gap: 0.5rem;
 }
 
-.page-3d-printed-figure .step-media--logo {
-  max-width: 220px;
+.page-3d-printed-figure .project-step .step-media.step-media--logo {
+  max-width: 110px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 12px;
