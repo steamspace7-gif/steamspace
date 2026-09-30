@@ -971,6 +971,17 @@ main {
   background: #111;
 }
 
+.intro-media--figure {
+  max-width: 520px;
+  background: #e8eef2;
+}
+
+.intro-media--figure img {
+  object-fit: contain;
+  max-height: 420px;
+  background: #e8eef2;
+}
+
 .project-step {
   background: var(--paper);
   border-radius: var(--radius);
@@ -1786,5 +1797,43 @@ main {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.page-3d-printed-figure .project-step h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-3d-printed-figure .step-media--logo {
+  max-width: 220px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.page-3d-printed-figure .tool-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 0.85rem 0 0.25rem;
+}
+
+.page-3d-printed-figure .tool-row img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+  .page-3d-printed-figure .tool-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page-3d-printed-figure .project-step .step-media {
+    max-width: 100%;
+  }
 }
 
