@@ -1774,3 +1774,17 @@ main {
     order: 0;
   }
 }
+
+/* ===================== 3D PRINTED FIGURE ===================== */
+.page-3d-printed-figure .project-step .step-media {
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-3d-printed-figure .project-step .step-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
