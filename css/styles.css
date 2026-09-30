@@ -972,7 +972,8 @@ main {
 }
 
 .intro-media--figure {
-  max-width: 520px;
+  width: min(520px, 100%);
+  margin-inline: auto;
   background: #e8eef2;
 }
 
