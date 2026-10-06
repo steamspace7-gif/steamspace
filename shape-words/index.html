@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STEAMSPACE · Shape Words → STL</title>
+<link rel="icon" href="icon.png">
+<style>
+  :root {
+    --pine: #1f6b4a; --pine-deep: #145239; --teal: #1a8a8a; --sun: #f0b429; --coral: #e36b4a;
+    --ink: #1c2a24; --sand: #f7f1e6; --paper: #fffdf8; --muted: #4a5c54; --light-teal: #e0f0f0;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--sand); }
+  header { background: var(--pine-deep); color: #fff; padding: 10px 18px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  header h1 { font-size: 20px; margin: 0; }
+  header .brand { font-weight: 700; letter-spacing: .08em; color: var(--sun); font-size: 13px; }
+  header .who { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+  header input { border: 0; border-radius: 6px; padding: 6px 8px; font-size: 14px; width: 150px; }
+  main { display: grid; grid-template-columns: minmax(360px, 1fr) minmax(380px, 1.1fr); gap: 14px; padding: 14px; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  .card { background: var(--paper); border-radius: 12px; padding: 12px 14px; box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 12px; }
+  .card h2 { font-size: 16px; margin: 0 0 8px; color: var(--pine-deep); display: flex; align-items: center; gap: 8px; }
+  .step { background: var(--teal); color: #fff; border-radius: 50%; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
+  label { font-size: 13px; color: var(--muted); }
+  select, input[type=number], input[type=text] { font-size: 14px; padding: 5px 6px; border: 1px solid #c9d3cf; border-radius: 6px; background: #fff; }
+  input[type=number] { width: 70px; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; margin-bottom: 8px; }
+  .row > div { display: flex; flex-direction: column; gap: 2px; }
+  textarea { width: 100%; min-height: 190px; font-size: 15px; line-height: 1.5; padding: 8px 10px; border: 2px solid var(--teal); border-radius: 8px; font-family: inherit; resize: vertical; }
+  button { font-size: 14px; border: 0; border-radius: 8px; padding: 8px 12px; cursor: pointer; background: var(--teal); color: #fff; font-weight: 600; }
+  button.secondary { background: var(--light-teal); color: var(--pine-deep); }
+  button.sun { background: var(--sun); color: var(--ink); }
+  button.coral { background: var(--coral); }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; margin: 4px 0 8px; }
+  .chips span.group { font-size: 12px; color: var(--muted); width: 100%; margin-top: 4px; }
+  .chip { background: var(--light-teal); color: var(--pine-deep); border-radius: 14px; padding: 3px 9px; font-size: 13px; cursor: pointer; border: 1px solid #bfdede; }
+  .chip:hover { background: var(--sun); }
+  .fb { border-left: 4px solid var(--pine); padding: 5px 8px; margin: 6px 0; background: #fbfaf5; border-radius: 0 6px 6px 0; font-size: 14px; }
+  .fb.warn { border-color: var(--coral); }
+  .fb .line { color: var(--muted); font-size: 12px; }
+  .fb .sum { font-weight: 600; }
+  .fb ul { margin: 3px 0 0 16px; padding: 0; }
+  .fb li.w { color: #a8412a; }
+  .fb li.n { color: var(--muted); }
+  .check { display: flex; gap: 8px; padding: 4px 0; font-size: 14px; }
+  .check .icon { width: 22px; text-align: center; font-weight: 700; }
+  .pass .icon { color: var(--pine); } .fail .icon { color: var(--coral); } .warn .icon { color: #c98a00; } .info .icon { color: var(--teal); }
+  #viewer { position: sticky; top: 10px; }
+  canvas { width: 100%; height: 460px; background: linear-gradient(#f4fbfb, #e4efe9); border-radius: 10px; touch-action: none; cursor: grab; display: block; }
+  .views { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+  .dims { font-size: 14px; margin-top: 6px; }
+  details summary { cursor: pointer; font-weight: 600; color: var(--pine-deep); }
+  .hint { font-size: 12px; color: var(--muted); }
+  #aiBox { display: none; background: #fff8e6; border: 1px dashed var(--sun); border-radius: 8px; padding: 8px; margin-top: 8px; }
+  #aiBox pre { white-space: pre-wrap; font-family: inherit; margin: 4px 0; }
+  ol.steps { margin: 4px 0 0 18px; padding: 0; font-size: 14px; }
+  .toast { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); background: var(--pine-deep); color: #fff; padding: 8px 14px; border-radius: 8px; display: none; }
+</style>
+</head>
+<body>
+<header>
+  <img src="icon.png" alt="" width="44" height="44" style="border-radius:10px">
+  <div>
+    <div class="brand">STEAMSPACE</div>
+    <h1>Shape Words → STL</h1>
+  </div>
+  <div class="who">
+    <input id="student" placeholder="My first name" aria-label="Student first name">
+    <input id="character" placeholder="Character name" aria-label="Character name">
+    <input id="theme" placeholder="Class theme" aria-label="Class theme">
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="card">
+    <h2><span class="step">1</span> Build a sentence (frames)</h2>
+    <div class="row">
+      <div><label for="fShape">Shape</label>
+        <select id="fShape">
+          <option value="box">box (rectangular prism)</option><option value="cube">cube</option>
+          <option value="cylinder">cylinder</option><option value="cone">cone</option>
+          <option value="sphere">sphere</option><option value="hemisphere">dome (half sphere)</option>
+          <option value="pyramid">pyramid</option><option value="torus">ring (torus)</option>
+        </select></div>
+      <div><label for="fName">Part name</label><input id="fName" type="text" placeholder="head" style="width:100px"></div>
+      <div id="fW"><label for="fWv">wide</label><input id="fWv" type="number" min="1" step="0.5" value="10"></div>
+      <div id="fD"><label for="fDv">deep</label><input id="fDv" type="number" min="1" step="0.5" value="10"></div>
+      <div id="fH"><label for="fHv">tall</label><input id="fHv" type="number" min="1" step="0.5" value="10"></div>
+      <div id="fT"><label for="fTv">thick</label><input id="fTv" type="number" min="1" step="0.5" value="3"></div>
+      <span class="hint">all in mm</span>
+    </div>
+    <div class="row">
+      <div><label for="fRel">Where?</label>
+        <select id="fRel">
+          <option value="">(first part / anchor)</option><option value="top">on top of</option><option value="bottom">below</option>
+          <option value="left">left of</option><option value="right">right of</option><option value="front">in front of</option>
+          <option value="back">behind</option><option value="center">centered on</option>
+        </select></div>
+      <div><label for="fTarget">which part</label><select id="fTarget"></select></div>
+      <div><label for="fAlign">up/down</label>
+        <select id="fAlign"><option value="">middle</option><option value="top">near the top</option><option value="bottom">near the bottom</option></select></div>
+      <div><label for="fRot">turn °</label><input id="fRot" type="number" step="15" value="0"></div>
+      <div><label><input id="fTip" type="checkbox"> lying on its side</label></div>
+      <div><label for="fColor">preview color</label>
+        <select id="fColor"><option value="">auto</option><option>red</option><option>orange</option><option>yellow</option><option>green</option><option>blue</option><option>teal</option><option>purple</option><option>pink</option><option>brown</option><option>black</option><option>white</option><option>gray</option></select></div>
+    </div>
+    <div class="row"><button id="addFrame">➕ Add this sentence</button><span class="hint" id="framePreview"></span></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="step">2</span> My description <span class="hint">(one sentence per line — edit freely)</span></h2>
+    <div class="chips" id="wordBank"></div>
+    <textarea id="desc" spellcheck="true" placeholder="Try: A box called body, 16 mm wide, 12 mm deep, 18 mm tall.&#10;Or write it your way: The head is a ball 12 mm across on top of the body."></textarea>
+    <div class="row" style="margin-top:8px">
+      <button class="secondary" id="example">Load example robot</button>
+      <button class="secondary" id="undoLine">Remove last line</button>
+      <button class="sun" id="aiAsk" disabled title="Your teacher turns this on">✨ AI helper: turn my free-write into frames</button>
+    </div>
+    <div id="aiBox">
+      <div class="hint">The AI helper suggests these frame sentences. Read them. Do they match your drawing?</div>
+      <pre id="aiOut"></pre>
+      <button id="aiUse">Use these sentences</button> <button class="secondary" id="aiDismiss">Keep mine</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="step">3</span> What the computer understood</h2>
+    <div id="feedback"><p class="hint">Your sentences will be read here, one part at a time.</p></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="step">4</span> Print checks</h2>
+    <div id="checks"></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="step">5</span> Export and open in Tinkercad</h2>
+    <div class="row">
+      <button id="exportOne" class="coral">⬇ Download as one shape</button>
+      <button id="exportStl" class="coral">⬇ Download separate shapes (.zip)</button>
+      <button id="exportTxt" class="secondary">⬇ Download my sentences (.txt)</button>
+    </div>
+    <p class="hint"><b>Download as one shape</b> is a single <code>.stl</code>. Tinkercad welds that into one solid you cannot pull apart — use it when the figure is ready to print. <b>Download separate shapes</b> is a zip with one file per shape, plus <code>HOW-TO-PLACE.txt</code>, so you can move each piece.</p>
+    <ol class="steps">
+      <li>Unzip the download. In Tinkercad, click <b>Import</b> and choose <code>01-….stl</code> first. Units: <b>Millimeters</b>. Scale: <b>100%</b>.</li>
+      <li>Import each next file the same way. Follow <code>HOW-TO-PLACE.txt</code> to move and lift it. Do <b>not</b> click Group yet, or the shapes stick together.</li>
+      <li>Tinker. Check the size box is still ≤ <span class="limit">20</span> cm³.</li>
+      <li>When it looks right, select all → <b>Group</b>, then <b>Export → .STL</b> for the Bambu printer.</li>
+    </ol>
+  </div>
+
+  <details class="card">
+    <summary>Teacher settings</summary>
+    <div class="row" style="margin-top:8px">
+      <div><label for="sLimit">Size limit (cm³)</label><input id="sLimit" type="number" min="1" step="1" value="20"></div>
+      <div><label for="sOverlap">Part overlap (mm)</label><input id="sOverlap" type="number" min="0" step="0.5" value="1"></div>
+    </div>
+    <div class="row">
+      <div style="flex:1"><label for="sAi">AI helper address (optional)</label><input id="sAi" type="text" placeholder="http://192.168.0.x:8765" style="width:100%"></div>
+      <button class="secondary" id="sAiTest">Test</button>
+    </div>
+    <p class="hint" id="aiStatus">AI helper is off. Everything else works offline, including on MoodleBox.</p>
+    <div class="row"><button class="secondary" id="clearAll">Clear this computer's saved work</button></div>
+  </details>
+</section>
+
+<section>
+  <div class="card" id="viewer">
+    <h2>3D preview <span class="hint">drag to spin · scroll to zoom</span></h2>
+    <canvas id="cv" aria-label="3D preview of the figure"></canvas>
+    <div class="views">
+      <button class="secondary" data-view="front">Front</button>
+      <button class="secondary" data-view="side">Side</button>
+      <button class="secondary" data-view="top">Top</button>
+      <button class="secondary" data-view="iso">3/4 view</button>
+    </div>
+    <div class="dims" id="dims"></div>
+    <p class="hint">Left and right mean <b>your</b> left and right when you look at the front view. Front is the side facing you.</p>
+  </div>
+</section>
+</main>
+<div class="toast" id="toast"></div>
+
+<script src="wordshape.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var STORE = 'ss-words-to-stl-v1', SETTINGS = 'ss-words-to-stl-settings-v1';
+  var model = null, aiReady = false, aiSuggestion = null;
+
+  var DEFAULT_AI = '';
+
+  /* ---------- SCORM 1.2 (optional; silent outside an LMS) ---------- */
+  var scorm = { api: null };
+  (function findAPI() {
+    var w = window, tries = 0;
+    try {
+      while (w && !w.API && w.parent && w.parent !== w && tries++ < 10) w = w.parent;
+      scorm.api = (w && w.API) || (window.opener && window.opener.API) || null;
+    } catch (e) { scorm.api = null; }
+    if (scorm.api) {
+      try {
+        scorm.api.LMSInitialize('');
+        var st = scorm.api.LMSGetValue('cmi.core.lesson_status');
+        if (!st || st === 'not attempted') scorm.api.LMSSetValue('cmi.core.lesson_status', 'incomplete');
+      } catch (e) { scorm.api = null; }
+    }
+  })();
+  function scormSave(done) {
+    if (!scorm.api) return;
+    try {
+      scorm.api.LMSSetValue('cmi.suspend_data', JSON.stringify(snapshot()).slice(0, 4000));
+      if (done) scorm.api.LMSSetValue('cmi.core.lesson_status', 'completed');
+      scorm.api.LMSCommit('');
+    } catch (e) { /* LMS unavailable: keep working locally */ }
+  }
+  window.addEventListener('beforeunload', function () { scormSave(false); if (scorm.api) try { scorm.api.LMSFinish(''); } catch (e) {} });
+
+  /* ---------- persistence ---------- */
+  function snapshot() { return { student: $('student').value, character: $('character').value, theme: $('theme').value, desc: $('desc').value }; }
+  function restore() {
+    var data = null;
+    if (scorm.api) try { data = JSON.parse(scorm.api.LMSGetValue('cmi.suspend_data') || 'null'); } catch (e) {}
+    if (!data) try { data = JSON.parse(localStorage.getItem(STORE) || 'null'); } catch (e) {}
+    if (data) ['student', 'character', 'theme', 'desc'].forEach(function (k) { if (data[k]) $(k).value = data[k]; });
+    var s = {}; try { s = JSON.parse(localStorage.getItem(SETTINGS) || '{}'); } catch (e) {}
+    if (s.limit) $('sLimit').value = s.limit;
+    if (s.overlap != null) $('sOverlap').value = s.overlap;
+    if (s.ai) $('sAi').value = s.ai;
+    else if (DEFAULT_AI) $('sAi').value = DEFAULT_AI;
+  }
+  function save() { try { localStorage.setItem(STORE, JSON.stringify(snapshot())); } catch (e) {} }
+  function saveSettings() {
+    try { localStorage.setItem(SETTINGS, JSON.stringify({ limit: +$('sLimit').value || 20, overlap: +$('sOverlap').value, ai: $('sAi').value.trim() })); } catch (e) {}
+  }
+
+  /* ---------- word bank ---------- */
+  var BANK = [
+    ['Shapes', ['box', 'cube', 'cylinder', 'cone', 'sphere', 'dome', 'pyramid', 'ring']],
+    ['Sizes', ['mm wide', 'mm deep', 'mm tall', 'mm across', 'mm thick', 'mm on each side']],
+    ['Where', ['on top of the', 'below the', 'left of the', 'right of the', 'in front of the', 'behind the', 'centered on the', 'near the top', 'near the bottom']],
+    ['Turns & names', ['called', 'rotated 45 degrees', 'lying on its side', 'upside down', 'moved 2 mm up']]
+  ];
+  BANK.forEach(function (g) {
+    var lab = document.createElement('span'); lab.className = 'group'; lab.textContent = g[0]; $('wordBank').appendChild(lab);
+    g[1].forEach(function (w) {
+      var c = document.createElement('span'); c.className = 'chip'; c.textContent = w;
+      c.onclick = function () { insertAtCursor($('desc'), w + ' '); };
+      $('wordBank').appendChild(c);
+    });
+  });
+  function insertAtCursor(el, text) {
+    var s = el.selectionStart, e = el.selectionEnd, v = el.value;
+    var pre = v.slice(0, s); if (pre && !/\s$/.test(pre)) text = ' ' + text;
+    el.value = pre + text + v.slice(e); el.selectionStart = el.selectionEnd = s + text.length; el.focus(); update();
+  }
+
+  /* ---------- frame builder ---------- */
+  var FIELDS = {
+    box: { W: 'wide', D: 'deep', H: 'tall' }, cube: { W: 'each side' }, cylinder: { W: 'across', H: 'tall' }, cone: { W: 'across', H: 'tall' },
+    sphere: { W: 'across' }, hemisphere: { W: 'across' }, pyramid: { W: 'wide', H: 'tall' }, torus: { W: 'across', T: 'thick' }
+  };
+  function frameFields() {
+    var f = FIELDS[$('fShape').value];
+    ['W', 'D', 'H', 'T'].forEach(function (k) {
+      var box = $('f' + k); box.style.display = f[k] ? '' : 'none';
+      if (f[k]) box.querySelector('label').textContent = f[k];
+    });
+    $('fAlign').disabled = !/^(left|right|front|back)$/.test($('fRel').value);
+    $('fTarget').disabled = !$('fRel').value;
+    $('framePreview').textContent = currentFrame();
+  }
+  function currentFrame() {
+    return WordShape.frameSentence({
+      shape: $('fShape').value, name: $('fName').value.trim().toLowerCase(), w: +$('fWv').value, d: +$('fDv').value, h: +$('fHv').value, t: +$('fTv').value,
+      relation: $('fRel').value, target: $('fTarget').value, align: $('fAlign').value, rotZ: +$('fRot').value, tip: $('fTip').checked, color: $('fColor').value
+    });
+  }
+  function refreshTargets() {
+    var sel = $('fTarget'), cur = sel.value; sel.innerHTML = '';
+    (model ? model.parts : []).forEach(function (p) { var o = document.createElement('option'); o.value = o.textContent = p.name; sel.appendChild(o); });
+    if (cur && model && model.parts.some(function (p) { return p.name === cur; })) sel.value = cur;
+    else if (model && model.parts.length) sel.value = model.parts[model.parts.length - 1].name;
+  }
+  ['fShape', 'fName', 'fWv', 'fDv', 'fHv', 'fTv', 'fRel', 'fTarget', 'fAlign', 'fRot', 'fTip', 'fColor'].forEach(function (id) {
+    $(id).addEventListener('input', frameFields); $(id).addEventListener('change', frameFields);
+  });
+  $('addFrame').onclick = function () {
+    if (model && model.parts.length && !$('fRel').value) { toast('Pick "Where?" so the new part connects to your figure.'); }
+    var el = $('desc'); el.value = el.value.replace(/\s*$/, '') + (el.value.trim() ? '\n' : '') + currentFrame();
+    $('fName').value = ''; update(); frameFields();
+  };
+
+  /* ---------- main update ---------- */
+  var timer = null;
+  $('desc').addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(update, 250); });
+  ['student', 'character', 'theme'].forEach(function (id) { $(id).addEventListener('input', save); });
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  function update() {
+    var limit = +$('sLimit').value || 20;
+    document.querySelectorAll('.limit').forEach(function (e) { e.textContent = limit; });
+    model = WordShape.buildModel($('desc').value, { limitCm3: limit, overlap: +$('sOverlap').value });
+    var fb = $('feedback');
+    if (!model.feedback.length) fb.innerHTML = '<p class="hint">Your sentences will be read here, one part at a time.</p>';
+    else fb.innerHTML = model.feedback.map(function (f) {
+      var items = f.warnings.map(function (w) { return '<li class="w">' + esc(w) + '</li>'; }).concat(f.notes.map(function (n) { return '<li class="n">' + esc(n) + '</li>'; }));
+      return '<div class="fb' + (f.warnings.length ? ' warn' : '') + '"><div class="line">“' + esc(f.line) + '”</div>' +
+        '<div class="sum">' + (f.part ? (f.warnings.length ? '⚠ ' : '✔ ') + esc(f.summary) : '✖ No part made from this sentence') + '</div>' +
+        (items.length ? '<ul>' + items.join('') + '</ul>' : '') + '</div>';
+    }).join('');
+    var icons = { pass: '✔', fail: '✖', warn: '!', info: 'i' };
+    $('checks').innerHTML = model.checks.map(function (c) {
+      return '<div class="check ' + c.level + '"><span class="icon">' + icons[c.level] + '</span><span>' + esc(c.text) + '</span></div>';
+    }).join('');
+    var sz = model.checks.find(function (c) { return c.id === 'size'; });
+    $('dims').textContent = sz && sz.value ? 'Size box: ' + sz.value.L.toFixed(1) + ' mm wide × ' + sz.value.W.toFixed(1) + ' mm deep × ' + sz.value.H.toFixed(1) + ' mm tall  →  ' + sz.value.cm3.toFixed(1) + ' cm³' : '';
+    $('exportStl').disabled = !model.parts.length;
+    $('exportOne').disabled = !model.parts.length;
+    refreshTargets(); frameFields(); draw(); save();
+  }
+  window.addEventListener('resize', function () { draw(); });
+
+  /* ---------- 3D preview (canvas, no libraries) ---------- */
+  var cv = $('cv'), ctx2 = cv.getContext('2d');
+  var cam = { yaw: -0.6, pitch: 0.45, zoom: 1 };
+  var VIEWS = { front: [0, 0.05], side: [-Math.PI / 2, 0.05], top: [0, Math.PI / 2 - 0.01], iso: [-0.6, 0.45] };
+  document.querySelectorAll('[data-view]').forEach(function (b) { b.onclick = function () { var v = VIEWS[b.dataset.view]; cam.yaw = v[0]; cam.pitch = v[1]; draw(); }; });
+  var drag = null;
+  cv.addEventListener('pointerdown', function (e) { drag = [e.clientX, e.clientY]; cv.setPointerCapture(e.pointerId); cv.style.cursor = 'grabbing'; });
+  cv.addEventListener('pointermove', function (e) {
+    if (!drag) return;
+    cam.yaw += (e.clientX - drag[0]) * 0.01; cam.pitch = Math.max(-0.2, Math.min(Math.PI / 2 - 0.01, cam.pitch + (e.clientY - drag[1]) * 0.01));
+    drag = [e.clientX, e.clientY]; draw();
+  });
+  cv.addEventListener('pointerup', function () { drag = null; cv.style.cursor = 'grab'; });
+  cv.addEventListener('wheel', function (e) { e.preventDefault(); cam.zoom = Math.max(0.3, Math.min(4, cam.zoom * (e.deltaY < 0 ? 1.1 : 0.9))); draw(); }, { passive: false });
+
+  function shade(hex, k) {
+    var n = parseInt(hex.slice(1), 16), r = n >> 16, g = (n >> 8) & 255, b = n & 255;
+    return 'rgb(' + Math.round(r * k) + ',' + Math.round(g * k) + ',' + Math.round(b * k) + ')';
+  }
+  function draw() {
+    var dpr = window.devicePixelRatio || 1, cw = Math.round(cv.clientWidth * dpr), ch = Math.round(cv.clientHeight * dpr);
+    if (cw && ch && (cv.width !== cw || cv.height !== ch)) { cv.width = cw; cv.height = ch; }
+    var W = cv.width, H = cv.height;
+    ctx2.clearRect(0, 0, W, H);
+    var cy = Math.cos(cam.yaw), sy = Math.sin(cam.yaw), cp = Math.cos(cam.pitch), sp = Math.sin(cam.pitch);
+    function view(p) { var x = p[0] * cy - p[1] * sy, y = p[0] * sy + p[1] * cy; return [x, y * sp + p[2] * cp, y * cp - p[2] * sp]; }
+    var parts = model ? model.parts : [];
+    var ext = 20, half = 10, top = 10;
+    parts.forEach(function (p) {
+      for (var k = 0; k < 2; k++) half = Math.max(half, Math.abs(p.bbox.min[k]), Math.abs(p.bbox.max[k]));
+      top = Math.max(top, p.bbox.max[2]);
+    });
+    ext = Math.max(half * 2, top);
+    var scale = Math.min(W, H) / (ext * 1.35) * cam.zoom, zMid = top / 2;
+    function scr(v) { return [W / 2 + v[0] * scale, H * 0.55 - (v[1] - zMid * cp) * scale]; }
+    // Build plate grid (5 mm squares)
+    var g = Math.ceil((half + 10) / 5) * 5;
+    ctx2.lineWidth = 1;
+    for (var i = -g; i <= g; i += 5) {
+      ctx2.strokeStyle = i % 10 === 0 ? 'rgba(20,82,57,.22)' : 'rgba(20,82,57,.09)';
+      var a = scr(view([i, -g, 0])), b = scr(view([i, g, 0])), c = scr(view([-g, i, 0])), d = scr(view([g, i, 0]));
+      ctx2.beginPath(); ctx2.moveTo(a[0], a[1]); ctx2.lineTo(b[0], b[1]); ctx2.moveTo(c[0], c[1]); ctx2.lineTo(d[0], d[1]); ctx2.stroke();
+    }
+    var fr = scr(view([0, -g, 0])); ctx2.fillStyle = 'rgba(20,82,57,.6)'; ctx2.font = Math.round(13 * dpr) + 'px sans-serif'; ctx2.fillText('FRONT', fr[0] - 22, fr[1] + 18);
+    var light = [0.35, -0.55, 0.75], ll = Math.hypot(light[0], light[1], light[2]); light = light.map(function (v) { return v / ll; });
+    var list = [];
+    parts.forEach(function (p) {
+      p.tris.forEach(function (t) {
+        var e1 = [t[1][0] - t[0][0], t[1][1] - t[0][1], t[1][2] - t[0][2]], e2 = [t[2][0] - t[0][0], t[2][1] - t[0][1], t[2][2] - t[0][2]];
+        var n = [e1[1] * e2[2] - e1[2] * e2[1], e1[2] * e2[0] - e1[0] * e2[2], e1[0] * e2[1] - e1[1] * e2[0]];
+        var nl = Math.hypot(n[0], n[1], n[2]) || 1; n = [n[0] / nl, n[1] / nl, n[2] / nl];
+        var nv = view(n); if (nv[2] > 0.02) return; // faces away from camera
+        var v0 = view(t[0]), v1 = view(t[1]), v2 = view(t[2]);
+        var lit = 0.45 + 0.55 * Math.max(0, n[0] * light[0] + n[1] * light[1] + n[2] * light[2]);
+        list.push({ d: (v0[2] + v1[2] + v2[2]) / 3, p: [scr(v0), scr(v1), scr(v2)], c: shade(p.color, lit) });
+      });
+    });
+    list.sort(function (a, b) { return b.d - a.d; });
+    list.forEach(function (t) {
+      ctx2.beginPath(); ctx2.moveTo(t.p[0][0], t.p[0][1]); ctx2.lineTo(t.p[1][0], t.p[1][1]); ctx2.lineTo(t.p[2][0], t.p[2][1]); ctx2.closePath();
+      ctx2.fillStyle = t.c; ctx2.fill(); ctx2.strokeStyle = t.c; ctx2.lineWidth = 0.6; ctx2.stroke();
+    });
+    if (!parts.length) { ctx2.fillStyle = '#4a5c54'; ctx2.font = Math.round(16 * dpr) + 'px sans-serif'; ctx2.textAlign = 'center'; ctx2.fillText('Describe your first shape to see it here.', W / 2, H / 2); ctx2.textAlign = 'start'; }
+  }
+
+  /* ---------- export ---------- */
+  function fileBase() {
+    var s = ($('student').value || 'student') + '-' + ($('character').value || 'character');
+    return s.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '') || 'figure';
+  }
+  function download(blob, name) {
+    var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  }
+  $('exportOne').onclick = function () {
+    if (!model || !model.parts.length) return;
+    var bad = model.checks.filter(function (c) { return c.level === 'fail'; });
+    if (bad.length && !confirm('Some checks failed:\n\n' + bad.map(function (c) { return '• ' + c.text; }).join('\n') + '\n\nDownload anyway and fix it in Tinkercad?')) return;
+    var buf = WordShape.toSTL(model.parts, 'STEAMSPACE Shape Words to STL (mm)');
+    download(new Blob([buf], { type: 'model/stl' }), fileBase() + '.stl');
+    scormSave(true); toast('Saved ' + fileBase() + '.stl as one shape. In Tinkercad: Import, Millimeters, 100%.');
+  };
+  $('exportStl').onclick = function () {
+    if (!model || !model.parts.length) return;
+    var bad = model.checks.filter(function (c) { return c.level === 'fail'; });
+    if (bad.length && !confirm('Some checks failed:\n\n' + bad.map(function (c) { return '• ' + c.text; }).join('\n') + '\n\nDownload anyway and fix it in Tinkercad?')) return;
+    var files = WordShape.partSTLs(model.parts);
+    files.push({ name: 'HOW-TO-PLACE.txt', data: WordShape.cardText(model.parts, $('character').value || 'My figure') });
+    download(new Blob([WordShape.toZip(files)], { type: 'application/zip' }), fileBase() + '-shapes.zip');
+    scormSave(true); toast('Saved ' + files.length + ' files in ' + fileBase() + '-shapes.zip. Import each .stl into Tinkercad (Millimeters, 100%).');
+  };
+  $('exportTxt').onclick = function () {
+    var head = 'Student: ' + $('student').value + '\nCharacter: ' + $('character').value + '\nTheme: ' + $('theme').value + '\n\n';
+    download(new Blob([head + $('desc').value + '\n'], { type: 'text/plain' }), fileBase() + '-sentences.txt');
+  };
+
+  /* ---------- helpers ---------- */
+  var EXAMPLE = [
+      'A box called feet, 18 mm wide, 14 mm deep, 3 mm tall.',
+      'A box called body, 16 mm wide, 12 mm deep, 18 mm tall, on top of the feet, colored teal.',
+      'The head is a sphere 12 mm across on top of the body.',
+      'A cone called hat, 8 mm across, 8 mm tall, on top of the head, colored yellow.',
+      'A cylinder called leftarm, 4 mm across, 12 mm tall, left of the body near the top.',
+      'A cylinder called rightarm, 4 mm across, 12 mm tall, right of the body near the top.'
+  ].join('\n');
+  $('example').onclick = function () {
+    if ($('desc').value.trim() && !confirm('Replace your description with the example robot?')) return;
+    $('desc').value = EXAMPLE;
+    update();
+  };
+  $('undoLine').onclick = function () { var l = $('desc').value.replace(/\s+$/, '').split('\n'); l.pop(); $('desc').value = l.join('\n'); update(); };
+  $('clearAll').onclick = function () { if (confirm('Erase the saved description on this computer?')) { localStorage.removeItem(STORE); $('desc').value = ''; update(); } };
+  ['sLimit', 'sOverlap'].forEach(function (id) { $(id).addEventListener('change', function () { saveSettings(); update(); }); });
+  function toast(msg) { var t = $('toast'); t.textContent = msg; t.style.display = 'block'; clearTimeout(t._h); t._h = setTimeout(function () { t.style.display = 'none'; }, 4200); }
+
+  /* ---------- optional AI helper (teacher-run service; never holds a key in this page) ---------- */
+  function aiUrl(path) { return $('sAi').value.trim().replace(/\/+$/, '') + path; }
+  function fetchT(url, opts, ms) {
+    var ctl = window.AbortController ? new AbortController() : null;
+    var h = setTimeout(function () { if (ctl) ctl.abort(); }, ms);
+    return fetch(url, Object.assign({}, opts, ctl ? { signal: ctl.signal } : {})).finally(function () { clearTimeout(h); });
+  }
+  function checkAi() {
+    aiReady = false; $('aiAsk').disabled = true;
+    if (!$('sAi').value.trim()) { $('aiStatus').textContent = 'AI helper is off. Everything else works offline, including on MoodleBox.'; return; }
+    $('aiStatus').textContent = 'Checking AI helper…';
+    fetchT(aiUrl('/health'), {}, 4000).then(function (r) { return r.json(); }).then(function (j) {
+      aiReady = !!(j && j.ok); $('aiAsk').disabled = !aiReady;
+      $('aiStatus').textContent = aiReady ? 'AI helper connected (' + (j.mode || 'ok') + '). Students can ask it to rewrite free-writes as frames.' : 'AI helper answered but is not ready.';
+    }).catch(function () { $('aiStatus').textContent = 'Can\'t reach the AI helper, so it stays off. The rest of the app works normally.'; });
+  }
+  $('sAiTest').onclick = function () { saveSettings(); checkAi(); };
+  $('aiAsk').onclick = function () {
+    var text = $('desc').value.trim(); if (!text) { toast('Write something first.'); return; }
+    $('aiAsk').disabled = true; $('aiAsk').textContent = '✨ Thinking…';
+    fetchT(aiUrl('/frames'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: text.slice(0, 2000) }) }, 20000)
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (!j || !Array.isArray(j.sentences) || !j.sentences.length) throw new Error('empty');
+        aiSuggestion = j.sentences.slice(0, 20).map(String).join('\n');
+        $('aiOut').textContent = aiSuggestion; $('aiBox').style.display = 'block';
+      })
+      .catch(function () { toast('The AI helper didn\'t answer. Keep using frames. They always work.'); })
+      .finally(function () { $('aiAsk').disabled = !aiReady; $('aiAsk').textContent = '✨ AI helper: turn my free-write into frames'; });
+  };
+  $('aiUse').onclick = function () { if (aiSuggestion) { $('desc').value = aiSuggestion; update(); } $('aiBox').style.display = 'none'; };
+  $('aiDismiss').onclick = function () { $('aiBox').style.display = 'none'; };
+
+  restore();
+  if (location.hash === '#example' && !$('desc').value.trim()) $('desc').value = EXAMPLE;
+  update(); checkAi();
+})();
+</script>
+</body>
+</html>
