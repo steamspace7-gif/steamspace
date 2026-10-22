@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=16">
+  <link rel="stylesheet" href="css/styles.css?v=17">
 </head>
 <body>
   <header class="site-header">
@@ -54,11 +54,30 @@
       <p class="hero-kicker">Step 2</p>
       <h1>Schedule Your Trip</h1>
       <p class="hero-lead">Plan your date, arrival time, and optional museum visit.</p>
-      <p><a class="hero-jump" href="#availability-calendar">View availability calendar</a></p>
+      <div class="hero-jumps">
+        <a class="hero-jump" href="#scheduling-walkthrough">Watch the scheduling walkthrough</a>
+        <a class="hero-jump" href="#availability-calendar">View availability calendar</a>
+      </div>
     </div>
   </section>
 
   <main>
+    <section class="section reveal" id="scheduling-walkthrough">
+      <div class="section-head">
+        <h2>Scheduling Walkthrough</h2>
+        <p>A 1-minute narrated tour of how to book a field trip on this site.</p>
+      </div>
+      <div class="intro-media walkthrough-video">
+        <video controls playsinline preload="metadata" poster="images/steam-banner-schedule.png">
+          <source src="media/videos/steamspace-site-tour-narrated-v3.mp4" type="video/mp4">
+          <a href="media/videos/steamspace-site-tour-narrated-v3.mp4">Open the scheduling walkthrough video</a>
+        </video>
+      </div>
+      <p class="walkthrough-link">
+        <a href="media/videos/steamspace-site-tour-narrated-v3.mp4">Open the scheduling walkthrough video</a>
+      </p>
+    </section>
+
     <section class="section reveal">
       <div class="schedule-list">
         <div class="schedule-item">
@@ -80,6 +99,7 @@
       </div>
       <div class="hero-actions" style="margin-top: 0; margin-bottom: 1.5rem; animation: none;">
         <a class="btn btn-primary" href="https://forms.gle/Hay16TfXqFxQYNw89" target="_blank" rel="noopener">Field Trip Interest Form</a>
+        <a class="btn btn-solid" href="#scheduling-walkthrough">Watch the walkthrough</a>
         <a class="btn btn-solid" href="#availability-calendar">Check the calendar</a>
       </div>
       <div class="prep-callout" style="margin-bottom: 1.5rem;">

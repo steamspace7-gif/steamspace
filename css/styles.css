@@ -347,6 +347,18 @@ a:hover {
   text-decoration-color: rgba(255, 255, 255, 0.85);
 }
 
+.hero-jumps {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin-top: 0.85rem;
+}
+
+.hero-jumps .hero-jump {
+  margin-top: 0;
+}
+
 .hero-actions {
   margin-top: 1.5rem;
   display: flex;
@@ -1468,6 +1480,15 @@ main {
 
 .prep-callout .btn {
   justify-self: start;
+}
+
+.walkthrough-video {
+  margin-top: 0.25rem;
+}
+
+.walkthrough-link {
+  margin: 0.9rem 0 0;
+  color: var(--ink-soft);
 }
 
 
