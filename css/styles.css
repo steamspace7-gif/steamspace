@@ -1486,6 +1486,40 @@ main {
   margin-top: 0.25rem;
 }
 
+.walkthrough-details {
+  max-width: 42rem;
+  background: var(--paper);
+  border-radius: var(--radius);
+  border: 1px solid rgba(31, 107, 74, 0.12);
+  padding: 0.85rem 1.1rem 1rem;
+}
+
+.walkthrough-details summary {
+  cursor: pointer;
+  font-family: var(--font-brand);
+  font-weight: 550;
+  font-size: 1.15rem;
+  color: var(--pine-deep);
+  line-height: 1.3;
+}
+
+.walkthrough-details summary span {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.walkthrough-details .walkthrough-video {
+  margin-top: 0.9rem;
+}
+
+.walkthrough-details .intro-media video {
+  max-height: 360px;
+}
+
 .walkthrough-link {
   margin: 0.9rem 0 0;
   color: var(--ink-soft);

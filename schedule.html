@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=17">
+  <link rel="stylesheet" href="css/styles.css?v=18">
 </head>
 <body>
   <header class="site-header">
@@ -71,19 +71,6 @@
       </div>
     </section>
 
-    <section class="section reveal" id="scheduling-walkthrough">
-      <div class="section-head">
-        <h2>Scheduling Walkthrough</h2>
-        <p>A 1-minute narrated tour of how to book a field trip on this site.</p>
-      </div>
-      <div class="intro-media walkthrough-video">
-        <video controls playsinline preload="metadata" poster="images/steam-banner-schedule.png">
-          <source src="media/videos/steamspace-site-tour-narrated-v3.mp4" type="video/mp4">
-          <a href="media/videos/steamspace-site-tour-narrated-v3.mp4">Open the scheduling walkthrough video</a>
-        </video>
-      </div>
-    </section>
-
     <section class="section reveal">
       <div class="schedule-list">
         <div class="schedule-item">
@@ -105,7 +92,6 @@
       </div>
       <div class="hero-actions" style="margin-top: 0; margin-bottom: 1.5rem; animation: none;">
         <a class="btn btn-primary" href="https://forms.gle/Hay16TfXqFxQYNw89" target="_blank" rel="noopener">Field Trip Interest Form</a>
-        <a class="btn btn-solid" href="#scheduling-walkthrough">Watch the walkthrough</a>
         <a class="btn btn-solid" href="#availability-calendar">Check the calendar</a>
       </div>
       <div class="prep-callout" style="margin-bottom: 1.5rem;">
@@ -122,6 +108,21 @@
       <div class="embed-frame">
         <iframe src="https://www.google.com/maps?q=Building+106+Fort+Apache+Historic+Park&amp;output=embed" title="Google Maps — Fort Apache Historic Park" allowfullscreen loading="lazy"></iframe>
       </div>
+    </section>
+
+    <section class="section reveal">
+      <details class="walkthrough-details" id="scheduling-walkthrough">
+        <summary>
+          Scheduling walkthrough
+          <span>Optional 1-minute narrated tour of how to book.</span>
+        </summary>
+        <div class="intro-media walkthrough-video">
+          <video controls playsinline preload="none" poster="images/steam-banner-schedule.png">
+            <source src="media/videos/steamspace-site-tour-narrated-v3.mp4" type="video/mp4">
+            <a href="media/videos/steamspace-site-tour-narrated-v3.mp4">Open the scheduling walkthrough video</a>
+          </video>
+        </div>
+      </details>
     </section>
   </main>
 
@@ -140,6 +141,6 @@
       <p><a href="donate.html">Donate Supplies</a></p>
     </div>
   </footer>
-  <script src="js/site.js?v=8"></script>
+  <script src="js/site.js?v=9"></script>
 </body>
 </html>

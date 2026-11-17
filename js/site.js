@@ -27,6 +27,15 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+function openWalkthroughFromHash() {
+  if (location.hash !== "#scheduling-walkthrough") return;
+  const details = document.getElementById("scheduling-walkthrough");
+  if (details && details.tagName === "DETAILS") details.open = true;
+}
+
+openWalkthroughFromHash();
+window.addEventListener("hashchange", openWalkthroughFromHash);
+
 document.addEventListener("DOMContentLoaded", () => {
   const isMobileNav = () => window.matchMedia("(max-width: 840px)").matches;
   const closeSubmenus = () => {
