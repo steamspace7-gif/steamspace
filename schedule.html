@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=17">
+  <link rel="stylesheet" href="css/styles.css?v=18">
 </head>
 <body>
   <header class="site-header">
@@ -61,16 +61,13 @@
   </section>
 
   <main>
-    <section class="section reveal" id="scheduling-walkthrough">
+    <section class="section reveal" id="availability-calendar">
       <div class="section-head">
-        <h2>Scheduling Walkthrough</h2>
-        <p>A 1-minute narrated tour of how to book a field trip on this site.</p>
+        <h2>Availability Calendar</h2>
+        <p>Open dates for Steamspace field trips.</p>
       </div>
-      <div class="intro-media walkthrough-video">
-        <video controls playsinline preload="metadata" poster="images/steam-banner-schedule.png">
-          <source src="media/videos/steamspace-site-tour-narrated-v3.mp4" type="video/mp4">
-          <a href="media/videos/steamspace-site-tour-narrated-v3.mp4">Open the scheduling walkthrough video</a>
-        </video>
+      <div class="embed-frame">
+        <iframe src="https://calendar.google.com/calendar/embed?src=steamspace7%40gmail.com&amp;ctz=America%2FPhoenix" title="Steamspace Calendar" loading="lazy"></iframe>
       </div>
     </section>
 
@@ -82,7 +79,7 @@
         </div>
         <div class="schedule-item">
           <div class="badge">2</div>
-          <p>Field trips are only offered on Tuesdays and Thursdays during the school year. Check the <a href="#availability-calendar">calendar below</a> to plan your trip.</p>
+          <p>Field trips are only offered on Tuesdays and Thursdays during the school year. Check the <a href="#availability-calendar">calendar above</a> to plan your trip.</p>
         </div>
         <div class="schedule-item">
           <div class="badge">3</div>
@@ -95,22 +92,11 @@
       </div>
       <div class="hero-actions" style="margin-top: 0; margin-bottom: 1.5rem; animation: none;">
         <a class="btn btn-primary" href="https://forms.gle/Hay16TfXqFxQYNw89" target="_blank" rel="noopener">Field Trip Interest Form</a>
-        <a class="btn btn-solid" href="#scheduling-walkthrough">Watch the walkthrough</a>
         <a class="btn btn-solid" href="#availability-calendar">Check the calendar</a>
       </div>
       <div class="prep-callout" style="margin-bottom: 1.5rem;">
         <p><strong>Optional:</strong> Before the trip, students can try the Steamspace Interest Inventory—a quick way to notice strengths and interests.</p>
         <a class="btn btn-solid" href="field-trip-prep.html">Field Trip Prep</a>
-      </div>
-    </section>
-
-    <section class="section reveal" id="availability-calendar">
-      <div class="section-head">
-        <h2>Availability Calendar</h2>
-        <p>Open dates for Steamspace field trips.</p>
-      </div>
-      <div class="embed-frame">
-        <iframe src="https://calendar.google.com/calendar/embed?src=steamspace7%40gmail.com&amp;ctz=America%2FPhoenix" title="Steamspace Calendar" loading="lazy"></iframe>
       </div>
     </section>
 
@@ -122,6 +108,21 @@
       <div class="embed-frame">
         <iframe src="https://www.google.com/maps?q=Building+106+Fort+Apache+Historic+Park&amp;output=embed" title="Google Maps — Fort Apache Historic Park" allowfullscreen loading="lazy"></iframe>
       </div>
+    </section>
+
+    <section class="section reveal">
+      <details class="walkthrough-details" id="scheduling-walkthrough">
+        <summary>
+          Scheduling walkthrough
+          <span>Optional 1-minute narrated tour of how to book.</span>
+        </summary>
+        <div class="intro-media walkthrough-video">
+          <video controls playsinline preload="none" poster="images/steam-banner-schedule.png">
+            <source src="media/videos/steamspace-site-tour-narrated-v3.mp4" type="video/mp4">
+            <a href="media/videos/steamspace-site-tour-narrated-v3.mp4">Open the scheduling walkthrough video</a>
+          </video>
+        </div>
+      </details>
     </section>
   </main>
 
@@ -140,6 +141,6 @@
       <p><a href="donate.html">Donate Supplies</a></p>
     </div>
   </footer>
-  <script src="js/site.js?v=8"></script>
+  <script src="js/site.js?v=9"></script>
 </body>
 </html>
